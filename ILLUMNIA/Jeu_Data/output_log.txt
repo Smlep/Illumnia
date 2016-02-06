@@ -14,20 +14,20 @@ Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_D
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.057 seconds
+- Completed reload, in  0.346 seconds
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.878494 ms
+UnloadTime: 0.967826 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: b60 -> priority: 1 
-  Thread -> id: fd8 -> priority: 1 
+  Thread -> id: 3380 -> priority: 1 
+  Thread -> id: 3394 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.624355 ms
+UnloadTime: 4.761964 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 471.
-Total: 0.217437 ms (FindLiveObjects: 0.034212 ms CreateObjectMapping: 0.019386 ms MarkObjects: 0.155855 ms  DeleteObjects: 0.007602 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 492.
+Total: 0.189687 ms (FindLiveObjects: 0.031171 ms CreateObjectMapping: 0.014825 ms MarkObjects: 0.136848 ms  DeleteObjects: 0.006462 ms)
 
