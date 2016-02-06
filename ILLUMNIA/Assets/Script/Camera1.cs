@@ -11,7 +11,7 @@ public class Camera1 : MonoBehaviour
     private float _y = 0.0f;
     void Start()
     {
-        Vector2 angles = this.transform.localEulerAngles;
+        Vector2 angles = transform.localEulerAngles;
         _x = angles.x;
         _y = angles.y;
         this.Rotate(_x, _y);
@@ -20,9 +20,11 @@ public class Camera1 : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
+        Vector3 movement = new Vector3(/* Déplacement sur X touche Horizontale */ moveHorizontal * Mathf.Cos(((_x) * Mathf.PI) / 180) + /* Déplacement sur X touche Verticale */ moveVertical * Mathf.Sin((_x * Mathf.PI) / 180),
+                                        0,
+                                       /* Déplacement sur Y touche Horizontale */ -moveHorizontal * Mathf.Sin(((_x) * Mathf.PI) / 180) + /* Déplacement sur Y touche Verticale */ moveVertical * Mathf.Cos((_x * Mathf.PI) / 180));
 
-        if (moveHorizontal > 0 && moveVertical > 0)
+        if (moveHorizontal != 0 && moveVertical != 0)
         {
             transform.position += (movement * speed) / 2;
         }
@@ -30,7 +32,7 @@ public class Camera1 : MonoBehaviour
         {
             transform.position += (movement * speed);
         }
-        this.RotateControls();
+        RotateControls();
     }
     void Rotate(float x, float y)
     {
@@ -41,6 +43,9 @@ public class Camera1 : MonoBehaviour
     {
         _x += Input.GetAxis("Mouse X") * _xSpeed;
         _y += -Input.GetAxis("Mouse Y") * _ySpeed;
-        this.Rotate(_x, _y);
+
+        _y = Mathf.Clamp(_y, -45, 30);
+
+        Rotate(_x, _y);
     }
 }
