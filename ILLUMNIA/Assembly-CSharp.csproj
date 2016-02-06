@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Script\Camera1.cs" />
      <Compile Include="Assets\Script\MenuScript.cs" />
+     <None Include="Assets\Sculptures\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
