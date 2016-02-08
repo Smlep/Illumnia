@@ -1,35 +1,39 @@
-Initialize engine version: 5.3.0f4 (2524e04062b4)
+Initialize engine version: 5.3.2f1 (e87ab445ead0)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) Iris(TM) Pro Graphics 5200 (ID=0xd26)
+    Renderer: Intel(R) HD Graphics 5600 (ID=0x1612)
     Vendor:   Intel
-    VRAM:     128 MB
+    VRAM:     2111 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.048 seconds
-Platform assembly: C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Cyril\Documents\GitHub\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.045 seconds
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.755918 ms
+UnloadTime: 0.724159 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1060 -> priority: 1 
-  Thread -> id: 203c -> priority: 1 
+  Thread -> id: 1b04 -> priority: 1 
+  Thread -> id: 2c10 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.159540 ms
+UnloadTime: 5.004491 ms
 
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 619.
-Total: 0.273013 ms (FindLiveObjects: 0.055936 ms CreateObjectMapping: 0.017961 ms MarkObjects: 0.191930 ms  DeleteObjects: 0.006158 ms)
+Total: 0.283201 ms (FindLiveObjects: 0.042575 ms CreateObjectMapping: 0.015965 ms MarkObjects: 0.217437 ms  DeleteObjects: 0.006842 ms)
 
 NullReferenceException: Object reference not set to an instance of an object
   at MenuScript.Start () [0x00000] in <filename unknown>:0 
