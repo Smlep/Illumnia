@@ -14,29 +14,44 @@ Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_D
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.045 seconds
+- Completed reload, in  0.039 seconds
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.724159 ms
+UnloadTime: 0.633689 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1b04 -> priority: 1 
-  Thread -> id: 2c10 -> priority: 1 
+  Thread -> id: 2700 -> priority: 1 
+  Thread -> id: 1334 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.004491 ms
+UnloadTime: 4.072033 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 619.
-Total: 0.283201 ms (FindLiveObjects: 0.042575 ms CreateObjectMapping: 0.015965 ms MarkObjects: 0.217437 ms  DeleteObjects: 0.006842 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 639.
+Total: 0.233404 ms (FindLiveObjects: 0.030791 ms CreateObjectMapping: 0.015965 ms MarkObjects: 0.180565 ms  DeleteObjects: 0.005702 ms)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at MenuScript.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.295650 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 639.
+Total: 0.507863 ms (FindLiveObjects: 0.083250 ms CreateObjectMapping: 0.018626 ms MarkObjects: 0.397623 ms  DeleteObjects: 0.006842 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.376858 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 639.
+Total: 0.382798 ms (FindLiveObjects: 0.059681 ms CreateObjectMapping: 0.022047 ms MarkObjects: 0.292325 ms  DeleteObjects: 0.007982 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.512187 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 639.
+Total: 0.407887 ms (FindLiveObjects: 0.111000 ms CreateObjectMapping: 0.014065 ms MarkObjects: 0.276740 ms  DeleteObjects: 0.004561 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.787406 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 639.
+Total: 0.370634 ms (FindLiveObjects: 0.061962 ms CreateObjectMapping: 0.013684 ms MarkObjects: 0.280921 ms  DeleteObjects: 0.013304 ms)
 
