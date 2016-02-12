@@ -40,3 +40,4 @@ D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Temp\bin\Debug\UnityEngi
 D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\obj\Debug\Assembly-CSharp.dll
 D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\obj\Debug\Assembly-CSharp.pdb
+D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll

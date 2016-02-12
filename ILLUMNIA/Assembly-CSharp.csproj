@@ -45,14 +45,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\KnightInChainMail\MyScripts\Mecanim_Control_melee.cs" />
      <Compile Include="Assets\Script\Camera1.cs" />
      <Compile Include="Assets\Script\Main.cs" />
      <Compile Include="Assets\Script\MenuScript.cs" />
      <None Include="Assets\Sculptures\readme.txt" />
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>D:/Documents_Data/Documents/Projet_S2/Illumnia/ILLUMNIA/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

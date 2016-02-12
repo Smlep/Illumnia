@@ -9,6 +9,7 @@ public class Camera1 : MonoBehaviour
     public float _ySpeed = 1f;
     private float _x = 0.0f;
     private float _y = 0.0f;
+    public Animation characteranimation;
     void Start()
     {
         Vector2 angles = transform.localEulerAngles;
@@ -27,12 +28,18 @@ public class Camera1 : MonoBehaviour
         if (moveHorizontal != 0 && moveVertical != 0)
         {
             transform.position += (movement * speed) / 2;
+            characteranimation.Play("Walk");
         }
-        else
+        else if (moveHorizontal!=0 || moveVertical!=0)
         {
             transform.position += (movement * speed);
+            characteranimation.Play("Walk");
         }
         RotateControls();
+        if (Input.GetButtonDown("Fire1"))
+        {
+            characteranimation.Play("Attack");
+        }
     }
     void Rotate(float x, float y)
     {

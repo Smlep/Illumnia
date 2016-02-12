@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Main : MonoBehaviour
 {
-
+    
     private Text yourbuttontext;
     private Text yourbuttontext1;
     private Text yourbuttonresumetext;
