@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{E4A2916F-B623-DBB4-6ED5-B0DE54E010A9}") = "ILLUMNIA", "Assembly-CSharp-firstpass.csproj", "{8593A848-C184-FF58-D365-9D7C42D8C9EB}"
+EndProject
 Project("{E4A2916F-B623-DBB4-6ED5-B0DE54E010A9}") = "ILLUMNIA", "Assembly-CSharp.csproj", "{455F3A10-3A6C-C69E-E6AF-F571CA36AFDC}"
 EndProject
 Global
@@ -9,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8593A848-C184-FF58-D365-9D7C42D8C9EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8593A848-C184-FF58-D365-9D7C42D8C9EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8593A848-C184-FF58-D365-9D7C42D8C9EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8593A848-C184-FF58-D365-9D7C42D8C9EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{455F3A10-3A6C-C69E-E6AF-F571CA36AFDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{455F3A10-3A6C-C69E-E6AF-F571CA36AFDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{455F3A10-3A6C-C69E-E6AF-F571CA36AFDC}.Release|Any CPU.ActiveCfg = Release|Any CPU

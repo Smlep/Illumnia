@@ -8,50 +8,28 @@ Direct3D:
 Begin MonoManager ReloadAssembly
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.039 seconds
+- Completed reload, in  0.074 seconds
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.633689 ms
+UnloadTime: 0.763696 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2700 -> priority: 1 
-  Thread -> id: 1334 -> priority: 1 
+  Thread -> id: 334c -> priority: 1 
+  Thread -> id: 2a4c -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.072033 ms
+UnloadTime: 6.080304 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 639.
-Total: 0.233404 ms (FindLiveObjects: 0.030791 ms CreateObjectMapping: 0.015965 ms MarkObjects: 0.180565 ms  DeleteObjects: 0.005702 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.295650 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 639.
-Total: 0.507863 ms (FindLiveObjects: 0.083250 ms CreateObjectMapping: 0.018626 ms MarkObjects: 0.397623 ms  DeleteObjects: 0.006842 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.376858 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 639.
-Total: 0.382798 ms (FindLiveObjects: 0.059681 ms CreateObjectMapping: 0.022047 ms MarkObjects: 0.292325 ms  DeleteObjects: 0.007982 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.512187 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 639.
-Total: 0.407887 ms (FindLiveObjects: 0.111000 ms CreateObjectMapping: 0.014065 ms MarkObjects: 0.276740 ms  DeleteObjects: 0.004561 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.787406 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 639.
-Total: 0.370634 ms (FindLiveObjects: 0.061962 ms CreateObjectMapping: 0.013684 ms MarkObjects: 0.280921 ms  DeleteObjects: 0.013304 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 906.
+Total: 0.388500 ms (FindLiveObjects: 0.073746 ms CreateObjectMapping: 0.020147 ms MarkObjects: 0.282062 ms  DeleteObjects: 0.008743 ms)
 

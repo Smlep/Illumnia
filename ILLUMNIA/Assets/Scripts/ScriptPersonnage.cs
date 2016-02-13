@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-public class Camera1 : MonoBehaviour
+public class ScriptPersonnage : MonoBehaviour
 {
     public float speed;
     public float _xSpeed = 1f;
@@ -10,12 +10,19 @@ public class Camera1 : MonoBehaviour
     private float _x = 0.0f;
     private float _y = 0.0f;
     public Animation characteranimation;
+    public GameObject Camera;
     void Start()
     {
         Vector2 angles = transform.localEulerAngles;
         _x = angles.x;
         _y = angles.y;
         this.Rotate(_x, _y);
+        // Code pour empécher la répétition automatique de l'animation d'attaque
+        characteranimation["Attack"].wrapMode = WrapMode.Once;
+        // Code pour empécher la répétition automatique de l'animation de saut
+        characteranimation["Jump"].wrapMode = WrapMode.Once;
+        // Code pour empécher la répétition automatique de l'animation dde déplacement
+        characteranimation["Walk"].wrapMode = WrapMode.Once;
     }
     void Update()
     {
@@ -28,23 +35,34 @@ public class Camera1 : MonoBehaviour
         if (moveHorizontal != 0 && moveVertical != 0)
         {
             transform.position += (movement * speed) / 2;
+            // Animation de déplacement
             characteranimation.Play("Walk");
         }
-        else if (moveHorizontal!=0 || moveVertical!=0)
+        else if (moveHorizontal != 0 || moveVertical != 0)
         {
             transform.position += (movement * speed);
+            // Animation de déplacement
             characteranimation.Play("Walk");
         }
-        RotateControls();
+
         if (Input.GetButtonDown("Fire1"))
         {
+            // Animation d'attaque
             characteranimation.Play("Attack");
         }
+        /*
+         if (Input.GetKeyDown("space"))
+        {            
+           characteranimation.Play("Jump");
+        } */
+        RotateControls();
     }
     void Rotate(float x, float y)
     {
-        Quaternion rotation = Quaternion.Euler(y, x, 0.0f);
-        transform.rotation = rotation;
+        Quaternion rotationcam = Quaternion.Euler(y, x, 0.0f);
+        Camera.transform.rotation = rotationcam;
+        Quaternion rotationjoueur = Quaternion.Euler(0, x, 0.0f);
+        transform.rotation = rotationjoueur;
     }
     void RotateControls()
     {
