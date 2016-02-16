@@ -72,7 +72,7 @@ public class Detection : MonoBehaviour
 					if (dooropening.Running == false)
 					{
 						// Open/close the door by running the 'Open' function in the 'DoorOpening' script.
-						StartCoroutine (hit.collider.GetComponent<Door>().Open());
+						StartCoroutine (GetComponent<Door>().Open());
 					}
 				}
 			}

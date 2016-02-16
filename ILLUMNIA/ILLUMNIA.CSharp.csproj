@@ -62,12 +62,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Main.cs" />
-    <Compile Include="Assets\Script\Camera1.cs" />
-    <Compile Include="Assets\Script\MenuScript.cs" />
+    <ProjectReference Include="ILLUMNIA.CSharp.Plugins.csproj">
+      <Project>{3D076AB4-B300-4F1A-4F54-E0F01A3371B1}</Project>
+      <Name>ILLUMNIA.CSharp.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanel.cs" />
+    <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanelField.cs" />
+    <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanelViewport.cs" />
+    <Compile Include="Assets\DoorSystem\Scripts\Detection.cs" />
+    <Compile Include="Assets\DoorSystem\Scripts\Door.cs" />
+    <Compile Include="Assets\DoorSystem\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\DoorSystem\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Activation.cs" />
+    <Compile Include="Assets\Scripts\GUItest.cs" />
+    <Compile Include="Assets\Scripts\Main.cs" />
+    <Compile Include="Assets\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\Porte1.cs" />
+    <Compile Include="Assets\Scripts\ScriptPersonnage.cs" />
+    <Compile Include="Assets\StandardAssets lever char\Character Controllers\Sources\Scripts\MouseLookbis.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\DungeonLevers\Readme.txt" />
     <None Include="Assets\Sculptures\readme.txt" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
