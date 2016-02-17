@@ -12,24 +12,39 @@ Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_D
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.108 seconds
+- Completed reload, in  0.130 seconds
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.532574 ms
+UnloadTime: 0.683490 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 734 -> priority: 1 
-  Thread -> id: 243c -> priority: 1 
+  Thread -> id: 2b4 -> priority: 1 
+  Thread -> id: 15c8 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.553306 ms
+UnloadTime: 4.551410 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 922.
-Total: 0.365693 ms (FindLiveObjects: 0.064243 ms CreateObjectMapping: 0.030030 ms MarkObjects: 0.260395 ms  DeleteObjects: 0.010263 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1032.
+Total: 0.338704 ms (FindLiveObjects: 0.061202 ms CreateObjectMapping: 0.031171 ms MarkObjects: 0.239487 ms  DeleteObjects: 0.006462 ms)
+
+Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityScript.Lang.dll (this message is harmless)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.316545 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1064.
+Total: 1.445670 ms (FindLiveObjects: 0.350108 ms CreateObjectMapping: 0.114421 ms MarkObjects: 0.967074 ms  DeleteObjects: 0.007982 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.926019 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1064.
+Total: 0.949968 ms (FindLiveObjects: 0.152055 ms CreateObjectMapping: 0.039154 ms MarkObjects: 0.742792 ms  DeleteObjects: 0.013685 ms)
 
