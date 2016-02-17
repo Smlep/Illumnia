@@ -39,17 +39,16 @@ public class Main : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Cursor.visible = true;
-            Time.timeScale = 0;
-            Buttonquit.gameObject.SetActive(true);
-            Buttonrestart.gameObject.SetActive(true);
-            // Buttonresume.gameObject.SetActive(true);
-            yourbuttontext = Buttonquit.transform.FindChild("Text").GetComponent<Text>();
-            yourbuttontext.text = "Quitter !";
-            yourbuttontext1 = Buttonrestart.transform.FindChild("Text").GetComponent<Text>();
-            yourbuttontext1.text = "Recommencer !";
-            // yourbuttonresumetext = Buttonresume.transform.FindChild("Text").GetComponent<Text>();
-            // yourbuttonresumetext.text = "Reprendre !";
+            if (Time.timeScale != 0)
+            {
+                Cursor.visible = true;
+                Time.timeScale = 0;
+                Buttonquit.gameObject.SetActive(true);
+                Buttonrestart.gameObject.SetActive(true);
+                Buttonresume.gameObject.SetActive(true);
+                // yourbuttonresumetext = Buttonresume.transform.FindChild("Text").GetComponent<Text>();
+                // yourbuttonresumetext.text = "Reprendre !";
+            }
         }
     }
 
