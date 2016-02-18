@@ -21,7 +21,7 @@ public class ScriptPersonnage : MonoBehaviour
         characteranimation["Attack"].wrapMode = WrapMode.Once;
         // Code pour empécher la répétition automatique de l'animation de saut
         characteranimation["Jump"].wrapMode = WrapMode.Once;
-        // Code pour empécher la répétition automatique de l'animation dde déplacement
+        // Code pour empécher la répétition automatique de l'animation de déplacement
         characteranimation["Walk"].wrapMode = WrapMode.Once;
     }
     void Update()
@@ -44,17 +44,16 @@ public class ScriptPersonnage : MonoBehaviour
             // Animation de déplacement
             characteranimation.Play("Walk");
         }
-
         if (Input.GetButtonDown("Fire1"))
         {
             // Animation d'attaque
             characteranimation.Play("Attack");
         }
-        /*
+        
          if (Input.GetKeyDown("space"))
         {            
            characteranimation.Play("Jump");
-        } */
+        } 
         RotateControls();
     }
     void Rotate(float x, float y)
