@@ -59,7 +59,7 @@ public class Detection : MonoBehaviour
 			if(hit.collider.tag == TriggerTag)
 			{
 				InReach = true;
-
+                /*
 				if (Input.GetKey(KeyCode.E))
 				{
 					// Give the object that was hit the name 'Door'.
@@ -75,6 +75,7 @@ public class Detection : MonoBehaviour
 						StartCoroutine (GetComponent<Door>().Open());
 					}
 				}
+                */
 			}
 
 			else InReach = false;

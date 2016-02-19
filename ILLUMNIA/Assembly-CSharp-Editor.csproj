@@ -48,10 +48,10 @@
      <Compile Include="Assets\DoorSystem\Debugger\Yurowm\Editor\DebugPanelWindow.cs" />
      <None Include="Assets\Sculptures\readme.txt" />
      <None Include="Assets\DungeonLevers\Readme.txt" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+     <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Materials\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Advanced.shader" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>D:/Documents_Data/Documents/Projet_S2/Illumnia/ILLUMNIA/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
@@ -87,8 +87,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{8593A848-C184-FF58-D365-9D7C42D8C9EB}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{455F3A10-3A6C-C69E-E6AF-F571CA36AFDC}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>

@@ -52,6 +52,14 @@
      <Compile Include="Assets\DoorSystem\Scripts\Door.cs" />
      <Compile Include="Assets\DoorSystem\Scripts\MouseLook.cs" />
      <Compile Include="Assets\DoorSystem\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\Displace.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\GerstnerDisplace.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\MeshContainer.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\PlanarReflection.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\SpecularLighting.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\Water.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\WaterBase.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\WaterTile.cs" />
      <Compile Include="Assets\Scripts\Activation.cs" />
      <Compile Include="Assets\Scripts\Changecolor.cs" />
      <Compile Include="Assets\Scripts\GUItest.cs" />
@@ -63,20 +71,16 @@
      <Compile Include="Assets\StandardAssets lever char\Character Controllers\Sources\Scripts\MouseLookbis.cs" />
      <None Include="Assets\Sculptures\readme.txt" />
      <None Include="Assets\DungeonLevers\Readme.txt" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
-     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+     <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Materials\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Advanced.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{8593A848-C184-FF58-D365-9D7C42D8C9EB}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

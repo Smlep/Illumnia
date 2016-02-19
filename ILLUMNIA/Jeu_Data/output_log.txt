@@ -8,8 +8,6 @@ Direct3D:
 Begin MonoManager ReloadAssembly
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
@@ -18,19 +16,19 @@ Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_D
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.061 seconds
+- Completed reload, in  0.042 seconds
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.659538 ms
+UnloadTime: 0.502921 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 98 -> priority: 1 
-  Thread -> id: 958 -> priority: 1 
+  Thread -> id: 3160 -> priority: 1 
+  Thread -> id: 329c -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.355373 ms
+UnloadTime: 4.241571 ms
 The AnimationClip 'Armature|Croc' used by the Animation component 'croco' must be marked as Legacy.
  
 (Filename:  Line: 1971)
@@ -40,7 +38,7 @@ Default clip could not be found in attached animations list.
 (Filename:  Line: 401)
 
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1310.
-Total: 0.490377 ms (FindLiveObjects: 0.094274 ms CreateObjectMapping: 0.034212 ms MarkObjects: 0.350866 ms  DeleteObjects: 0.010263 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1363.
+Total: 0.326918 ms (FindLiveObjects: 0.066143 ms CreateObjectMapping: 0.023948 ms MarkObjects: 0.230363 ms  DeleteObjects: 0.005702 ms)
 
 Platform assembly: D:\Documents_Data\Documents\Projet_S2\Illumnia\ILLUMNIA\Jeu_Data\Managed\UnityScript.Lang.dll (this message is harmless)

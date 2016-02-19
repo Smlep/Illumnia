@@ -4,17 +4,20 @@ using System.Collections;
 
 public class Main : MonoBehaviour
 {
-    
+
     private Text yourbuttontext;
     private Text yourbuttontext1;
     private Text yourbuttonresumetext;
     public Button Buttonquit;
     public Button Buttonrestart;
     public Button Buttonresume;
+    public Texture2D crosshairImage;
     public static bool Inpause;
+
     void Start()
     {
         Cursor.visible = false;
+
         Time.timeScale = 1;
         Inpause = false;
     }
@@ -23,6 +26,7 @@ public class Main : MonoBehaviour
     {
         Application.Quit();
     }
+
     public void restart()
     {
         Time.timeScale = 1;
@@ -57,4 +61,14 @@ public class Main : MonoBehaviour
         }
     }
 
+    void OnGUI()
+    {
+        // CROSSHAIR
+        if (!Inpause)
+        {
+            float xMin = (Screen.width / 2) - (crosshairImage.width / 2);
+            float yMin = (Screen.height / 2) - (crosshairImage.height / 2);
+            GUI.DrawTexture(new Rect(xMin, yMin, crosshairImage.width, crosshairImage.height), crosshairImage);
+        }
+    }
 }
