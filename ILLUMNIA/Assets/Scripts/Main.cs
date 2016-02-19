@@ -11,10 +11,12 @@ public class Main : MonoBehaviour
     public Button Buttonquit;
     public Button Buttonrestart;
     public Button Buttonresume;
+    public static bool Inpause;
     void Start()
     {
         Cursor.visible = false;
         Time.timeScale = 1;
+        Inpause = false;
     }
 
     public void end()
@@ -29,6 +31,8 @@ public class Main : MonoBehaviour
 
     public void resume()
     {
+        Inpause = false;
+        Cursor.visible = false;
         Time.timeScale = 1;
         Buttonquit.gameObject.SetActive(false);
         Buttonrestart.gameObject.SetActive(false);
@@ -41,6 +45,7 @@ public class Main : MonoBehaviour
         {
             if (Time.timeScale != 0)
             {
+                Inpause = true;
                 Cursor.visible = true;
                 Time.timeScale = 0;
                 Buttonquit.gameObject.SetActive(true);

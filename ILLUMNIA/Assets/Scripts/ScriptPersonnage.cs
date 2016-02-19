@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Reflection;
 
 
 public class ScriptPersonnage : MonoBehaviour
@@ -11,8 +12,10 @@ public class ScriptPersonnage : MonoBehaviour
     private float _y = 0.0f;
     public Animation characteranimation;
     public GameObject Camera;
+    private Rigidbody rb;
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         Vector2 angles = transform.localEulerAngles;
         _x = angles.x;
         _y = angles.y;
@@ -34,15 +37,20 @@ public class ScriptPersonnage : MonoBehaviour
 
         if (moveHorizontal != 0 && moveVertical != 0)
         {
-            transform.position += (movement * speed) / 2;
-            // Animation de déplacement
-            characteranimation.Play("Walk");
+            transform.position += movement * speed / 2 * Time.timeScale;
+            // La multiplication par time.timescale fait bouger le personnage en fonction du temps (donc l'arrete en pause)
+
+
+            /* Animation de déplacement
+            characteranimation.Play("Walk"); */
         }
         else if (moveHorizontal != 0 || moveVertical != 0)
         {
-            transform.position += (movement * speed);
-            // Animation de déplacement
-            characteranimation.Play("Walk");
+            transform.position += movement * speed * Time.timeScale;
+
+
+            /* Animation de déplacement
+             characteranimation.Play("Walk"); */
         }
         if (Input.GetButtonDown("Fire1"))
         {
@@ -53,8 +61,11 @@ public class ScriptPersonnage : MonoBehaviour
          if (Input.GetKeyDown("space"))
         {            
            characteranimation.Play("Jump");
-        } 
-        RotateControls();
+        }
+        if (!Main.Inpause)
+        {
+            RotateControls();
+        }                
     }
     void Rotate(float x, float y)
     {
@@ -67,7 +78,6 @@ public class ScriptPersonnage : MonoBehaviour
     {
         _x += Input.GetAxis("Mouse X") * _xSpeed;
         _y += -Input.GetAxis("Mouse Y") * _ySpeed;
-
         _y = Mathf.Clamp(_y, -45, 30);
 
         Rotate(_x, _y);
