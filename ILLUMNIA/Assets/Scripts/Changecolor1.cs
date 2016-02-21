@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Changecolor : MonoBehaviour {
-    private bool ColorON;
+public class Changecolor1 : MonoBehaviour {
+    private bool ColorON1 = false;
     public GameObject lampeoff;
     public GameObject lampeon;
 	// Use this for initialization
 	void Start () {
+        lampeon.SetActive(false);
         if (lampeon.activeSelf == true && lampeoff.activeSelf == false)
         {
-            ColorON = true;
+            ColorON1 = true;
         }
         else
-            ColorON = false;
+        {
+            ColorON1 = false;
+        }
 	}
 	
 	// Update is called once per frame
@@ -22,15 +25,16 @@ public class Changecolor : MonoBehaviour {
 
     void Activate()
     {
-        if (ColorON)
+        StartCoroutine(MyMethod());
+        if (ColorON1)
         {
-            ColorON = false;
             coloroff();
+            ColorON1 = false;
         }
         else
         {
-            ColorON = true;
             coloron();
+            ColorON1 = true;
         }
     }
 
@@ -38,11 +42,20 @@ public class Changecolor : MonoBehaviour {
     {
         lampeoff.SetActive(false);
         lampeon.SetActive(true);
+        StartCoroutine(MyMethod());
     }
 
     void coloroff()
     {
         lampeoff.SetActive(true);
         lampeon.SetActive(false);
+        StartCoroutine(MyMethod());
+    }
+
+    IEnumerator MyMethod()
+    {
+        Debug.Log("Before Waiting 1 seconds");
+        yield return new WaitForSeconds(1);
+        Debug.Log("After Waiting 1 Seconds");
     }
 }

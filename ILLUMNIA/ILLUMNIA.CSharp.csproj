@@ -57,15 +57,15 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="ILLUMNIA.CSharp.Plugins.csproj">
-      <Project>{3D076AB4-B300-4F1A-4F54-E0F01A3371B1}</Project>
-      <Name>ILLUMNIA.CSharp.Plugins</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanel.cs" />
@@ -75,8 +75,17 @@
     <Compile Include="Assets\DoorSystem\Scripts\Door.cs" />
     <Compile Include="Assets\DoorSystem\Scripts\MouseLook.cs" />
     <Compile Include="Assets\DoorSystem\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Materials\Water\Water\Scripts\Displace.cs" />
+    <Compile Include="Assets\Materials\Water\Water\Scripts\GerstnerDisplace.cs" />
+    <Compile Include="Assets\Materials\Water\Water\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\Materials\Water\Water\Scripts\PlanarReflection.cs" />
+    <Compile Include="Assets\Materials\Water\Water\Scripts\SpecularLighting.cs" />
+    <Compile Include="Assets\Materials\Water\Water\Scripts\Water.cs" />
+    <Compile Include="Assets\Materials\Water\Water\Scripts\WaterBase.cs" />
+    <Compile Include="Assets\Materials\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Scripts\Activation.cs" />
-    <Compile Include="Assets\Scripts\Changecolor.cs" />
+    <Compile Include="Assets\Scripts\Changecolor1.cs" />
+    <Compile Include="Assets\Scripts\Changecolor2.cs" />
     <Compile Include="Assets\Scripts\GUItest.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
@@ -87,11 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DungeonLevers\Readme.txt" />
+    <None Include="Assets\Materials\Shaders\TextBehindWalls.shader" />
+    <None Include="Assets\Materials\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Sculptures\readme.txt" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
