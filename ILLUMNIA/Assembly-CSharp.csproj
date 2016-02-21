@@ -72,6 +72,7 @@
      <None Include="Assets\Sculptures\readme.txt" />
      <None Include="Assets\DungeonLevers\Readme.txt" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Materials\Shaders\TextBehindWalls.shader" />
      <None Include="Assets\Materials\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Advanced.shader" />
