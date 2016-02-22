@@ -52,6 +52,10 @@
      <Compile Include="Assets\DoorSystem\Scripts\Door.cs" />
      <Compile Include="Assets\DoorSystem\Scripts\MouseLook.cs" />
      <Compile Include="Assets\DoorSystem\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\FIGHT\EnemyAttack.cs" />
+     <Compile Include="Assets\FIGHT\PlayerHealth.cs" />
+     <Compile Include="Assets\FIGHT\PlayerMove.cs" />
+     <Compile Include="Assets\FIGHT\ScriptCroco1.cs" />
      <Compile Include="Assets\Materials\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\Materials\Water\Water\Scripts\GerstnerDisplace.cs" />
      <Compile Include="Assets\Materials\Water\Water\Scripts\MeshContainer.cs" />
@@ -61,7 +65,8 @@
      <Compile Include="Assets\Materials\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\Materials\Water\Water\Scripts\WaterTile.cs" />
      <Compile Include="Assets\Scripts\Activation.cs" />
-     <Compile Include="Assets\Scripts\Changecolor.cs" />
+     <Compile Include="Assets\Scripts\Changecolor1.cs" />
+     <Compile Include="Assets\Scripts\Changecolor2.cs" />
      <Compile Include="Assets\Scripts\GUItest.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
