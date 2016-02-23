@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int startingHealth = 100;                            // The amount of health the player starts the game with.
+    public int tauxderégen;
     public int currentHealth;                                   // The current health the player has.
     public Slider healthSlider;                                 // Reference to the UI's health bar.
     public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
@@ -16,19 +19,19 @@ public class PlayerHealth : MonoBehaviour
     Animator anim;                                              // Reference to the Animator component.
     // AudioSource playerAudio;                                    // Reference to the AudioSource component.
     ScriptPersonnage playerMovement;                              // Reference to the player's movement.
-    //PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
+    PlayerAttack playerShooting;                              // Reference to the PlayerShooting script.
     bool isDead;                                                // Whether the player is dead.
     bool damaged;                                               // True when the player gets damaged.
-
     void Awake()
     {
         // Setting up the references.
         anim = GetComponent<Animator>();
         // playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<ScriptPersonnage>();
-        //playerShooting = GetComponentInChildren<PlayerShooting>();
+        playerShooting = GetComponentInChildren<PlayerAttack>();
         // Set the initial health of the player.
         currentHealth = startingHealth;
+        StartCoroutine(Autoregen());
     }
 
 
@@ -70,18 +73,33 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0 && !isDead)
         {
             // ... it should die.
+            SceneManager.LoadScene("Menu Scene");
             Death();
         }
     }
-
-
+    
+    IEnumerator Autoregen()
+    {
+        while (true)
+        {
+            if (currentHealth <= startingHealth)
+            {
+                currentHealth += tauxderégen;
+                healthSlider.value = currentHealth;
+                yield return new WaitForSeconds(5);
+            }
+            yield return null;
+        }
+           
+    }
+    
     void Death()
     {
         // Set the death flag so this function won't be called again.
         isDead = true;
 
         // Turn off any remaining shooting effects.
-        //playerShooting.DisableEffects();
+        playerShooting.DisableEffects();
 
         // Tell the animator that the player is dead.
         // anim.SetTrigger("Die");
@@ -92,6 +110,6 @@ public class PlayerHealth : MonoBehaviour
 
         // Turn off the movement and shooting scripts.
         playerMovement.enabled = false;
-        //playerShooting.enabled = false;
+        playerShooting.enabled = false;
     }
 }

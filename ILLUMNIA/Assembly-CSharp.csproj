@@ -53,6 +53,8 @@
      <Compile Include="Assets\DoorSystem\Scripts\MouseLook.cs" />
      <Compile Include="Assets\DoorSystem\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\FIGHT\EnemyAttack.cs" />
+     <Compile Include="Assets\FIGHT\EnemyHealth.cs" />
+     <Compile Include="Assets\FIGHT\PlayerAttack.cs" />
      <Compile Include="Assets\FIGHT\PlayerHealth.cs" />
      <Compile Include="Assets\FIGHT\PlayerMove.cs" />
      <Compile Include="Assets\FIGHT\ScriptCroco1.cs" />
