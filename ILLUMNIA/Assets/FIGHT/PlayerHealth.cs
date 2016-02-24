@@ -86,7 +86,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 currentHealth += tauxderégen;
                 healthSlider.value = currentHealth;
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(0.5f);
             }
             yield return null;
         }

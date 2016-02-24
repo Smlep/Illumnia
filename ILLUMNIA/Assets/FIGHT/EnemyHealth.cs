@@ -38,11 +38,17 @@ public class EnemyHealth : MonoBehaviour
             // ... move the enemy down by the sinkSpeed per second.
             transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
         }
+        if (currentHealth <= 0)
+        {
+            // ... the enemy is dead.
+            Death();
+        }
     }
 
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
+        anim.SetTrigger("TakeDamage");
         // If the enemy is dead...
         if (isDead)
             // ... no need to take damage so exit the function.
@@ -61,11 +67,7 @@ public class EnemyHealth : MonoBehaviour
         //hitParticles.Play();
 
         // If the current health is less than or equal to zero...
-        if (currentHealth <= 0)
-        {
-            // ... the enemy is dead.
-            Death();
-        }
+        
     }
 
 

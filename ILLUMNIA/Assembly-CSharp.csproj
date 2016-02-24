@@ -69,11 +69,16 @@
      <Compile Include="Assets\Scripts\Activation.cs" />
      <Compile Include="Assets\Scripts\Changecolor1.cs" />
      <Compile Include="Assets\Scripts\Changecolor2.cs" />
+     <Compile Include="Assets\Scripts\Code1.cs" />
+     <Compile Include="Assets\Scripts\Code2.cs" />
+     <Compile Include="Assets\Scripts\Code3.cs" />
+     <Compile Include="Assets\Scripts\Code4.cs" />
      <Compile Include="Assets\Scripts\GUItest.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\Porte1.cs" />
      <Compile Include="Assets\Scripts\ScriptPersonnage.cs" />
+     <Compile Include="Assets\Scripts\SlideCode.cs" />
      <Compile Include="Assets\Scripts\lightdoor.cs" />
      <Compile Include="Assets\StandardAssets lever char\Character Controllers\Sources\Scripts\MouseLookbis.cs" />
      <None Include="Assets\Sculptures\readme.txt" />
