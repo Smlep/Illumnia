@@ -9,7 +9,8 @@ function Start () {
 	GetComponent.<Animation>()[anim].time = GetComponent.<Animation>()[anim].length;
 }
 function Activate() {
-	//play next animation
+    //play next animation
+    yield;
 	GetComponent.<Animation>().CrossFade(animations[interval]);
 	interval += 1;
 	//reset to first animation
