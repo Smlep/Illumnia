@@ -46,20 +46,18 @@ public class Changecolor2 : MonoBehaviour {
     {
         lampeoff.SetActive(false);
         lampeon.SetActive(true);
-        StartCoroutine(MyMethod());
     }
 
     void coloroff()
     {
         lampeoff.SetActive(true);
         lampeon.SetActive(false);
-        StartCoroutine(MyMethod());
     }
 
     IEnumerator MyMethod()
     {
         Debug.Log("Before Waiting 1 seconds");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         Debug.Log("After Waiting 1 Seconds");
     }
 }

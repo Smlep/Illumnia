@@ -2,10 +2,6 @@
 using System.Collections;
 
 public class SlideCode : MonoBehaviour {
-    public bool signal1;
-    public bool signal2;
-    public bool signal3;
-    public bool signal4;
     private bool stop;
     public GameObject wall_part;
     // Use this for initialization
@@ -15,12 +11,12 @@ public class SlideCode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (stop && signal1 && signal2 && signal3 && signal4)
+        if (stop && Code1.main.signal1 && Code2.main.signal2 && Code3.main.signal3 && Code4.main.signal4)
         {
             wall_part.SendMessage("Activate");
             stop = false;
         }
-        if (stop == false && (signal1 == false || signal2 == false || signal3 == false || signal4 == false ))
+        if (stop == false && (Code1.main.signal1 == false || Code2.main.signal2 == false || Code3.main.signal3 == false || Code4.main.signal4 == false ))
         {
             wall_part.SendMessage("Activate");
             stop = true;

@@ -2,18 +2,11 @@
 using System.Collections;
 
 public class Code1 : MonoBehaviour {
-    private bool on;
-    public bool signal1 = true;
+    public bool signal1;
+    public static Code1 main;
 	// Use this for initialization
 	void Start () {
-	    if (signal1)
-        {
-            on = true;
-        }
-        else
-        {
-            on = false;
-        }
+        signal1 = true;
 	}
 	
 	// Update is called once per frame
@@ -24,22 +17,18 @@ public class Code1 : MonoBehaviour {
     void Activate()
     {
         StartCoroutine(MyMethod());
-        if (on)
-        {
-            signal1 = false;
-            on = false;
-        }
-        else
-        {
-            signal1 = true;
-            on = true;
-        }
+        signal1 = !signal1;
     }
 
     IEnumerator MyMethod()
     {
         Debug.Log("Before Waiting 1 seconds");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         Debug.Log("After Waiting 1 Seconds");
+    }
+
+    void Awake ()
+    {
+        main = this;
     }
 }
