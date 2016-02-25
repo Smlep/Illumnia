@@ -46,6 +46,11 @@ public class ScriptPersonnage : MonoBehaviour
 
         if (controller.isGrounded)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //characteranimation.Play("Jump");
+                moveDirection.y = speed;
+            }
             bool Allertoutdroit = Input.GetKey("z");
             bool Reculer = Input.GetKey("s");
             bool AlleràDroite = Input.GetKey("d");
@@ -93,10 +98,6 @@ public class ScriptPersonnage : MonoBehaviour
             characteranimation.Play("Attack");
         }
 
-        if (Input.GetKeyDown("space"))
-        {
-            characteranimation.Play("Jump");
-        }
         if (!Main.Inpause)
         {
             RotateControls();

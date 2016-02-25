@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DoorSystem\Debugger\Yurowm\Editor\DebugPanelWindow.cs" />
-     <None Include="Assets\Sculptures\readme.txt" />
+     <None Include="Assets\Blender imports\Déco\Sculptures\readme.txt" />
      <None Include="Assets\DungeonLevers\Readme.txt" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Materials\Shaders\TextBehindWalls.shader" />

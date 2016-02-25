@@ -10,11 +10,14 @@ function Start () {
 }
 function Activate() {
     //play next animation
-    yield;
-    GetComponent.<Animation>().CrossFade(animations[interval]);
-    interval += 1;
-    //reset to first animation
-    if(interval >= animations.length) {
-        interval = 0;
+        yield;
+        GetComponent.<Animation>().CrossFade(animations[interval]);
+        interval += 1;
+        //reset to first animation
+        if(interval >= animations.length) {
+            interval = 0;
+            
+        
     }
+    
 }

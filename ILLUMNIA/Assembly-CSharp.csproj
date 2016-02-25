@@ -84,8 +84,7 @@
      <Compile Include="Assets\Scripts\ScriptPersonnage.cs" />
      <Compile Include="Assets\Scripts\SlideCode.cs" />
      <Compile Include="Assets\Scripts\lightdoor.cs" />
-     <Compile Include="Assets\StandardAssets lever char\Character Controllers\Sources\Scripts\MouseLookbis.cs" />
-     <None Include="Assets\Sculptures\readme.txt" />
+     <None Include="Assets\Blender imports\Déco\Sculptures\readme.txt" />
      <None Include="Assets\DungeonLevers\Readme.txt" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Materials\Shaders\TextBehindWalls.shader" />
