@@ -10,16 +10,26 @@ public class Porte0 : MonoBehaviour
     public Transform spawncroco1;
     public Transform spawnskeleton1;
     private bool crocohasspawned;
+    public GameObject nextlever;
+    private Object croco1;
+    private Object skeleton1;
     // Use this for initialization
     void Start()
     {
         crocohasspawned = false;
+        nextlever.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (crocohasspawned)
+        {
+            if (croco1 == null && skeleton1 == null)
+            {
+                nextlever.SetActive(true);
+            }
+        }
     }
 
     void Activate()
@@ -28,8 +38,8 @@ public class Porte0 : MonoBehaviour
         // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
         if (!crocohasspawned)
         {
-            Instantiate(crocodile, spawncroco1.position, spawncroco1.rotation);
-            Instantiate(skeleton, spawnskeleton1.position, spawnskeleton1.rotation);
+            croco1 =Instantiate(crocodile, spawncroco1.position, spawncroco1.rotation);
+            skeleton1 = Instantiate(skeleton, spawnskeleton1.position, spawnskeleton1.rotation);
         }
         Door dooropening = Door.GetComponent<Door>();
         crocohasspawned = true;
