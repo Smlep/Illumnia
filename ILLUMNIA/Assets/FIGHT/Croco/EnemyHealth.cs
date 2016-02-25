@@ -5,8 +5,8 @@ public class EnemyHealth : MonoBehaviour
     public int startingHealth;           // The amount of health the enemy starts the game with.
     public int currentHealth;                   // The current health the enemy has.
     public float sinkSpeed = 0.5f;              // The speed at which the enemy sinks through the floor when dead.
-   // public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
-   // public AudioClip deathClip;                 // The sound to play when the enemy dies.
+                                                // public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
+                                                // public AudioClip deathClip;                 // The sound to play when the enemy dies.
 
 
     Animator anim;
@@ -50,15 +50,15 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
-        if (typedemonstre == 0)
+        if (typedemonstre == 0 || typedemonstre == 2)
         {
             anim.SetTrigger("TakeDamage");
         }
-        else if (typedemonstre==1)
+        else if (typedemonstre == 1)
         {
             animation.Play("Hit1");
         }
-        
+
         // If the enemy is dead...
         if (isDead)
             // ... no need to take damage so exit the function.
@@ -71,13 +71,13 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= amount;
 
         // Set the position of the particle system to where the hit was sustained.
-       // hitParticles.transform.position = hitPoint;
+        // hitParticles.transform.position = hitPoint;
 
         // And play the particles.
         //hitParticles.Play();
 
         // If the current health is less than or equal to zero...
-        
+
     }
 
 
@@ -88,17 +88,17 @@ public class EnemyHealth : MonoBehaviour
 
         // Turn the collider into a trigger so shots can pass through it.
         capsuleCollider.isTrigger = true;
-        
+
         // Tell the animator that the enemy is dead.
-        if (typedemonstre == 0)
+        if (typedemonstre == 0 || typedemonstre == 2)
         {
             anim.SetTrigger("Dead");
         }
-        else if (typedemonstre==1)
+        else if (typedemonstre == 1)
         {
             animation.Play("Hit1");
         }
-        
+
 
         StartSinking();
 
@@ -120,7 +120,7 @@ public class EnemyHealth : MonoBehaviour
         isSinking = true;
 
         // Increase the score by the enemy's score value.
-       //  ScoreManager.score += scoreValue;
+        //  ScoreManager.score += scoreValue;
 
         // After 2 seconds destory the enemy.
         Destroy(gameObject, 5f);

@@ -48,9 +48,17 @@
      <Compile Include="Assets\DoorSystem\Debugger\Yurowm\Editor\DebugPanelWindow.cs" />
      <None Include="Assets\Blender imports\Déco\Sculptures\readme.txt" />
      <None Include="Assets\DungeonLevers\Readme.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\vertexAnim.shader" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\bumpSpecmap.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\metalA.shader" />
      <None Include="Assets\Materials\Shaders\TextBehindWalls.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\caveShader.shader" />
      <None Include="Assets\Materials\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\monsterShader.shader" />
      <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Advanced.shader" />
  <Reference Include="Assembly-UnityScript">

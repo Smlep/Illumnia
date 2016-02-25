@@ -4,11 +4,12 @@ using System.Collections;
 public class SpawnEnigme1 : MonoBehaviour
 {
     public GameObject skeleton;
+    public GameObject mob;
     public Transform spawnskeletonenigm1;
-    public Transform spawnskeletonenigm2;
+    public Transform spawnmobenigm1;
     private bool spawnisallowed;
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         StartCoroutine(Spawnallowed());
     }
@@ -21,13 +22,14 @@ public class SpawnEnigme1 : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
-	// Update is called once per frame
-	void Activate () {
-	    if (spawnisallowed)
-	    {
+    // Update is called once per frame
+    void Activate()
+    {
+        if (spawnisallowed)
+        {
             Instantiate(skeleton, spawnskeletonenigm1.position, spawnskeletonenigm1.rotation);
-            Instantiate(skeleton, spawnskeletonenigm2.position, spawnskeletonenigm2.rotation);
-	        spawnisallowed = false;
-	    }       
+            Instantiate(mob, spawnmobenigm1.position, spawnmobenigm1.rotation);
+            spawnisallowed = false;
+        }
     }
 }

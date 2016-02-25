@@ -55,6 +55,8 @@
      <Compile Include="Assets\FIGHT\Croco\CrocoAttack.cs" />
      <Compile Include="Assets\FIGHT\Croco\EnemyHealth.cs" />
      <Compile Include="Assets\FIGHT\Croco\ScriptCroco1.cs" />
+     <Compile Include="Assets\FIGHT\Mob\MobMove.cs" />
+     <Compile Include="Assets\FIGHT\Mob\Mobattack.cs" />
      <Compile Include="Assets\FIGHT\Player\PlayerAttack.cs" />
      <Compile Include="Assets\FIGHT\Player\PlayerHealth.cs" />
      <Compile Include="Assets\FIGHT\Player\PlayerMove.cs" />
@@ -86,9 +88,17 @@
      <Compile Include="Assets\Scripts\lightdoor.cs" />
      <None Include="Assets\Blender imports\Déco\Sculptures\readme.txt" />
      <None Include="Assets\DungeonLevers\Readme.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\vertexAnim.shader" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\bumpSpecmap.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\metalA.shader" />
      <None Include="Assets\Materials\Shaders\TextBehindWalls.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\caveShader.shader" />
      <None Include="Assets\Materials\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\monsterShader.shader" />
      <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Advanced.shader" />
  <Reference Include="UnityEngine.UI">
