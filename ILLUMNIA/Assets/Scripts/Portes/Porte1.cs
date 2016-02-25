@@ -29,5 +29,5 @@ public class Porte1 : MonoBehaviour
             StartCoroutine(Door.GetComponent<Door>().Open());
         }
 
-    }
+    } 
 }
