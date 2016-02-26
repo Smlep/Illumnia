@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnEnigme1 : MonoBehaviour
+public class Spawn2enemys : MonoBehaviour
 {
-    public GameObject skeleton;
-    public GameObject mob;
-    public Transform spawnskeletonenigm1;
-    public Transform spawnmobenigm1;
+    public GameObject enemy1;
+    public GameObject enemy2;
+    public Transform spawnenemy1;
+    public Transform spawnenemy2;
     private bool spawnisallowed;
     // Use this for initialization
     void Start()
@@ -27,8 +27,8 @@ public class SpawnEnigme1 : MonoBehaviour
     {
         if (spawnisallowed)
         {
-            Instantiate(skeleton, spawnskeletonenigm1.position, spawnskeletonenigm1.rotation);
-            Instantiate(mob, spawnmobenigm1.position, spawnmobenigm1.rotation);
+            Instantiate(enemy1, spawnenemy1.position, spawnenemy1.rotation);
+            Instantiate(enemy2, spawnenemy2.position, spawnenemy2.rotation);
             spawnisallowed = false;
         }
     }

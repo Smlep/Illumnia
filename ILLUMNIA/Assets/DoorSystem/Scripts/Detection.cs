@@ -96,11 +96,13 @@ public class Detection : MonoBehaviour
 
 		if (InReach == true)
 		{
+            /*
 			DebugPanel.Log (TitleHingeSide, CategoryDoor, hit.collider.GetComponent<Door>().HingeSide);
 			DebugPanel.Log (TitleSpeed, CategoryDoor, hit.collider.GetComponent<Door> ().Speed);
 			DebugPanel.Log (TitleTimesMoveable, CategoryDoor, hit.collider.GetComponent<Door> ().TimesMoveable);
 			DebugPanel.Log (TitleCurrentAngle, CategoryDoor, Mathf.Round(hit.transform.eulerAngles.y) + "°");
 			DebugPanel.Log (TitleRunning, CategoryDoor, hit.collider.GetComponent<Door> ().Running);
+            */
 		}
 
 		else
