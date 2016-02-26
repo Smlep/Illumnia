@@ -17,8 +17,8 @@ public class PorteAile1 : MonoBehaviour
     private object e3;
     private object e2;
     private object e4;
-    private bool enemyhavespawned;
-    private bool nextdooropened;
+    private bool enemyhavespawned = false;
+    private bool nextdooropened = false;
     // Use this for initialization
     void Start()
     {
@@ -32,7 +32,8 @@ public class PorteAile1 : MonoBehaviour
         {
             if (e1 == null && e2 == null && e3 == null && e4 == null)
             {
-                // lance l'ouverture de la prochaine porte sans avoir besoin de levier
+                nextdoor.SendMessage("Activate");
+                nextdooropened = !nextdooropened;// lance l'ouverture de la prochaine porte sans avoir besoin de levier
             }
         }
     }
