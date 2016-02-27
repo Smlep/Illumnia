@@ -57,6 +57,7 @@
      <None Include="Assets\Materials\Shaders\TextBehindWalls.shader" />
      <None Include="Assets\Blender imports\BORDEL\Monster\shaders\caveShader.shader" />
      <None Include="Assets\Materials\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Blender imports\Déco\torch\readme.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\Blender imports\BORDEL\Monster\shaders\monsterShader.shader" />
      <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />

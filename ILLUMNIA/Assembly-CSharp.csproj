@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Blender imports\Déco\torch\scene\script\TorchSlider.cs" />
+     <Compile Include="Assets\Blender imports\Déco\torch\scene\script\Torchslider2.cs" />
+     <Compile Include="Assets\Blender imports\Déco\torch\scripts\Torchelight.cs" />
      <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanel.cs" />
      <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanelField.cs" />
      <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanelViewport.cs" />
@@ -99,6 +102,7 @@
      <None Include="Assets\Materials\Shaders\TextBehindWalls.shader" />
      <None Include="Assets\Blender imports\BORDEL\Monster\shaders\caveShader.shader" />
      <None Include="Assets\Materials\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Blender imports\Déco\torch\readme.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\Blender imports\BORDEL\Monster\shaders\monsterShader.shader" />
      <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />

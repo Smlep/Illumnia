@@ -11,7 +11,7 @@ public class Changecolor2 : MonoBehaviour {
     void Start()
     {
         lampeon.SetActive(false);
-        if (lampeon.activeSelf == true && lampeoff.activeSelf == false)
+        if (lampeon.activeSelf&& lampeoff.activeSelf == false)
         {
             ColorON2 = true;
         }
