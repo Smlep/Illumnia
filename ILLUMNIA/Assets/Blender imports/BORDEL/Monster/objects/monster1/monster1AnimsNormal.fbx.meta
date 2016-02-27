@@ -1708,14 +1708,6 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.38078272
-        functionName: rayfireshort
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: bc99bba037f3052419d7e5b43c516041,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1904,14 +1896,6 @@ ModelImporter:
         functionName: attacksound
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: a52b96fa86a792b4790d169dd20d6209,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.4911034
-        functionName: rayfireshort
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: bc99bba037f3052419d7e5b43c516041,
           type: 3}
         floatParameter: 0
         intParameter: 0

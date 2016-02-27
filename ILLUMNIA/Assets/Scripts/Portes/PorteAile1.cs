@@ -12,11 +12,13 @@ public class PorteAile1 : MonoBehaviour
     public Transform spawnenemy2;
     public Transform spawnenemy3;
     public Transform spawnenemy4;
+    public GameObject camerapouranim;
+    public GameObject vraicamera;
     public GameObject nextdoor;
-    private object e1;
-    private object e3;
-    private object e2;
-    private object e4;
+    private Object e1;
+    private Object e3;
+    private Object e2;
+    private Object e4;
     private bool enemyhavespawned = false;
     private bool nextdooropened = false;
     // Use this for initialization
@@ -32,10 +34,18 @@ public class PorteAile1 : MonoBehaviour
         {
             if (e1 == null && e2 == null && e3 == null && e4 == null)
             {
+                camerapouranim.SetActive(true);
+                StartCoroutine(Terminerlacinématique());
                 nextdoor.SendMessage("Activate");
                 nextdooropened = !nextdooropened;// lance l'ouverture de la prochaine porte sans avoir besoin de levier
             }
         }
+    }
+
+    IEnumerator Terminerlacinématique()
+    {
+        yield return new WaitForSeconds(2);
+        camerapouranim.SetActive(false);
     }
     void Activate()
     {
