@@ -21,10 +21,15 @@ public class PorteAile1 : MonoBehaviour
     private Object e4;
     private bool enemyhavespawned = false;
     private bool nextdooropened = false;
+    private ScriptPersonnage Scriptdedéplacement;
+    private GameObject player;
     // Use this for initialization
     void Start()
     {
         enemyhavespawned = false;
+        // recherche du joueur
+        player = GameObject.FindGameObjectWithTag("Player");
+        Scriptdedéplacement= player.GetComponent<ScriptPersonnage>();
     }
 
     // Update is called once per frame
@@ -35,6 +40,7 @@ public class PorteAile1 : MonoBehaviour
             if (e1 == null && e2 == null && e3 == null && e4 == null)
             {
                 camerapouranim.SetActive(true);
+                Scriptdedéplacement.playercanmove = false;
                 StartCoroutine(Terminerlacinématique());
                 nextdoor.SendMessage("Activate");
                 nextdooropened = !nextdooropened;// lance l'ouverture de la prochaine porte sans avoir besoin de levier
@@ -46,6 +52,7 @@ public class PorteAile1 : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         camerapouranim.SetActive(false);
+        Scriptdedéplacement.playercanmove = true;
     }
     void Activate()
     {

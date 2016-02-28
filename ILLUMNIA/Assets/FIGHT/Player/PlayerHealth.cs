@@ -54,6 +54,14 @@ public class PlayerHealth : MonoBehaviour
         damaged = false;
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        // Détecter les collisions
+        if (other.gameObject.CompareTag("HealZone"))
+        {
+            currentHealth = startingHealth;
+        }
+    }
 
     public void TakeDamage(int amount)
     {

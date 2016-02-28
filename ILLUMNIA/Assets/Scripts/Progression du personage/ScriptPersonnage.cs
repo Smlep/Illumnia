@@ -5,6 +5,7 @@ using System.Reflection;
 
 public class ScriptPersonnage : MonoBehaviour
 {
+    public bool playercanmove;
     public float speed;
     public float _xSpeed = 1f;
     public float _ySpeed = 1f;
@@ -36,60 +37,62 @@ public class ScriptPersonnage : MonoBehaviour
     void Update()
     {
 
-        
-        if (moveDirection.y > gravity * -1)
+        if (playercanmove)
         {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
-        controller.Move(moveDirection * Time.deltaTime);
-        var left = transform.TransformDirection(Vector3.left);
-
-        if (controller.isGrounded)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (moveDirection.y > gravity*-1)
             {
-                //characteranimation.Play("Jump");
-                moveDirection.y = speed;
+                moveDirection.y -= gravity*Time.deltaTime;
             }
-            bool Allertoutdroit = Input.GetKey("z");
-            bool Reculer = Input.GetKey("s");
-            bool AlleràDroite = Input.GetKey("d");
-            bool AlleràGauche = Input.GetKey("q");
-            float coefficientdedéplacement;
-            // Gestion du déplacement en diagonale
-            if (Allertoutdroit ^ Reculer ^ AlleràGauche ^ AlleràDroite)
+            controller.Move(moveDirection*Time.deltaTime);
+            var left = transform.TransformDirection(Vector3.left);
+
+            if (controller.isGrounded)
             {
-                coefficientdedéplacement = 1;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    //characteranimation.Play("Jump");
+                    moveDirection.y = speed;
+                }
+                bool Allertoutdroit = Input.GetKey("z");
+                bool Reculer = Input.GetKey("s");
+                bool AlleràDroite = Input.GetKey("d");
+                bool AlleràGauche = Input.GetKey("q");
+                float coefficientdedéplacement;
+                // Gestion du déplacement en diagonale
+                if (Allertoutdroit ^ Reculer ^ AlleràGauche ^ AlleràDroite)
+                {
+                    coefficientdedéplacement = 1;
+                }
+                else
+                {
+                    coefficientdedéplacement = 1/Mathf.Sqrt(2);
+                }
+                if (Allertoutdroit && !Reculer)
+                {
+                    controller.SimpleMove(transform.forward*speed*coefficientdedéplacement);
+                }
+                else if (Reculer && !Allertoutdroit)
+                {
+                    controller.SimpleMove(transform.forward*-speed*coefficientdedéplacement);
+                }
+                if (AlleràGauche && !AlleràDroite)
+                {
+                    controller.SimpleMove(left*speed*coefficientdedéplacement);
+                }
+                else if (AlleràDroite && !AlleràGauche)
+                {
+                    controller.SimpleMove(left*-speed*coefficientdedéplacement);
+                }
             }
             else
             {
-                coefficientdedéplacement = 1/Mathf.Sqrt(2);
-            }
-            if (Allertoutdroit && !Reculer)
-            {
-                controller.SimpleMove(transform.forward * speed * coefficientdedéplacement);
-            }
-            else if (Reculer && !Allertoutdroit)
-            {
-                controller.SimpleMove(transform.forward * -speed * coefficientdedéplacement);
-            }
-            if (AlleràGauche && !AlleràDroite)
-            {
-                controller.SimpleMove(left * speed * coefficientdedéplacement);
-            }
-            else if (AlleràDroite && !AlleràGauche)
-            {
-                controller.SimpleMove(left * -speed * coefficientdedéplacement);
-            }
-        }
-        else
-        {
-            if (Input.GetKey("z"))
-            {
-                Vector3 relative;
-                relative = transform.TransformDirection(0, 0, 1);
-                controller.Move(relative * Time.deltaTime * speed / 1.5f);
-                //controller.Move(forward * 2);
+                if (Input.GetKey("z"))
+                {
+                    Vector3 relative;
+                    relative = transform.TransformDirection(0, 0, 1);
+                    controller.Move(relative*Time.deltaTime*speed/1.5f);
+                    //controller.Move(forward * 2);
+                }
             }
         }
         if (Input.GetButtonDown("Fire1"))
@@ -102,8 +105,17 @@ public class ScriptPersonnage : MonoBehaviour
         {
             RotateControls();
         }
-    }
 
+    }
+    // Détection des Collision
+    void OnTriggerEnter(Collider other)
+    {
+        // Téléportation
+        if (other.gameObject.CompareTag("Téléporteur"))
+        {
+            transform.position=new Vector3(-7.5f,2,40);
+        }
+    }
     void Rotate(float x, float y)
     {
         Quaternion rotationcam = Quaternion.Euler(y, x, 0.0f);

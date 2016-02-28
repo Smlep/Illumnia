@@ -2,7 +2,7 @@
 
 public class PlayerAttack : MonoBehaviour
 {
-    public int damagePerShot = 20;                  // The damage inflicted by each bullet.
+    public int damagePerShot = 25;                  // The damage inflicted by each bullet.
     public float timeBetweenBullets = 2f;        // The time between each shot.
     public float range = 30f;                      // The distance the gun can fire.
 
