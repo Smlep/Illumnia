@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\Enigmes\Code3.cs" />
      <Compile Include="Assets\Scripts\Enigmes\Code4.cs" />
      <Compile Include="Assets\Scripts\Enigmes\Spawn2enemys.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\clé.cs" />
      <Compile Include="Assets\Scripts\GUItest.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
