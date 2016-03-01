@@ -45,7 +45,7 @@ public class clé : MonoBehaviour {
     {
 	    if (!keyhasspawned)
 	    {
-	        if (l1.activeSelf  || /*||*/
+	        if (l1.activeSelf  &&
 	            (l2.activeSelf  && l3.activeSelf  && l4.activeSelf   && l5.activeSelf &&
 	             l6.activeSelf  && l7.activeSelf  && l8.activeSelf  && l9.activeSelf  &&
 	             l10.activeSelf  && l11.activeSelf  && l12.activeSelf  && l13.activeSelf  &&

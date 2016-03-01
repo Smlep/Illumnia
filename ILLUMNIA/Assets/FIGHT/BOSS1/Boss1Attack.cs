@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Boss1Attack : MonoBehaviour {
+public class Boss1Attack : MonoBehaviour
+{
 
     public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
     public int attackDamage = 10;               // The amount of health taken away per attack.
 
-
+    private ScriptPersonnage scriptdupersonage;
     Animation Anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
     PlayerHealth playerHealth;                  // Reference to the player's health.
@@ -27,6 +28,7 @@ public class Boss1Attack : MonoBehaviour {
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         Anim = GetComponent<Animation>();
+        scriptdupersonage = player.GetComponent<ScriptPersonnage>();
         // Code pour empécher la répétition automatique de l'animation
         Anim["jump"].wrapMode = WrapMode.Once;
         // Code pour empécher la répétition automatique de l'animation
@@ -67,14 +69,14 @@ public class Boss1Attack : MonoBehaviour {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
         TimerMecanic -= Time.deltaTime;
-        if (TimerMecanic < 0)
+        if (TimerMecanic < 0 && (Boss1Move.leplayerestassezproche))
         {
             BossMecanic();
             TimerMecanic = 10f;
         }
-        if (!playerInRange&&enemyHealth.currentHealth>0)
+        if (!playerInRange && enemyHealth.currentHealth > 0&&Boss1Move.lebosspeutbouger)
         {
-            Anim.Play("walk");
+            Anim.PlayQueued("walk");
         }
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
@@ -108,47 +110,43 @@ public class Boss1Attack : MonoBehaviour {
         }
     }
 
-
+    
     //---------------------------------Phase1(100-75)---------------------------------
-    void Mecanic1(Collider other)
+    IEnumerator Mecanic1()
     {
-        Mecanic1TimeLeft -= Time.deltaTime;
-        while (Mecanic1TimeLeft > 0)
+        Boss1Move.lebosspeutbouger = false;
+        Anim.Play("faint");
+        yield return new WaitForSeconds(1.367f);// L'animation faint dure 1.367 sec
+        Boss1Move.lebosspeutbouger = true;
+        if (!scriptdupersonage.Lejoueurestdanslazone1)
         {
-            Anim.PlayQueued("faint");
-        }
-        if (!other.gameObject.CompareTag("ZoneSafe1"))
-        {
-            playerHealth.TakeDamage((int)(0.25 * playerHealth.startingHealth)); 
+            playerHealth.TakeDamage((int)(0.25 * playerHealth.startingHealth));
         }
     }
     //---------------------------------Phase2(75-50)---------------------------------
-    void Mecanic2()
-    {
-
-    }
+    //IEnumerator Mecanic2()
+   
     //---------------------------------Phase3(50-25)---------------------------------
-    void Mecanic3()
-    {
-
-    }
+    //IEnumerator Mecanic3()
+  
     //---------------------------------Phase4(25-0)---------------------------------
-    void Mecanic4()
-    {
-
-    }
+    //IEnumerator Mecanic4()
+    
     //---------------------------------Phase1(100-75)---------------------------------
     void BossMecanic()
     {
+        // Il faut appeler les mechaniques avec startcoroutine
         HPpourcent = 100 * enemyHealth.currentHealth / enemyHealth.startingHealth;
         if (HPpourcent > 75)
         {
+            StartCoroutine(Mecanic1());
         }
     }
-
-
-
-
-
-
 }
+
+
+
+
+
+
+

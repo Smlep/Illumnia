@@ -19,6 +19,11 @@ public class ScriptPersonnage : MonoBehaviour
     public CharacterController controller;
     private bool playerhasthekey;
     private Vector3 moveDirection = Vector3.zero;
+    public bool Lejoueurestdanslazone1;
+    public bool Lejoueurestdanslazone2;
+    public bool Lejoueurestdanslazone3;
+    public bool Lejoueurestdanslazone4;
+    public bool Lejoueurestdanslazone5;
     // private Rigidbody rb;
 
     void Start()
@@ -35,6 +40,11 @@ public class ScriptPersonnage : MonoBehaviour
         characteranimation["Jump"].wrapMode = WrapMode.Once;
         // Code pour empécher la répétition automatique de l'animation de déplacement
         characteranimation["Walk"].wrapMode = WrapMode.Once;
+        Lejoueurestdanslazone2 = false;
+        Lejoueurestdanslazone1 = false;
+        Lejoueurestdanslazone3 = false;
+        Lejoueurestdanslazone4 = false;
+        Lejoueurestdanslazone5 = false;
     }
 
     void Update()
@@ -122,6 +132,50 @@ public class ScriptPersonnage : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             playerhasthekey = true;
+        }
+        if (other.gameObject.CompareTag("ZoneSafe1"))
+        {
+            Lejoueurestdanslazone1 = true;
+        }
+        if (other.gameObject.CompareTag("ZoneSafe2"))
+        {
+            Lejoueurestdanslazone2 = true;
+        }
+        if (other.gameObject.CompareTag("ZoneSafe3"))
+        {
+            Lejoueurestdanslazone3 = true;
+        }
+        if (other.gameObject.CompareTag("ZoneSafe4"))
+        {
+            Lejoueurestdanslazone4 = true;
+        }
+        if (other.gameObject.CompareTag("ZoneSafe5"))
+        {
+            Lejoueurestdanslazone5 = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("ZoneSafe1"))
+        {
+            Lejoueurestdanslazone1 = false;
+        }
+        if (other.gameObject.CompareTag("ZoneSafe2"))
+        {
+            Lejoueurestdanslazone2 = false;
+        }
+        if (other.gameObject.CompareTag("ZoneSafe3"))
+        {
+            Lejoueurestdanslazone3 = false;
+        }
+        if (other.gameObject.CompareTag("ZoneSafe4"))
+        {
+            Lejoueurestdanslazone4 = false;
+        }
+        if (other.gameObject.CompareTag("ZoneSafe5"))
+        {
+            Lejoueurestdanslazone5 = false;
         }
     }
     void Rotate(float x, float y)

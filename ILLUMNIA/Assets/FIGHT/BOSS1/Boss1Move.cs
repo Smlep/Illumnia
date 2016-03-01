@@ -9,6 +9,8 @@ public class Boss1Move : MonoBehaviour
     EnemyHealth enemyHealth;        // Reference to this enemy's health.
     NavMeshAgent nav;
     private Animation animation;
+    public static bool leplayerestassezproche;
+    public static bool lebosspeutbouger;
     public int portéededétectiondujoueur;// Reference to the nav mesh agent.
 
     void Awake()
@@ -19,14 +21,17 @@ public class Boss1Move : MonoBehaviour
         enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<NavMeshAgent>();
         animation = GetComponent<Animation>();
+        lebosspeutbouger = true;
     }
 
 
     void Update()
     {
+        leplayerestassezproche = Mathf.Abs(player.transform.position.x - transform.position.x) +
+                                 Mathf.Abs(player.transform.position.z - transform.position.z) <
+                                 portéededétectiondujoueur;
         // Si le monstre est pres du joueur
-        if (Mathf.Abs(player.transform.position.x - transform.position.x) +
-            Mathf.Abs(player.transform.position.z - transform.position.z) < portéededétectiondujoueur)
+        if (leplayerestassezproche)
         {
             // If the enemy and the player have health left...
             if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
@@ -40,11 +45,13 @@ public class Boss1Move : MonoBehaviour
                 nav.enabled = false;
             }
         }
+        if (lebosspeutbouger)
+        {
+            nav.Resume();
+        }
         else
         {
-            animation.Play("idle");
-        }
-        // Otherwise...
-       
+            nav.Stop();
+        }      
     }
 }
