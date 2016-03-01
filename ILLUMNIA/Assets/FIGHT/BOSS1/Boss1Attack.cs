@@ -13,6 +13,11 @@ public class Boss1Attack : MonoBehaviour {
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
+    float Mecanic1TimeLeft = 2.0f;
+    float TimerMecanic = 10f;
+    int HPpourcent;
+
+
 
 
     void Awake()
@@ -32,7 +37,6 @@ public class Boss1Attack : MonoBehaviour {
         Anim["hpunch"].wrapMode = WrapMode.Once;
         Anim["hit"].wrapMode = WrapMode.Once;
         Anim["faint"].wrapMode = WrapMode.Once;
-
     }
 
 
@@ -62,6 +66,12 @@ public class Boss1Attack : MonoBehaviour {
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
+        TimerMecanic -= Time.deltaTime;
+        if (TimerMecanic < 0)
+        {
+            BossMecanic();
+            TimerMecanic = 10f;
+        }
         if (!playerInRange&&enemyHealth.currentHealth>0)
         {
             Anim.Play("walk");
@@ -97,4 +107,48 @@ public class Boss1Attack : MonoBehaviour {
             playerHealth.TakeDamage(attackDamage);
         }
     }
+
+
+    //---------------------------------Phase1(100-75)---------------------------------
+    void Mecanic1(Collider other)
+    {
+        Mecanic1TimeLeft -= Time.deltaTime;
+        while (Mecanic1TimeLeft > 0)
+        {
+            Anim.PlayQueued("faint");
+        }
+        if (!other.gameObject.CompareTag("ZoneSafe1"))
+        {
+            playerHealth.TakeDamage((int)(0.25 * playerHealth.startingHealth)); 
+        }
+    }
+    //---------------------------------Phase2(75-50)---------------------------------
+    void Mecanic2()
+    {
+
+    }
+    //---------------------------------Phase3(50-25)---------------------------------
+    void Mecanic3()
+    {
+
+    }
+    //---------------------------------Phase4(25-0)---------------------------------
+    void Mecanic4()
+    {
+
+    }
+    //---------------------------------Phase1(100-75)---------------------------------
+    void BossMecanic()
+    {
+        HPpourcent = 100 * enemyHealth.currentHealth / enemyHealth.startingHealth;
+        if (HPpourcent > 75)
+        {
+        }
+    }
+
+
+
+
+
+
 }
