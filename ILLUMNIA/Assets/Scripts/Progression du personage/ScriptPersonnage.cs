@@ -17,13 +17,14 @@ public class ScriptPersonnage : MonoBehaviour
     public float gravity = 10;
     public Texture2D Keypicture;
     public CharacterController controller;
-    private bool playerhasthekey;
+    public bool playerhasthekey;
     private Vector3 moveDirection = Vector3.zero;
     public bool Lejoueurestdanslazone1;
     public bool Lejoueurestdanslazone2;
     public bool Lejoueurestdanslazone3;
     public bool Lejoueurestdanslazone4;
     public bool Lejoueurestdanslazone5;
+    public static ScriptPersonnage main;
     // private Rigidbody rb;
 
     void Start()
@@ -212,6 +213,11 @@ public class ScriptPersonnage : MonoBehaviour
                 new Rect(Screen.width - 50 - Keypicture.width / 2, Screen.height - 50 - Keypicture.height / 2,
                     Keypicture.width / 2, Keypicture.height / 2), Keypicture);
         }
+    }
+
+    void Awake()
+    {
+        main = this;
     }
 }
 //float moveHorizontal = Input.GetAxis("Horizontal");

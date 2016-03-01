@@ -6,6 +6,7 @@ public class SalleBoss1 : MonoBehaviour
 {
     private bool isintheroom;
     public GameObject lightforthisroom;
+    public GameObject door;
 	// Use this for initialization
 	void Start ()
 	{
@@ -24,6 +25,7 @@ public class SalleBoss1 : MonoBehaviour
 	    if (isintheroom)
 	    {
 	        lightforthisroom.SetActive(true);
+            door.SendMessage("Activate");
 	    }
 	}
 }

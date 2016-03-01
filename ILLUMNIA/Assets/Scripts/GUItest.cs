@@ -21,8 +21,24 @@ public class GUItest : MonoBehaviour {
 
         if (activation.reached == true)
         {
-            GUI.color = Color.white;
-            GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 200, 25), "Press 'E' to activate");
+            if (Activation.main.hit.transform.tag == "Interact")
+            {
+                GUI.color = Color.white;
+                GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 200, 25), "Press 'E' to activate");
+            }
+            if (Activation.main.hit.transform.tag == "PorteBoss1")
+            {
+                if (ScriptPersonnage.main.playerhasthekey)
+                {
+                    GUI.color = Color.white;
+                    GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 200, 25), "Press 'E' to use the key");
+                }
+                else
+                {
+                    GUI.color = Color.white;
+                    GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 200, 25), "It's locked");
+                }
+            }
         }
     }
 }

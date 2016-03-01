@@ -5,11 +5,13 @@ public class Activation : MonoBehaviour
 {
     public RaycastHit hit;
     public bool reached;
-    public string TriggerTag = "Interact";
+    public string TriggerTag1 = "Interact";
+    public string TriggerTag2 = "PorteBoss1";
     public float range = 4F;
     private bool canbeactivated;
     [HideInInspector]
     public bool open;
+    public static Activation main;
 
     // Use this for initialization
     void Start()
@@ -30,7 +32,7 @@ public class Activation : MonoBehaviour
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-        if ((Physics.Raycast(ray, out hit, range)) && (hit.collider.tag == TriggerTag))
+        if ((Physics.Raycast(ray, out hit, range)) && (hit.collider.tag == TriggerTag1 || hit.collider.tag == TriggerTag2))
         {
             reached = true;
 
@@ -49,6 +51,14 @@ public class Activation : MonoBehaviour
                             hit.transform.gameObject.SendMessage("Activate");
 
                         }
+                        if (hit.transform.tag == "PorteBoss1")
+                        {
+                            if (ScriptPersonnage.main.playerhasthekey)
+                            {
+                                hit.transform.gameObject.SendMessage("Activate");
+                                ScriptPersonnage.main.playerhasthekey = false;
+                            }
+                        }
 
                     }
                     canbeactivated = false;
@@ -58,5 +68,10 @@ public class Activation : MonoBehaviour
 
         }
         else reached = false;
+    }
+
+    void Awake()
+    {
+        main = this;
     }
 }
