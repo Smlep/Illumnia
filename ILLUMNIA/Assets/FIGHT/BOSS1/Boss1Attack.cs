@@ -57,7 +57,7 @@ public class Boss1Attack : MonoBehaviour
         Anim["faint"].wrapMode = WrapMode.Once;
         // Récupère le slider
         enemyhealthSliderObjectGameObject = GameObject.FindGameObjectWithTag("BossHealthSlider");
-        enemyHealthSlider = enemyhealthSliderObjectGameObject.GetComponents<Slider>()[0];
+        enemyHealthSlider = enemyhealthSliderObjectGameObject.GetComponent<Slider>();
         enemyHealthSlider.maxValue = enemyHealth.startingHealth;
     }
 
