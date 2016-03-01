@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
     public int typedemonstre; // 0= Croco ; 1=Squelette ; 2= MOB ; 3=Boss1
     bool deathanimationplayed;
+    private Boss1Attack boss1attack;
 
     void Awake()
     {
@@ -25,6 +26,10 @@ public class EnemyHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         animation = GetComponent<Animation>();
         enemyAudio = GetComponent<AudioSource>();
+        if (typedemonstre == 3)
+        {
+            boss1attack = GetComponent<Boss1Attack>();
+        }
         //hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         // Setting the current health when the enemy first spawns.
@@ -58,7 +63,7 @@ public class EnemyHealth : MonoBehaviour
         {
             animation.Play("Hit1");
         }
-        else if (typedemonstre == 3 && currentHealth > 0)
+        else if (typedemonstre == 3 && currentHealth > 0&&!boss1attack.seconcentre)
         {
             animation.Play("hit");
         }
