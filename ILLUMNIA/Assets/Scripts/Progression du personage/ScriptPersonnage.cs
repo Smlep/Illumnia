@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Reflection;
 
@@ -14,7 +15,9 @@ public class ScriptPersonnage : MonoBehaviour
     public Animation characteranimation;
     public GameObject Camera;
     public float gravity = 10;
+    public Texture2D Keypicture;
     public CharacterController controller;
+    private bool playerhasthekey;
     private Vector3 moveDirection = Vector3.zero;
     // private Rigidbody rb;
 
@@ -39,11 +42,11 @@ public class ScriptPersonnage : MonoBehaviour
 
         if (playercanmove)
         {
-            if (moveDirection.y > gravity*-1)
+            if (moveDirection.y > gravity * -1)
             {
-                moveDirection.y -= gravity*Time.deltaTime;
+                moveDirection.y -= gravity * Time.deltaTime;
             }
-            controller.Move(moveDirection*Time.deltaTime);
+            controller.Move(moveDirection * Time.deltaTime);
             var left = transform.TransformDirection(Vector3.left);
 
             if (controller.isGrounded)
@@ -65,23 +68,23 @@ public class ScriptPersonnage : MonoBehaviour
                 }
                 else
                 {
-                    coefficientdedéplacement = 1/Mathf.Sqrt(2);
+                    coefficientdedéplacement = 1 / Mathf.Sqrt(2);
                 }
                 if (Allertoutdroit && !Reculer)
                 {
-                    controller.SimpleMove(transform.forward*speed*coefficientdedéplacement);
+                    controller.SimpleMove(transform.forward * speed * coefficientdedéplacement);
                 }
                 else if (Reculer && !Allertoutdroit)
                 {
-                    controller.SimpleMove(transform.forward*-speed*coefficientdedéplacement);
+                    controller.SimpleMove(transform.forward * -speed * coefficientdedéplacement);
                 }
                 if (AlleràGauche && !AlleràDroite)
                 {
-                    controller.SimpleMove(left*speed*coefficientdedéplacement);
+                    controller.SimpleMove(left * speed * coefficientdedéplacement);
                 }
                 else if (AlleràDroite && !AlleràGauche)
                 {
-                    controller.SimpleMove(left*-speed*coefficientdedéplacement);
+                    controller.SimpleMove(left * -speed * coefficientdedéplacement);
                 }
             }
             else
@@ -90,7 +93,7 @@ public class ScriptPersonnage : MonoBehaviour
                 {
                     Vector3 relative;
                     relative = transform.TransformDirection(0, 0, 1);
-                    controller.Move(relative*Time.deltaTime*speed/1.5f);
+                    controller.Move(relative * Time.deltaTime * speed / 1.5f);
                     //controller.Move(forward * 2);
                 }
             }
@@ -113,7 +116,12 @@ public class ScriptPersonnage : MonoBehaviour
         // Téléportation
         if (other.gameObject.CompareTag("Téléporteur"))
         {
-            transform.position=new Vector3(-7.5f,2,40);
+            transform.position = new Vector3(-7.5f, 2, 40);
+        }
+        if (other.gameObject.CompareTag("Clef"))
+        {
+            other.gameObject.SetActive(false);
+            playerhasthekey = true;
         }
     }
     void Rotate(float x, float y)
@@ -128,7 +136,7 @@ public class ScriptPersonnage : MonoBehaviour
     {
         _x += Input.GetAxis("Mouse X") * _xSpeed;
         _y += -Input.GetAxis("Mouse Y") * _ySpeed;
-        _y = Mathf.Clamp(_y, -45, 30);
+        _y = Mathf.Clamp(_y, -45, 40);
 
         Rotate(_x, _y);
     }
@@ -138,6 +146,17 @@ public class ScriptPersonnage : MonoBehaviour
         if (hit.transform.GetComponent<Rigidbody>())
         {
             hit.transform.GetComponent<Rigidbody>().AddForce(10 * transform.forward);
+        }
+    }
+
+    void OnGUI()
+    {
+        //affichage de la clef
+        if (playerhasthekey)
+        {
+            GUI.DrawTexture(
+                new Rect(Screen.width - 50 - Keypicture.width / 2, Screen.height - 50 - Keypicture.height / 2,
+                    Keypicture.width / 2, Keypicture.height / 2), Keypicture);
         }
     }
 }

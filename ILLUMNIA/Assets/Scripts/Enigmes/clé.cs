@@ -29,21 +29,42 @@ public class clé : MonoBehaviour {
     public GameObject l25;
     private bool keyhasspawned = false; //sais pas si tu l'utilisera
     public GameObject key;
+    public GameObject caméracinématiqueramassage;
     private Object cle;
+    public GameObject mobquifuit;
+    public Transform mobquifuitspawn;
     public Transform spawnkey;
     // Use this for initialization
     void Start ()
     {
         keyhasspawned = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
     {
-	    if (l1.activeSelf == true && l2.activeSelf == true && l3.activeSelf == true && l4.activeSelf == true && l5.activeSelf == true && l6.activeSelf == true && l7.activeSelf == true && l8.activeSelf == true && l9.activeSelf == true && l10.activeSelf == true && l11.activeSelf == true && l12.activeSelf == true && l13.activeSelf == true && l14.activeSelf == true && l15.activeSelf == true && l16.activeSelf == true && l17.activeSelf == true && l18.activeSelf == true && l19.activeSelf == true && l20.activeSelf == true && l21.activeSelf == true && l22.activeSelf == true && l23.activeSelf == true && l24.activeSelf == true && l25.activeSelf == true)
-        {
-            cle = Instantiate(key, spawnkey.position, spawnkey.rotation);
-            keyhasspawned = true;
-        }
-	}
+	    if (!keyhasspawned)
+	    {
+	        if (l1.activeSelf  &&/*||*/
+	            (l2.activeSelf  && l3.activeSelf  && l4.activeSelf   && l5.activeSelf &&
+	             l6.activeSelf  && l7.activeSelf  && l8.activeSelf  && l9.activeSelf  &&
+	             l10.activeSelf  && l11.activeSelf  && l12.activeSelf  && l13.activeSelf  &&
+	             l14.activeSelf  && l15.activeSelf  && l16.activeSelf  && l17.activeSelf  &&
+	             l18.activeSelf  && l19.activeSelf  && l20.activeSelf  && l21.activeSelf &&
+	             l22.activeSelf  && l23.activeSelf && l24.activeSelf  && l25.activeSelf ))
+	        {
+	            cle = Instantiate(key, spawnkey.position, spawnkey.rotation);
+	            Instantiate(mobquifuit, mobquifuitspawn.position, mobquifuitspawn.rotation);
+                caméracinématiqueramassage.SetActive(true);
+	            keyhasspawned = true;
+	            StartCoroutine(fincinématique());
+	        }
+	    }
+    }
+
+    IEnumerator fincinématique()
+    {
+        yield return new WaitForSeconds(2);
+        caméracinématiqueramassage.SetActive(false);
+    }
 }

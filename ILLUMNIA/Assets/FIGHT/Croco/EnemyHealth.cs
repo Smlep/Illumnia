@@ -16,7 +16,8 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead;                                // Whether the enemy is dead.
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
-    public int typedemonstre;  // 0= Croco ; 1=Squelette
+    public int typedemonstre; // 0= Croco ; 1=Squelette ; 2= MOB ; 3=Boss1
+    bool deathanimationplayed;
 
     void Awake()
     {
@@ -26,7 +27,6 @@ public class EnemyHealth : MonoBehaviour
         enemyAudio = GetComponent<AudioSource>();
         //hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-
         // Setting the current health when the enemy first spawns.
         currentHealth = startingHealth;
 
@@ -57,6 +57,10 @@ public class EnemyHealth : MonoBehaviour
         else if (typedemonstre == 1)
         {
             animation.Play("Hit1");
+        }
+        else if (typedemonstre == 3 && currentHealth > 0)
+        {
+            animation.Play("hit");
         }
 
         // If the enemy is dead...
@@ -97,6 +101,11 @@ public class EnemyHealth : MonoBehaviour
         else if (typedemonstre == 1)
         {
             animation.Play("Hit1");
+        }        
+        else if (typedemonstre == 3&&!deathanimationplayed)
+        {
+            animation.Play("death");
+            deathanimationplayed = true;
         }
 
 
