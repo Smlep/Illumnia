@@ -5,11 +5,13 @@ using System.Runtime.Remoting;
 public class SalleBoss1 : MonoBehaviour
 {
     private bool isintheroom;
+    public GameObject levieraile2;
     private ScriptPersonnage scriptPersonnage;
     public GameObject lightforthisroom;
     public GameObject door;
     public GameObject Canvasduboss;
     public GameObject TéléporteurBoss1;
+    public GameObject caméracinématiqueouvertureporte;
     public int intensitélumineuseapresboss;
     private bool estdéjaentréavant;
     private PlayerAttack playerAttack;
@@ -65,6 +67,15 @@ public class SalleBoss1 : MonoBehaviour
             GetComponentInChildren<Light>().intensity=intensitélumineuse ;
             GetComponentInChildren<Light>().range = portéelumineuse;
         }
+        // Cinématique
+        yield return new WaitForSeconds(3);
+        levieraile2.SendMessage("Activate");
+        scriptPersonnage.playercanmove = false;
+        caméracinématiqueouvertureporte.SetActive(true);
+        yield return new WaitForSeconds(2);
+        caméracinématiqueouvertureporte.SetActive(false);
+        scriptPersonnage.playercanmove = true;
+
 
     }
     IEnumerator test()

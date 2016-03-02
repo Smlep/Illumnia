@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead;                                // Whether the enemy is dead.
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
-    public int typedemonstre; // 0= Croco ; 1=Squelette ; 2= MOB ; 3=Boss1
+    public int typedemonstre; // 0= Croco ; 1=Squelette ; 2= MOB ; 3=Boss1 ; 4=Troll
     bool deathanimationplayed;
     private Boss1Attack boss1attack;
 
@@ -34,7 +34,13 @@ public class EnemyHealth : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider>();
         // Setting the current health when the enemy first spawns.
         currentHealth = startingHealth;
-
+        if (typedemonstre == 4)
+        {
+            // Code pour empécher la répétition automatique de l'animation d'attaque
+            animation["Hit"].wrapMode = WrapMode.Once;
+            // Code pour empécher la répétition automatique de l'animation de saut
+            animation["Die"].wrapMode = WrapMode.Once;
+        }
     }
 
     void Update()
@@ -66,6 +72,10 @@ public class EnemyHealth : MonoBehaviour
         else if (typedemonstre == 3 && currentHealth > 0&&!boss1attack.seconcentre)
         {
             animation.Play("hit");
+        }
+        else if (typedemonstre == 4&&currentHealth>0)
+        {
+            animation.Play("Hit");
         }
 
         // If the enemy is dead...
@@ -112,7 +122,11 @@ public class EnemyHealth : MonoBehaviour
             animation.Play("death");
             deathanimationplayed = true;
         }
-
+        else if (typedemonstre==4&&!deathanimationplayed)
+        {
+            animation.Play("Die");
+            deathanimationplayed = true;
+        }
 
         StartSinking();
 
@@ -135,8 +149,15 @@ public class EnemyHealth : MonoBehaviour
 
         // Increase the score by the enemy's score value.
         //  ScoreManager.score += scoreValue;
-
-        // After 2 seconds destory the enemy.
+        if (typedemonstre == 4)
+        {
+            Destroy(gameObject,2);
+        }
+        else
+        {
+            // After 5 seconds destory the enemy.
         Destroy(gameObject, 5f);
+        }
+        
     }
 }

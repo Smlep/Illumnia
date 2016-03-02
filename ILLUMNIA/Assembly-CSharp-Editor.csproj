@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DoorSystem\Debugger\Yurowm\Editor\DebugPanelWindow.cs" />
+     <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\Alpha_Texture.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
      <None Include="Assets\Blender imports\Déco\Sculptures\readme.txt" />
      <None Include="Assets\DungeonLevers\Readme.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />

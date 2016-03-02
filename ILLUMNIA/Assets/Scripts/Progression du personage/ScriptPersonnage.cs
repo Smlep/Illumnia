@@ -26,7 +26,10 @@ public class ScriptPersonnage : MonoBehaviour
     public bool Lejoueurestdanslazone3;
     public bool Lejoueurestdanslazone4;
     public bool Lejoueurestdanslazone5;
+    public bool lejoueurestdanslazonemobdelapremiereaile;
+    public bool lejoueurestdanslazonemobdeladeuxiemeaile;
     public bool sprintautorisé;
+    private bool jouelanimationdattaque;
     private PlayerHealth playerHealth;
     public bool Lejoueurestdanslazonemortemecanic2;
     public static ScriptPersonnage main;
@@ -53,6 +56,8 @@ public class ScriptPersonnage : MonoBehaviour
         Lejoueurestdanslazone4 = false;
         Lejoueurestdanslazone5 = false;
         Lejoueurestdanslazonemortemecanic2 = false;
+        lejoueurestdanslazonemobdelapremiereaile = false;
+        lejoueurestdanslazonemobdeladeuxiemeaile = false;
     }
 
     void Update()
@@ -92,11 +97,11 @@ public class ScriptPersonnage : MonoBehaviour
                 if (Allertoutdroit ^ Reculer ^ AlleràGauche ^ AlleràDroite)
                 {
                     coefficientdedéplacement = 1;
-                    if (speed == speeddecourse)
+                    if (speed == speeddecourse&&!jouelanimationdattaque)
                     {
                         characteranimation.Play("Run");
                     }
-                    else
+                    else if (!jouelanimationdattaque)
                     {
                         characteranimation.Play("Walk");
                     }
@@ -140,6 +145,8 @@ public class ScriptPersonnage : MonoBehaviour
         if (Input.GetButtonDown("Fire1")&&!playerHealth.enmodedéfensif)
         {
             // Animation d'attaque
+            jouelanimationdattaque = true;
+            StartCoroutine(findelanimationdattaque());
             characteranimation.Play("Attack");
         }
 
@@ -149,6 +156,12 @@ public class ScriptPersonnage : MonoBehaviour
         }
 
     }
+    // Permet de jouer d'autre anim apres une attaque
+    IEnumerator findelanimationdattaque()
+    {
+        yield return new WaitForSeconds(1.533f);
+        jouelanimationdattaque = false;
+    }
     // Détection des Collision
     void OnTriggerEnter(Collider other)
     {
@@ -156,6 +169,15 @@ public class ScriptPersonnage : MonoBehaviour
         if (other.gameObject.CompareTag("Téléporteur"))
         {
             transform.position = new Vector3(-7.5f, 2, 40);
+        }
+        // Entrée et sortie dans le MindFuck
+        if (other.gameObject.CompareTag("TéléporteurMindFuckIn"))
+        {
+            transform.position=new Vector3(104.805f,2f, 68.56776f);
+        }
+        if (other.gameObject.CompareTag("TéléporteurMindFuckOut"))
+        {
+            transform.position = new Vector3(104.805f,2f, 147.0118f);
         }
         if (other.gameObject.CompareTag("Clef"))
         {
@@ -186,6 +208,14 @@ public class ScriptPersonnage : MonoBehaviour
         {
             Lejoueurestdanslazonemortemecanic2 = true;
         }
+        if (other.gameObject.CompareTag("FightMob1"))
+        {
+            lejoueurestdanslazonemobdelapremiereaile = true;
+        }
+        if (other.gameObject.CompareTag("FightMob2"))
+        {
+            lejoueurestdanslazonemobdeladeuxiemeaile = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -213,6 +243,14 @@ public class ScriptPersonnage : MonoBehaviour
         if (other.gameObject.CompareTag("ZoneMorteMecanic2"))
         {
             Lejoueurestdanslazonemortemecanic2 = false;
+        }
+        if (other.gameObject.CompareTag("FightMob1"))
+        {
+            lejoueurestdanslazonemobdelapremiereaile = false;
+        }
+        if (other.gameObject.CompareTag("FightMob1"))
+        {
+            lejoueurestdanslazonemobdeladeuxiemeaile = false;
         }
     }
     void Rotate(float x, float y)

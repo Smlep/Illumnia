@@ -67,6 +67,7 @@
      <Compile Include="Assets\FIGHT\Player\PlayerMove.cs" />
      <Compile Include="Assets\FIGHT\Squelette\SkeletteMove.cs" />
      <Compile Include="Assets\FIGHT\Squelette\SqueletteAttack.cs" />
+     <Compile Include="Assets\FIGHT\Troll\TrollAttack.cs" />
      <Compile Include="Assets\Materials\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\Materials\Water\Water\Scripts\GerstnerDisplace.cs" />
      <Compile Include="Assets\Materials\Water\Water\Scripts\MeshContainer.cs" />
@@ -91,11 +92,14 @@
      <Compile Include="Assets\Scripts\Portes\Porte0.cs" />
      <Compile Include="Assets\Scripts\Portes\Porte1.cs" />
      <Compile Include="Assets\Scripts\Portes\PorteAile1.cs" />
+     <Compile Include="Assets\Scripts\Portes\PorteAile2.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\SalleBoss1.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\ScriptPersonnage.cs" />
      <Compile Include="Assets\Scripts\SlideCode.cs" />
      <Compile Include="Assets\Scripts\TEST.cs" />
      <Compile Include="Assets\Scripts\lightdoor.cs" />
+     <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\Alpha_Texture.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
      <None Include="Assets\Blender imports\Déco\Sculptures\readme.txt" />
      <None Include="Assets\DungeonLevers\Readme.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
