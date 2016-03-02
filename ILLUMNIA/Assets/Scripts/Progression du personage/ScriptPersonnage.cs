@@ -7,7 +7,9 @@ using System.Reflection;
 public class ScriptPersonnage : MonoBehaviour
 {
     public bool playercanmove;
-    public float speed;
+    private float speed;
+    public float speeddemarche;
+    public float speeddecourse;
     public float _xSpeed = 1f;
     public float _ySpeed = 1f;
     private float _x = 0.0f;
@@ -24,12 +26,15 @@ public class ScriptPersonnage : MonoBehaviour
     public bool Lejoueurestdanslazone3;
     public bool Lejoueurestdanslazone4;
     public bool Lejoueurestdanslazone5;
+    public bool sprintautorisé;
+    private PlayerHealth playerHealth;
     public bool Lejoueurestdanslazonemortemecanic2;
     public static ScriptPersonnage main;
     // private Rigidbody rb;
 
     void Start()
     {
+        playerHealth = GetComponent<PlayerHealth>();
         controller = transform.GetComponent<CharacterController>();
         // rb = GetComponent<Rigidbody>();
         Vector2 angles = transform.localEulerAngles;
@@ -52,8 +57,17 @@ public class ScriptPersonnage : MonoBehaviour
 
     void Update()
     {
-
-        if (playercanmove)
+        if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = speeddemarche;
+            
+        }
+        else if (sprintautorisé)
+        {
+            speed = speeddecourse;
+            
+        }
+        if (playercanmove&&!playerHealth.enmodedéfensif)
         {
             if (moveDirection.y > gravity * -1)
             {
@@ -78,10 +92,22 @@ public class ScriptPersonnage : MonoBehaviour
                 if (Allertoutdroit ^ Reculer ^ AlleràGauche ^ AlleràDroite)
                 {
                     coefficientdedéplacement = 1;
+                    if (speed == speeddecourse)
+                    {
+                        characteranimation.Play("Run");
+                    }
+                    else
+                    {
+                        characteranimation.Play("Walk");
+                    }
                 }
                 else
                 {
                     coefficientdedéplacement = 1 / Mathf.Sqrt(2);
+                    if (speed == speeddecourse)
+                    {
+                        characteranimation.Play("Run");
+                    }
                 }
                 if (Allertoutdroit && !Reculer)
                 {
@@ -111,7 +137,7 @@ public class ScriptPersonnage : MonoBehaviour
                 }
             }
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")&&!playerHealth.enmodedéfensif)
         {
             // Animation d'attaque
             characteranimation.Play("Attack");

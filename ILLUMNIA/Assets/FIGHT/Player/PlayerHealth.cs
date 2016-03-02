@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     // public AudioClip deathClip;                                 // The audio clip to play when the player dies.
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
-
+    public bool enmodedéfensif;
 
     Animator anim;                                              // Reference to the Animator component.
     // AudioSource playerAudio;                                    // Reference to the AudioSource component.
@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
         playerShooting = GetComponentInChildren<PlayerAttack>();
         // Set the initial health of the player.
         currentHealth = startingHealth;
+        enmodedéfensif = false;
         StartCoroutine(Autoregen());
     }
 
@@ -69,7 +70,14 @@ public class PlayerHealth : MonoBehaviour
         damaged = true;
 
         // Reduce the current health by the damage amount.
-        currentHealth -= amount;
+        if (!enmodedéfensif)
+        {
+            currentHealth -= amount;
+        }
+        else
+        {
+            currentHealth -= amount/2;
+        }
 
         // Set the health bar's value to the current health.
         healthSlider.value = currentHealth;

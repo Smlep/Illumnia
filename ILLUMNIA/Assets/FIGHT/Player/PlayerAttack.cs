@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
     public float timeBetweenBullets = 2f;        // The time between each shot.
     public float range = 30f;                      // The distance the gun can fire.
 
+    public GameObject bouclier;
     float timer;                                    // A timer to determine when to fire.
     Ray shootRay;                                   // A ray from the gun end forwards.
     RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
@@ -15,6 +16,8 @@ public class PlayerAttack : MonoBehaviour
     AudioSource gunAudio;                           // Reference to the audio source.
     //Light gunLight;                                 // Reference to the light component.
     float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
+    private PlayerHealth playerHealth;
+    public bool modedefensifautorisé;
 
     void Awake()
     {
@@ -25,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
         gunLine = GetComponent<LineRenderer>();
         // AttackAudio = GetComponent<AudioSource>();
         // gunLight = GetComponent<Light>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     void Update()
@@ -33,12 +37,22 @@ public class PlayerAttack : MonoBehaviour
         timer += Time.deltaTime;
 
         // If the Fire1 button is being press and it's time to fire...
-        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
+        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets&&!playerHealth.enmodedéfensif)
         {
             // ... shoot the gun.
             Shoot();
         }
+        if (Input.GetButton("Fire2")&&modedefensifautorisé)
+        {
+            playerHealth.enmodedéfensif = true;
+            bouclier.SetActive(true);
+        }
 
+        else
+        {
+            playerHealth.enmodedéfensif = false;
+            bouclier.SetActive(false);
+        }
         // If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
         if (timer >= timeBetweenBullets * effectsDisplayTime)
         {
