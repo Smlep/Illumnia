@@ -20,7 +20,7 @@ public class Boss1Attack : MonoBehaviour
     private GameObject enemyhealthSliderObjectGameObject;
     public bool seconcentre;
     int HPpourcent;
-    GameObject ZoneSafe1, ZoneSafe2, ZoneSafe3, ZoneSafe4, ZoneSafe5;
+    GameObject ZoneSafe1, ZoneSafe2, ZoneSafe3, ZoneSafe4, ZoneSafe5, ZoneMorteMecanic2, Boss;
 
     void Awake()
     {
@@ -30,7 +30,9 @@ public class Boss1Attack : MonoBehaviour
         ZoneSafe3 = GameObject.Find("ZoneSafe3");
         ZoneSafe4 = GameObject.Find("ZoneSafe4");
         ZoneSafe5 = GameObject.Find("ZoneSafe5");
-            
+        ZoneMorteMecanic2 = GameObject.Find("ZoneMorteMecanic2");
+        Boss = GameObject.Find("golem");
+
 
         //Initialise toutes les zones sous la carte (bullshit pour pas qu'on ne les vois)
         ZoneSafe1.transform.position = new Vector3(ZoneSafe1.transform.position.x, -20f, ZoneSafe1.transform.position.z);
@@ -38,6 +40,7 @@ public class Boss1Attack : MonoBehaviour
         ZoneSafe3.transform.position = new Vector3(ZoneSafe3.transform.position.x, -20f, ZoneSafe3.transform.position.z);
         ZoneSafe4.transform.position = new Vector3(ZoneSafe4.transform.position.x, -20f, ZoneSafe4.transform.position.z);
         ZoneSafe5.transform.position = new Vector3(ZoneSafe5.transform.position.x, -20f, ZoneSafe5.transform.position.z);
+        ZoneMorteMecanic2.transform.position = new Vector3(ZoneMorteMecanic2.transform.position.x, -20f, ZoneMorteMecanic2.transform.position.z);
 
         // Setting up the references.
         player = GameObject.FindGameObjectWithTag("Player");
@@ -99,7 +102,7 @@ public class Boss1Attack : MonoBehaviour
             Anim.PlayQueued("walk");
         }
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0&&!seconcentre)
+        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0 && !seconcentre)
         {
             // Jouer l'animation d'attaque;
 
@@ -209,7 +212,19 @@ public class Boss1Attack : MonoBehaviour
         TimerMecanic = 10f;
     }
     //---------------------------------Phase2(75-50)---------------------------------
-    //IEnumerator Mecanic2()
+    IEnumerator Mecanic2()
+    {
+        ZoneMorteMecanic2.transform.position = new Vector3(Boss.transform.position.x, 0.003f, Boss.transform.position.z);
+        Boss1Move.lebosspeutbouger = false;
+        Anim.Play("jump");
+        yield return new WaitForSeconds(1.2f);
+        if (scriptdupersonage.Lejoueurestdanslazonemortemecanic2)
+        {
+            playerHealth.TakeDamage((int)(0.5 * playerHealth.startingHealth));
+        }
+        Boss1Move.lebosspeutbouger = true;
+        ZoneMorteMecanic2.transform.position = new Vector3(Boss.transform.position.x, -20, Boss.transform.position.z);
+    }
 
     //---------------------------------Phase3(50-25)---------------------------------
     //IEnumerator Mecanic3()
@@ -225,6 +240,20 @@ public class Boss1Attack : MonoBehaviour
         if (HPpourcent > 75)
         {
             StartCoroutine(Mecanic1());
+        }
+        else if (HPpourcent > 50)
+        {
+            System.Random Rand = new System.Random();
+            int n = Rand.Next(0, 2);
+            switch (n)
+            {
+                case 0:
+                    StartCoroutine(Mecanic1());
+                    break;
+                case 1:
+                    StartCoroutine(Mecanic2());
+                    break;
+            }
         }
     }
 }

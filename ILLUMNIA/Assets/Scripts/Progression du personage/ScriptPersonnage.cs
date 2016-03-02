@@ -24,6 +24,7 @@ public class ScriptPersonnage : MonoBehaviour
     public bool Lejoueurestdanslazone3;
     public bool Lejoueurestdanslazone4;
     public bool Lejoueurestdanslazone5;
+    public bool Lejoueurestdanslazonemortemecanic2;
     public static ScriptPersonnage main;
     // private Rigidbody rb;
 
@@ -46,6 +47,7 @@ public class ScriptPersonnage : MonoBehaviour
         Lejoueurestdanslazone3 = false;
         Lejoueurestdanslazone4 = false;
         Lejoueurestdanslazone5 = false;
+        Lejoueurestdanslazonemortemecanic2 = false;
     }
 
     void Update()
@@ -154,6 +156,10 @@ public class ScriptPersonnage : MonoBehaviour
         {
             Lejoueurestdanslazone5 = true;
         }
+        if (other.gameObject.CompareTag("ZoneMorteMecanic2"))
+        {
+            Lejoueurestdanslazonemortemecanic2 = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -177,6 +183,10 @@ public class ScriptPersonnage : MonoBehaviour
         if (other.gameObject.CompareTag("ZoneSafe5"))
         {
             Lejoueurestdanslazone5 = false;
+        }
+        if (other.gameObject.CompareTag("ZoneMorteMecanic2"))
+        {
+            Lejoueurestdanslazonemortemecanic2 = false;
         }
     }
     void Rotate(float x, float y)
