@@ -43,7 +43,7 @@ public class SalleBoss1 : MonoBehaviour
 	    }
 	}
 
-    void Boss1Terminé()
+    public void Boss1Terminé()
     {
         TéléporteurBoss1.SetActive(true);
         Canvasduboss.SetActive(false);       

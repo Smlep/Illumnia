@@ -53,11 +53,7 @@ public class clé : MonoBehaviour {
 	             l18.activeSelf  && l19.activeSelf  && l20.activeSelf  && l21.activeSelf &&
 	             l22.activeSelf  && l23.activeSelf && l24.activeSelf  && l25.activeSelf ))
 	        {
-	            cle = Instantiate(key, spawnkey.position, spawnkey.rotation);
-	            Instantiate(mobquifuit, mobquifuitspawn.position, mobquifuitspawn.rotation);
-                caméracinématiqueramassage.SetActive(true);
-	            keyhasspawned = true;
-	            StartCoroutine(fincinématique());
+                keyon();
 	        }
 	    }
     }
@@ -66,5 +62,14 @@ public class clé : MonoBehaviour {
     {
         yield return new WaitForSeconds(2);
         caméracinématiqueramassage.SetActive(false);
+    }
+
+    public void keyon()
+    {
+        cle = Instantiate(key, spawnkey.position, spawnkey.rotation);
+        Instantiate(mobquifuit, mobquifuitspawn.position, mobquifuitspawn.rotation);
+        caméracinématiqueramassage.SetActive(true);
+        keyhasspawned = true;
+        StartCoroutine(fincinématique());
     }
 }

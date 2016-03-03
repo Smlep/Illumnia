@@ -11,8 +11,12 @@ public class Main : MonoBehaviour
     public Button Buttonquit;
     public Button Buttonrestart;
     public Button Buttonresume;
+    public Button Buttonoption;
     public Texture2D crosshairImage;
+    public Canvas OptionMenu;
     public static bool Inpause;
+    public GameObject player;
+    
 
     void Start()
     {
@@ -41,6 +45,30 @@ public class Main : MonoBehaviour
         Buttonquit.gameObject.SetActive(false);
         Buttonrestart.gameObject.SetActive(false);
         Buttonresume.gameObject.SetActive(false);
+        Buttonoption.gameObject.SetActive(false);
+    }
+
+    public void option()
+    {
+        OptionMenu.gameObject.SetActive(true);
+        Buttonquit.gameObject.SetActive(false);
+        Buttonrestart.gameObject.SetActive(false);
+        Buttonresume.gameObject.SetActive(false);
+        Buttonoption.gameObject.SetActive(false);
+    }
+
+    public void optionquit()
+    {
+        OptionMenu.gameObject.SetActive(false);
+        Buttonquit.gameObject.SetActive(true);
+        Buttonrestart.gameObject.SetActive(true);
+        Buttonresume.gameObject.SetActive(true);
+        Buttonoption.gameObject.SetActive(true);
+    }
+
+    public void lobby()
+    {
+        player.transform.position = new Vector3(-7,0,40);
     }
 
     void Update()
@@ -55,6 +83,7 @@ public class Main : MonoBehaviour
                 Buttonquit.gameObject.SetActive(true);
                 Buttonrestart.gameObject.SetActive(true);
                 Buttonresume.gameObject.SetActive(true);
+                Buttonoption.gameObject.SetActive(true);
                 // yourbuttonresumetext = Buttonresume.transform.FindChild("Text").GetComponent<Text>();
                 // yourbuttonresumetext.text = "Reprendre !";
             }
