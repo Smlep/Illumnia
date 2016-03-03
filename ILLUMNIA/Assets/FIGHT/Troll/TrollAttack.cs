@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TrollAttack : MonoBehaviour {
-    public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
+public class TrollAttack : MonoBehaviour
+{
+    private float timeBetweenAttacks = 3f;     // The time in seconds between each attack.
     public int attackDamage = 10;               // The amount of health taken away per attack.
 
 
@@ -12,7 +13,7 @@ public class TrollAttack : MonoBehaviour {
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
-
+    public bool jouelaniamtiondattaque;
 
     void Awake()
     {
@@ -56,17 +57,28 @@ public class TrollAttack : MonoBehaviour {
     {
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
-        if (!playerInRange)
+        if (!playerInRange&&!jouelaniamtiondattaque&&enemyHealth.currentHealth>50)
         {
             Anim.Play("Walk");
         }
+        else if (!playerInRange&&!jouelaniamtiondattaque&&enemyHealth.currentHealth>0)
+        {
+            Anim.Play("Run");
+        }
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-        if (timer >= 2f && playerInRange && enemyHealth.currentHealth > 0)
+        if (timer >= 2f && playerInRange && enemyHealth.currentHealth > 50)
         {
             // Jouer l'animation d'attaque;
 
             // ... attack.
-            StartCoroutine(Attack());
+            StartCoroutine(Attackpeudevie());
+        }
+        else if (timer >= 2f && playerInRange && enemyHealth.currentHealth > 0)
+        {
+            // Jouer l'animation d'attaque;
+
+            // ... attack.
+            StartCoroutine(Attackforte());
         }
 
         // If the player has zero or less health...
@@ -78,19 +90,47 @@ public class TrollAttack : MonoBehaviour {
     }
 
 
-   IEnumerator Attack()
+    IEnumerator Attackforte()
     {
         Anim.Play("Attack_01");
         // Reset the timer.
         timer = 0f;
+        jouelaniamtiondattaque = true;
         yield return new WaitForSeconds(1f);
         timer = 0f;
+        jouelaniamtiondattaque = false;
 
         // If the player has health to lose...
-        if (playerHealth.currentHealth > 0)
+        if (playerHealth.currentHealth > 0&&enemyHealth.currentHealth>0)
         {
             // ... damage the player.
             playerHealth.TakeDamage(attackDamage);
         }
+    }
+    IEnumerator Attackpeudevie()
+    {
+        Anim.Play("Attack_02");
+        // Reset the timer.
+        timer = 0f;
+        jouelaniamtiondattaque = true;
+        yield return new WaitForSeconds(0.6f);
+        timer = 0f;
+        // Première partie de l'anim
+        if (playerHealth.currentHealth > 0&&enemyHealth.currentHealth>0)
+        {
+            // ... damage the player.
+            playerHealth.TakeDamage(attackDamage/3);
+        }
+        yield return new WaitForSeconds(1.4f);
+        timer = 0f;
+
+
+        // Seconde partie de l'anim
+        if (playerHealth.currentHealth > 0&&enemyHealth.currentHealth>0)
+        {
+            // ... damage the player.
+            playerHealth.TakeDamage(attackDamage / 3);
+        }
+        jouelaniamtiondattaque = false;
     }
 }

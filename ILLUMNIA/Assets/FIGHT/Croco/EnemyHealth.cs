@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     public int typedemonstre; // 0= Croco ; 1=Squelette ; 2= MOB ; 3=Boss1 ; 4=Troll
     bool deathanimationplayed;
     private Boss1Attack boss1attack;
+    private TrollAttack trollAttack;
 
     void Awake()
     {
@@ -29,6 +30,10 @@ public class EnemyHealth : MonoBehaviour
         if (typedemonstre == 3)
         {
             boss1attack = GetComponent<Boss1Attack>();
+        }
+        if (typedemonstre == 4)
+        {
+            trollAttack = GetComponent<TrollAttack>();
         }
         //hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
@@ -73,7 +78,7 @@ public class EnemyHealth : MonoBehaviour
         {
             animation.Play("hit");
         }
-        else if (typedemonstre == 4&&currentHealth>0)
+        else if (typedemonstre == 4&&currentHealth>0&&!trollAttack.jouelaniamtiondattaque)
         {
             animation.Play("Hit");
         }
