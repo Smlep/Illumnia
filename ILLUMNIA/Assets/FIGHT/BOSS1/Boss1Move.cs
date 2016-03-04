@@ -45,11 +45,11 @@ public class Boss1Move : MonoBehaviour
                 nav.enabled = false;
             }
         }
-        if (lebosspeutbouger)
+        if (lebosspeutbouger&&enemyHealth.currentHealth>0)
         {
             nav.Resume();
         }
-        else
+        else if (enemyHealth.currentHealth>0)
         {
             nav.Stop();
         }      
