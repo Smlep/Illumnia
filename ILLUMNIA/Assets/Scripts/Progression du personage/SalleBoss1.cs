@@ -51,7 +51,7 @@ public class SalleBoss1 : MonoBehaviour
         }
         if (bossenvie)
         {
-            if (!findéjajoué && enemyHealth.currentHealth < 0)
+            if (!findéjajoué && enemyHealth.currentHealth <= 0)
             {
                 Boss1Terminé();
                 bossenvie = false;
