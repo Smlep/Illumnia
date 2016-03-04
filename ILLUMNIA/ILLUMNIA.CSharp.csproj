@@ -91,6 +91,8 @@
     <Compile Include="Assets\FIGHT\Player\PlayerMove.cs" />
     <Compile Include="Assets\FIGHT\Squelette\SkeletteMove.cs" />
     <Compile Include="Assets\FIGHT\Squelette\SqueletteAttack.cs" />
+    <Compile Include="Assets\FIGHT\Troll\TrollAttack.cs" />
+    <Compile Include="Assets\FIGHT\Troll\TrollMove.cs" />
     <Compile Include="Assets\Materials\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Materials\Water\Water\Scripts\GerstnerDisplace.cs" />
     <Compile Include="Assets\Materials\Water\Water\Scripts\MeshContainer.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="Assets\Scripts\Enigmes\Code4.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Mobquicourt.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Spawn2enemys.cs" />
+    <Compile Include="Assets\Scripts\Enigmes\TP.cs" />
     <Compile Include="Assets\Scripts\Enigmes\clé.cs" />
     <Compile Include="Assets\Scripts\GUItest.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
@@ -115,6 +118,7 @@
     <Compile Include="Assets\Scripts\Portes\Porte0.cs" />
     <Compile Include="Assets\Scripts\Portes\Porte1.cs" />
     <Compile Include="Assets\Scripts\Portes\PorteAile1.cs" />
+    <Compile Include="Assets\Scripts\Portes\PorteAile2.cs" />
     <Compile Include="Assets\Scripts\Progression du personage\SalleBoss1.cs" />
     <Compile Include="Assets\Scripts\Progression du personage\ScriptPersonnage.cs" />
     <Compile Include="Assets\Scripts\SlideCode.cs" />
@@ -122,6 +126,8 @@
     <Compile Include="Assets\Scripts\lightdoor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\Alpha_Texture.shader" />
+    <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
     <None Include="Assets\Blender imports\BORDEL\Key\Key\readME keys.txt" />
     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\bumpSpecmap.shader" />
     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\caveShader.shader" />

@@ -126,6 +126,8 @@
     <Compile Include="Assets\DoorSystem\Debugger\Yurowm\Editor\DebugPanelWindow.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\Alpha_Texture.shader" />
+    <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
     <None Include="Assets\Blender imports\BORDEL\Key\Key\readME keys.txt" />
     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\bumpSpecmap.shader" />
     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\caveShader.shader" />

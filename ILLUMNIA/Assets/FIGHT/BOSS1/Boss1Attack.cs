@@ -21,9 +21,23 @@ public class Boss1Attack : MonoBehaviour
     public bool seconcentre;
     int HPpourcent;
     GameObject ZoneSafe1, ZoneSafe2, ZoneSafe3, ZoneSafe4, ZoneSafe5, ZoneMorteMecanic2, Boss;
+    public GameObject enemy1;
+    public GameObject enemy2;
+    private GameObject e1;
+    private GameObject e2;
+    public GameObject spawnenemy1;
+    public GameObject spawnenemy2;
+    EnemyHealth e1Health;
+    EnemyHealth e2Health;
+    NavMeshAgent nav;
+    float courrir;
 
     void Awake()
     {
+        nav = GetComponent<NavMeshAgent>();
+        courrir = 2*nav.speed;
+        spawnenemy1 = GameObject.Find("SpawnBoss");
+        spawnenemy2 = GameObject.Find("SpawnBoss");
         //Récupère les zones safes
         ZoneSafe1 = GameObject.Find("ZoneSafe1");
         ZoneSafe2 = GameObject.Find("ZoneSafe2");
@@ -95,11 +109,19 @@ public class Boss1Attack : MonoBehaviour
         if (TimerMecanic < 0 && (Boss1Move.leplayerestassezproche))
         {
             BossMecanic();
-            TimerMecanic = 10f;
         }
         if (!playerInRange && enemyHealth.currentHealth > 0 && Boss1Move.lebosspeutbouger)
         {
-            Anim.PlayQueued("walk");
+            HPpourcent = 100 * enemyHealth.currentHealth / enemyHealth.startingHealth;
+            if (HPpourcent < 25)
+            {
+                nav.speed = courrir;
+                Anim.PlayQueued("run");
+            }
+            else
+            {
+                Anim.PlayQueued("walk");
+            }
         }
         // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0 && !seconcentre)
@@ -138,6 +160,7 @@ public class Boss1Attack : MonoBehaviour
     //---------------------------------Phase1(100-75)---------------------------------
     IEnumerator Mecanic1()
     {
+        TimerMecanic = 20f; ;
         Boss1Move.lebosspeutbouger = false;
         Anim.Play("faint");
         Anim.PlayQueued("faint");
@@ -173,40 +196,40 @@ public class Boss1Attack : MonoBehaviour
             case 1:
                 if (!scriptdupersonage.Lejoueurestdanslazone1)
                 {
-                    playerHealth.TakeDamage((int)(0.25 * playerHealth.startingHealth));
+                    playerHealth.TakeDamage((int)(0.5 * playerHealth.startingHealth));
                 }
                 ZoneSafe1.transform.position = new Vector3(ZoneSafe1.transform.position.x, -20f, ZoneSafe1.transform.position.z);
                 break;
             case 2:
                 if (!scriptdupersonage.Lejoueurestdanslazone2)
                 {
-                    playerHealth.TakeDamage((int)(0.25 * playerHealth.startingHealth));
+                    playerHealth.TakeDamage((int)(0.5 * playerHealth.startingHealth));
                 }
                 ZoneSafe2.transform.position = new Vector3(ZoneSafe2.transform.position.x, -20f, ZoneSafe2.transform.position.z);
                 break;
             case 3:
                 if (!scriptdupersonage.Lejoueurestdanslazone3)
                 {
-                    playerHealth.TakeDamage((int)(0.25 * playerHealth.startingHealth));
+                    playerHealth.TakeDamage((int)(0.5 * playerHealth.startingHealth));
                 }
                 ZoneSafe3.transform.position = new Vector3(ZoneSafe3.transform.position.x, -20f, ZoneSafe3.transform.position.z);
                 break;
             case 4:
                 if (!scriptdupersonage.Lejoueurestdanslazone4)
                 {
-                    playerHealth.TakeDamage((int)(0.25 * playerHealth.startingHealth));
+                    playerHealth.TakeDamage((int)(0.5 * playerHealth.startingHealth));
                 }
                 ZoneSafe4.transform.position = new Vector3(ZoneSafe4.transform.position.x, -20f, ZoneSafe4.transform.position.z);
                 break;
             case 5:
                 if (!scriptdupersonage.Lejoueurestdanslazone5)
                 {
-                    playerHealth.TakeDamage((int)(0.25 * playerHealth.startingHealth));
+                    playerHealth.TakeDamage((int)(0.5 * playerHealth.startingHealth));
                 }
                 ZoneSafe5.transform.position = new Vector3(ZoneSafe5.transform.position.x, -20f, ZoneSafe5.transform.position.z);
                 break;
             default:
-                playerHealth.TakeDamage((int)(0.25 * playerHealth.startingHealth));
+                playerHealth.TakeDamage((int)(0.5 * playerHealth.startingHealth));
                 break;
         }
         TimerMecanic = 10f;
@@ -214,20 +237,53 @@ public class Boss1Attack : MonoBehaviour
     //---------------------------------Phase2(75-50)---------------------------------
     IEnumerator Mecanic2()
     {
+        TimerMecanic = 10f;
         ZoneMorteMecanic2.transform.position = new Vector3(Boss.transform.position.x, 0.003f, Boss.transform.position.z);
         Boss1Move.lebosspeutbouger = false;
-        Anim.Play("jump");
-        yield return new WaitForSeconds(1.2f);
+        Anim.Play("faint");
+        Anim.PlayQueued("jump");
+        yield return new WaitForSeconds(2.4f);
         if (scriptdupersonage.Lejoueurestdanslazonemortemecanic2)
         {
             playerHealth.TakeDamage((int)(0.5 * playerHealth.startingHealth));
         }
         Boss1Move.lebosspeutbouger = true;
         ZoneMorteMecanic2.transform.position = new Vector3(Boss.transform.position.x, -20, Boss.transform.position.z);
+        TimerMecanic = 10f;
     }
 
     //---------------------------------Phase3(50-25)---------------------------------
-    //IEnumerator Mecanic3()
+    IEnumerator Mecanic3()
+    {
+        TimerMecanic = 30f;
+        Boss1Move.lebosspeutbouger = false;
+        Anim.Play("hpunch");
+        Anim.PlayQueued("hpunch");
+        yield return new WaitForSeconds(1f);
+        e1 = (GameObject)Instantiate(enemy1, spawnenemy1.transform.position, spawnenemy1.transform.rotation);
+        e2 = (GameObject)Instantiate(enemy1, spawnenemy2.transform.position, spawnenemy2.transform.rotation);
+        e1Health = e1.GetComponent<EnemyHealth>();
+        e2Health = e2.GetComponent<EnemyHealth>();
+        Anim.Play("faint");
+        Anim.PlayQueued("faint");
+        Anim.PlayQueued("faint");
+        Anim.PlayQueued("faint");
+        Anim.PlayQueued("faint");
+        Anim.PlayQueued("faint");
+        Anim.PlayQueued("faint");
+        Anim.PlayQueued("faint");
+        Anim.PlayQueued("faint");
+        Anim.PlayQueued("faint");
+        yield return new WaitForSeconds(13.67f);
+        Boss1Move.lebosspeutbouger = true;
+        if (e1Health.currentHealth > 0 || e2Health.currentHealth > 0)
+        {
+            Destroy(e1, 0f);
+            Destroy(e2, 0f);
+            enemyHealth.TakeDamage((int)(-enemyHealth.startingHealth * 0.1), Vector3.zero);
+        }
+        TimerMecanic = 10f;
+    }
 
     //---------------------------------Phase4(25-0)---------------------------------
     //IEnumerator Mecanic4()
@@ -252,6 +308,23 @@ public class Boss1Attack : MonoBehaviour
                     break;
                 case 1:
                     StartCoroutine(Mecanic2());
+                    break;
+            }
+        }
+         else if (HPpourcent > 25)
+        {
+            System.Random Rand = new System.Random();
+            int n = Rand.Next(0, 3);
+            switch (n)
+            {
+                case 0:
+                    StartCoroutine(Mecanic1());
+                    break;
+                case 1:
+                    StartCoroutine(Mecanic2());
+                    break;
+                case 2:
+                    StartCoroutine(Mecanic3());
                     break;
             }
         }
