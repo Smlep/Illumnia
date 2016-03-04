@@ -60,8 +60,13 @@ public class PlayerHealth : MonoBehaviour
         // Détecter les collisions
         if (other.gameObject.CompareTag("HealZone"))
         {
-            currentHealth = startingHealth;
+            Resethealth();
         }
+    }
+
+    public void Resethealth()
+    {
+        currentHealth = startingHealth;
     }
 
     public void TakeDamage(int amount)

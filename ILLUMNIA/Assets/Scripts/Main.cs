@@ -71,6 +71,15 @@ public class Main : MonoBehaviour
         player.transform.position = new Vector3(-7,0,40);
     }
 
+    public void B1TP()
+    {
+        player.transform.position = new Vector3(-53, 0, 63);
+    }
+
+    public void B2TP()
+    {
+        player.transform.position = new Vector3(105, 0, 147);
+    }
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
