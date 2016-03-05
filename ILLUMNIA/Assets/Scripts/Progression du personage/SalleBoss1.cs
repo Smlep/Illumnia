@@ -53,8 +53,8 @@ public class SalleBoss1 : MonoBehaviour
         {
             if (!findéjajoué && enemyHealth.currentHealth <= 0)
             {
-                Boss1Terminé();
                 bossenvie = false;
+                Boss1Terminé();              
                 findéjajoué = true;
             }
         }
@@ -62,6 +62,11 @@ public class SalleBoss1 : MonoBehaviour
 
     public void Boss1Terminé()
     {
+        if (bossenvie)
+        {
+            enemyHealth.currentHealth = 0;
+            bossenvie = false;
+        }
         TéléporteurBoss1.SetActive(true);
         Canvasduboss.SetActive(false);
         scriptPersonnage.sprintautorisé = true;
