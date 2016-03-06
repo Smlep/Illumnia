@@ -5,13 +5,13 @@ using System.Runtime.Remoting;
 public class SalleBoss1 : MonoBehaviour
 {
     private bool isintheroom;
-    public GameObject levieraile2;
+    private GameObject levieraile2;
     private ScriptPersonnage scriptPersonnage;
-    public GameObject lightforthisroom;
-    public GameObject door;
-    public GameObject Canvasduboss;
-    public GameObject TéléporteurBoss1;
-    public GameObject caméracinématiqueouvertureporte;
+    private GameObject lightforthisroom;
+    private GameObject door;
+    private GameObject Canvasduboss;
+    private GameObject TéléporteurBoss1;
+    private GameObject caméracinématiqueouvertureporte;
     public int intensitélumineuseapresboss;
     EnemyHealth enemyHealth;
     public GameObject Boss1;
@@ -22,8 +22,18 @@ public class SalleBoss1 : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Canvasduboss = GameObject.FindGameObjectWithTag("BossCanvas");
+        Canvasduboss.SetActive(false);
+        TéléporteurBoss1 = GameObject.FindGameObjectWithTag("TéléporteurBoss1");
+        TéléporteurBoss1.SetActive(false);
+        lightforthisroom = GameObject.FindGameObjectWithTag("LightBoss1");
+        lightforthisroom.SetActive(false);
+        levieraile2 = GameObject.FindGameObjectWithTag("Levierporteaile2");
         isintheroom = false;
+        caméracinématiqueouvertureporte = GameObject.FindGameObjectWithTag("Cameradoor2");
+        caméracinématiqueouvertureporte.SetActive(false);
         playerAttack = GetComponent<PlayerAttack>();
+        door = GameObject.FindGameObjectWithTag("PorteBoss1");
         scriptPersonnage = GetComponent<ScriptPersonnage>();
     }
     // détection de la premiere entrée dans cette salle

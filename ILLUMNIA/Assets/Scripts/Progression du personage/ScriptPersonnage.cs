@@ -14,11 +14,11 @@ public class ScriptPersonnage : MonoBehaviour
     public float _ySpeed = 1f;
     private float _x = 0.0f;
     private float _y = 0.0f;
-    public Animation characteranimation;
-    public GameObject Camera;
+    private Animation characteranimation;
+    private GameObject cameraa;
     public float gravity = 10;
     public Texture2D Keypicture;
-    public CharacterController controller;
+    private CharacterController controller;
     public bool playerhasthekey;
     private Vector3 moveDirection = Vector3.zero;
     public bool Lejoueurestdanslazone1;
@@ -39,6 +39,8 @@ public class ScriptPersonnage : MonoBehaviour
     {
         playerHealth = GetComponent<PlayerHealth>();
         controller = transform.GetComponent<CharacterController>();
+        characteranimation = GetComponent<Animation>();
+        cameraa = GameObject.FindGameObjectWithTag("MainCamera");
         // rb = GetComponent<Rigidbody>();
         Vector2 angles = transform.localEulerAngles;
         _x = angles.x;
@@ -166,7 +168,7 @@ public class ScriptPersonnage : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Téléportation
-        if (other.gameObject.CompareTag("Téléporteur"))
+        if (other.gameObject.CompareTag("TéléporteurBoss1")|| other.gameObject.CompareTag("TéléporteurBoss2"))
         {
             transform.position = new Vector3(-7.5f, 2, 40);
         }
@@ -256,7 +258,7 @@ public class ScriptPersonnage : MonoBehaviour
     void Rotate(float x, float y)
     {
         Quaternion rotationcam = Quaternion.Euler(y, x, 0.0f);
-        Camera.transform.rotation = rotationcam;
+        cameraa.transform.rotation = rotationcam;
         Quaternion rotationjoueur = Quaternion.Euler(0, x, 0.0f);
         transform.rotation = rotationjoueur;
     }

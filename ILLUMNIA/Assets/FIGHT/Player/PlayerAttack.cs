@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
     public float timeBetweenBullets = 2f;        // The time between each shot.
     public float range = 30f;                      // The distance the gun can fire.
 
-    public GameObject bouclier;
+    private GameObject bouclier;
     float timer;                                    // A timer to determine when to fire.
     Ray shootRay;                                   // A ray from the gun end forwards.
     RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     {
         // Create a layer mask for the Shootable layer.
         shootableMask = LayerMask.GetMask("Enemys");
-
+        bouclier = GameObject.FindGameObjectWithTag("ShieldPlayer1");
         // Set up the references.
         gunLine = GetComponent<LineRenderer>();
         // AttackAudio = GetComponent<AudioSource>();
