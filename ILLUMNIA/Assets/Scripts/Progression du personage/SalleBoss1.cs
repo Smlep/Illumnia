@@ -10,6 +10,8 @@ public class SalleBoss1 : MonoBehaviour
     private GameObject lightforthisroom;
     private GameObject door;
     private GameObject Canvasduboss;
+    private GameObject Canvasbossdead;
+    private GameObject Canvasbossdead2;
     private GameObject TéléporteurBoss1;
     private GameObject caméracinématiqueouvertureporte;
     public int intensitélumineuseapresboss;
@@ -24,6 +26,10 @@ public class SalleBoss1 : MonoBehaviour
     {
         Canvasduboss = GameObject.FindGameObjectWithTag("BossCanvas");
         Canvasduboss.SetActive(false);
+        Canvasbossdead= GameObject.FindGameObjectWithTag("Boss1DeadCV");
+        Canvasbossdead.SetActive(false);
+        Canvasbossdead2 = GameObject.FindGameObjectWithTag("Boss1DeadCV2");
+        Canvasbossdead2.SetActive(false);
         TéléporteurBoss1 = GameObject.FindGameObjectWithTag("TéléporteurBoss1");
         TéléporteurBoss1.SetActive(false);
         lightforthisroom = GameObject.FindGameObjectWithTag("LightBoss1");
@@ -88,6 +94,7 @@ public class SalleBoss1 : MonoBehaviour
 
     IEnumerator Boostsdécalé()
     {
+        Canvasbossdead.SetActive(true);
         // Augmentation progressive de la lumière de facon ultra-stylée
         float intensitélumineuse = GetComponentInChildren<Light>().intensity;
         float portéelumineuse = GetComponentInChildren<Light>().range;
@@ -106,8 +113,11 @@ public class SalleBoss1 : MonoBehaviour
         caméracinématiqueouvertureporte.SetActive(true);
         yield return new WaitForSeconds(2);
         caméracinématiqueouvertureporte.SetActive(false);
+        Canvasbossdead.SetActive(false);
+        Canvasbossdead2.SetActive(true);
         scriptPersonnage.playercanmove = true;
-
+        yield return new WaitForSeconds(8);
+        Canvasbossdead2.SetActive(false);            
 
     }
     IEnumerator test()
