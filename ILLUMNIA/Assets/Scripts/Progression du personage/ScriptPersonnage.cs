@@ -28,6 +28,7 @@ public class ScriptPersonnage : MonoBehaviour
     public bool Lejoueurestdanslazone5;
     public bool lejoueurestdanslazonemobdelapremiereaile;
     public bool lejoueurestdanslazonemobdeladeuxiemeaile;
+    public bool lejoueurestdanslazonemobdelatroisièmeaile;
     public bool sprintautorisé;
     private bool jouelanimationdattaque;
     private PlayerHealth playerHealth;
@@ -218,6 +219,10 @@ public class ScriptPersonnage : MonoBehaviour
         {
             lejoueurestdanslazonemobdeladeuxiemeaile = true;
         }
+        if (other.gameObject.CompareTag("FightMob3"))
+        {
+            lejoueurestdanslazonemobdelatroisièmeaile = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -250,9 +255,13 @@ public class ScriptPersonnage : MonoBehaviour
         {
             lejoueurestdanslazonemobdelapremiereaile = false;
         }
-        if (other.gameObject.CompareTag("FightMob1"))
+        if (other.gameObject.CompareTag("FightMob2"))
         {
             lejoueurestdanslazonemobdeladeuxiemeaile = false;
+        }
+        if (other.gameObject.CompareTag("FightMob3"))
+        {
+            lejoueurestdanslazonemobdelatroisièmeaile = false;
         }
     }
     void Rotate(float x, float y)

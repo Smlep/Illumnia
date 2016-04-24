@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead;                                // Whether the enemy is dead.
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
-    public int typedemonstre; // 0= Croco ; 1=Squelette ; 2= MOB ; 3=Boss1 ; 4=Troll
+    public int typedemonstre; // 0= Croco ; 1=Squelette ; 2= MOB ; 3=Boss1 ; 4=Troll ; 5= Demon
     bool deathanimationplayed;
     private Boss1Attack boss1attack;
     private TrollAttack trollAttack;
@@ -132,7 +132,11 @@ public class EnemyHealth : MonoBehaviour
             animation.Play("Die");
             deathanimationplayed = true;
         }
-
+        else if (typedemonstre == 5 && !deathanimationplayed)
+        {
+            animation.Play("DemDeath");
+            deathanimationplayed = true;
+        }
         StartSinking();
 
         // Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
@@ -162,7 +166,6 @@ public class EnemyHealth : MonoBehaviour
         {
             // After 5 seconds destory the enemy.
         Destroy(gameObject, 5f);
-        }
-        
+        }     
     }
 }

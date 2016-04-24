@@ -60,6 +60,8 @@
      <Compile Include="Assets\FIGHT\Croco\CrocoAttack.cs" />
      <Compile Include="Assets\FIGHT\Croco\EnemyHealth.cs" />
      <Compile Include="Assets\FIGHT\Croco\ScriptCroco1.cs" />
+     <Compile Include="Assets\FIGHT\Demon\RedDemonAttack.cs" />
+     <Compile Include="Assets\FIGHT\Demon\RedDemonMove.cs" />
      <Compile Include="Assets\FIGHT\Mob\MobMove.cs" />
      <Compile Include="Assets\FIGHT\Mob\Mobattack.cs" />
      <Compile Include="Assets\FIGHT\Player\PlayerAttack.cs" />
@@ -96,7 +98,9 @@
      <Compile Include="Assets\Scripts\Portes\Porte1.cs" />
      <Compile Include="Assets\Scripts\Portes\PorteAile1.cs" />
      <Compile Include="Assets\Scripts\Portes\PorteAile2.cs" />
+     <Compile Include="Assets\Scripts\Portes\PorteAile3.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\CinématiqueCaméra.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\FightSalle1.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\MobCleaning.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\SalleBoss1.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\ScriptPersonnage.cs" />
