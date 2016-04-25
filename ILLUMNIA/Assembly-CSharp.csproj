@@ -38,10 +38,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>D:/Logiciels/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:/Logiciels/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +80,7 @@
      <Compile Include="Assets\Materials\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\Materials\Water\Water\Scripts\WaterTile.cs" />
      <Compile Include="Assets\Scripts\Activation.cs" />
+     <Compile Include="Assets\Scripts\Clignote.cs" />
      <Compile Include="Assets\Scripts\Enigmes\Changecolor1.cs" />
      <Compile Include="Assets\Scripts\Enigmes\Changecolor2.cs" />
      <Compile Include="Assets\Scripts\Enigmes\Code1.cs" />
@@ -94,6 +95,7 @@
      <Compile Include="Assets\Scripts\GUItest.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
+     <Compile Include="Assets\Scripts\Needle.cs" />
      <Compile Include="Assets\Scripts\Portes\Porte0.cs" />
      <Compile Include="Assets\Scripts\Portes\Porte1.cs" />
      <Compile Include="Assets\Scripts\Portes\PorteAile1.cs" />
@@ -105,8 +107,10 @@
      <Compile Include="Assets\Scripts\Progression du personage\SalleBoss1.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\ScriptPersonnage.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\Tutoriel.cs" />
+     <Compile Include="Assets\Scripts\Slide.cs" />
      <Compile Include="Assets\Scripts\SlideCode.cs" />
      <Compile Include="Assets\Scripts\TEST.cs" />
+     <Compile Include="Assets\Scripts\Trapdmg.cs" />
      <Compile Include="Assets\Scripts\lightdoor.cs" />
      <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\Alpha_Texture.shader" />
      <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
@@ -128,10 +132,10 @@
      <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Advanced.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
