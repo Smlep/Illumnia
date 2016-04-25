@@ -34,9 +34,18 @@ public class ScriptPersonnage : MonoBehaviour
     private PlayerHealth playerHealth;
     public bool Lejoueurestdanslazonemortemecanic2;
     public static ScriptPersonnage main;
+    public bool Dashautorise;
+    private float TimerDash;
+    private bool isDashing;
+    private float DashCoeff;
+    // Tuto
+    public bool estdanslelobby;
+    public bool estdansletutomob;
+    public bool estdansletutoenigme;
+    public bool estdanslespawn;
     // private Rigidbody rb;
 
-    void Start()
+    void Awake()
     {
         playerHealth = GetComponent<PlayerHealth>();
         controller = transform.GetComponent<CharacterController>();
@@ -61,21 +70,30 @@ public class ScriptPersonnage : MonoBehaviour
         Lejoueurestdanslazonemortemecanic2 = false;
         lejoueurestdanslazonemobdelapremiereaile = false;
         lejoueurestdanslazonemobdeladeuxiemeaile = false;
+        main = this;
     }
 
     void Update()
     {
+        if (TimerDash < 5)
+        {
+            TimerDash += Time.deltaTime;
+        }
+        if (isDashing)
+            DashCoeff = 5;
+        else
+            DashCoeff = 1;
         if (!Input.GetKey(KeyCode.LeftShift))
         {
             speed = speeddemarche;
-            
+
         }
         else if (sprintautorisé)
         {
             speed = speeddecourse;
-            
+
         }
-        if (playercanmove&&!playerHealth.enmodedéfensif)
+        if (playercanmove && !playerHealth.enmodedéfensif)
         {
             if (moveDirection.y > gravity * -1)
             {
@@ -100,7 +118,7 @@ public class ScriptPersonnage : MonoBehaviour
                 if (Allertoutdroit ^ Reculer ^ AlleràGauche ^ AlleràDroite)
                 {
                     coefficientdedéplacement = 1;
-                    if (speed == speeddecourse&&!jouelanimationdattaque)
+                    if (speed == speeddecourse && !jouelanimationdattaque)
                     {
                         characteranimation.Play("Run");
                     }
@@ -119,19 +137,19 @@ public class ScriptPersonnage : MonoBehaviour
                 }
                 if (Allertoutdroit && !Reculer)
                 {
-                    controller.SimpleMove(transform.forward * speed * coefficientdedéplacement);
+                    controller.SimpleMove(transform.forward * speed * coefficientdedéplacement * DashCoeff);
                 }
                 else if (Reculer && !Allertoutdroit)
                 {
-                    controller.SimpleMove(transform.forward * -speed * coefficientdedéplacement);
+                    controller.SimpleMove(transform.forward * -speed * coefficientdedéplacement * DashCoeff);
                 }
                 if (AlleràGauche && !AlleràDroite)
                 {
-                    controller.SimpleMove(left * speed * coefficientdedéplacement);
+                    controller.SimpleMove(left * speed * coefficientdedéplacement * DashCoeff);
                 }
                 else if (AlleràDroite && !AlleràGauche)
                 {
-                    controller.SimpleMove(left * -speed * coefficientdedéplacement);
+                    controller.SimpleMove(left * -speed * coefficientdedéplacement * DashCoeff);
                 }
             }
             else
@@ -145,7 +163,7 @@ public class ScriptPersonnage : MonoBehaviour
                 }
             }
         }
-        if (Input.GetButtonDown("Fire1")&&!playerHealth.enmodedéfensif)
+        if (Input.GetButtonDown("Fire1") && !playerHealth.enmodedéfensif)
         {
             // Animation d'attaque
             jouelanimationdattaque = true;
@@ -156,6 +174,14 @@ public class ScriptPersonnage : MonoBehaviour
         if (!Main.Inpause)
         {
             RotateControls();
+        }
+        if (Dashautorise)
+        {
+            if (Input.GetKeyDown(KeyCode.F) && TimerDash >= 4)
+            {
+                TimerDash = 0;
+                StartCoroutine(Dash());
+            }
         }
 
     }
@@ -169,18 +195,18 @@ public class ScriptPersonnage : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Téléportation
-        if (other.gameObject.CompareTag("TéléporteurBoss1")|| other.gameObject.CompareTag("TéléporteurBoss2"))
+        if (other.gameObject.CompareTag("TéléporteurBoss1") || other.gameObject.CompareTag("TéléporteurBoss2"))
         {
             transform.position = new Vector3(-7.5f, 2, 40);
         }
         // Entrée et sortie dans le MindFuck
         if (other.gameObject.CompareTag("TéléporteurMindFuckIn"))
         {
-            transform.position=new Vector3(104.805f,2f, 68.56776f);
+            transform.position = new Vector3(104.805f, 2f, 68.56776f);
         }
         if (other.gameObject.CompareTag("TéléporteurMindFuckOut"))
         {
-            transform.position = new Vector3(104.805f,2f, 147.0118f);
+            transform.position = new Vector3(104.805f, 2f, 147.0118f);
         }
         if (other.gameObject.CompareTag("Clef"))
         {
@@ -223,6 +249,25 @@ public class ScriptPersonnage : MonoBehaviour
         {
             lejoueurestdanslazonemobdelatroisièmeaile = true;
         }
+        // Tuto
+
+        if (other.gameObject.CompareTag("Lobby"))
+        {
+            estdanslelobby = true;
+        }
+        if (other.gameObject.CompareTag("Spawn"))
+        {
+            estdanslespawn = true;
+        }
+        if (other.gameObject.CompareTag("Tutomob"))
+        {
+            estdansletutomob = true;
+        }
+        if (other.gameObject.CompareTag("Tutoenigme"))
+        {
+            estdansletutoenigme = true;
+        }
+
     }
 
     void OnTriggerExit(Collider other)
@@ -263,6 +308,24 @@ public class ScriptPersonnage : MonoBehaviour
         {
             lejoueurestdanslazonemobdelatroisièmeaile = false;
         }
+        // Tuto
+
+        if (other.gameObject.CompareTag("Lobby"))
+        {
+            estdanslelobby = false;
+        }
+        if (other.gameObject.CompareTag("Spawn"))
+        {
+            estdanslespawn = false;
+        }
+        if (other.gameObject.CompareTag("Tutomob"))
+        {
+            estdansletutomob = false;
+        }
+        if (other.gameObject.CompareTag("Tutoenigme"))
+        {
+            estdansletutoenigme = false;
+        }
     }
     void Rotate(float x, float y)
     {
@@ -300,9 +363,11 @@ public class ScriptPersonnage : MonoBehaviour
         }
     }
 
-    void Awake()
+    IEnumerator Dash()
     {
-        main = this;
+        isDashing = true;
+        yield return new WaitForSeconds(0.25f);
+        isDashing = false;
     }
 }
 //float moveHorizontal = Input.GetAxis("Horizontal");

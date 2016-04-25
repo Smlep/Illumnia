@@ -22,7 +22,7 @@ public class SalleBoss1 : MonoBehaviour
     private bool findéjajoué;
     private bool bossenvie;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         Canvasduboss = GameObject.FindGameObjectWithTag("BossCanvas");
         Canvasduboss.SetActive(false);

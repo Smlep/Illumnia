@@ -110,6 +110,7 @@
      <Compile Include="Assets\Scripts\Progression du personage\Fights\ScriptPrincipalFight.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\MobCleaning.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\SalleBoss1.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\SalleBoss2.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\ScriptPersonnage.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\Tutoriel.cs" />
      <Compile Include="Assets\Scripts\Slide.cs" />

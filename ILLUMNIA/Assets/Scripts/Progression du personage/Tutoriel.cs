@@ -1,12 +1,8 @@
-﻿    using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Tutoriel : MonoBehaviour
 {
-    private bool estdanslelobby;
-    private bool estdansletutomob;
-    private bool estdansletutoenigme;
-    private bool estdanslespawn;
     private bool nestjamaisallédanslelobby = true;
     private bool nestjamaisallédanslespawn = true;
     private bool nestjamaisallédansletutomob = true;
@@ -28,75 +24,43 @@ public class Tutoriel : MonoBehaviour
     public GameObject cameratutotp;
     public GameObject cameratutoheal;
     CinématiqueCaméra cinematiquecamera;
-    ScriptPersonnage scriptpersonage;
+    ScriptPersonnage[] scriptpersonages;
+    GameObject[] Players;
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-        scriptpersonage = GetComponent<ScriptPersonnage>();
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Lobby"))
+        Players = GameObject.FindGameObjectsWithTag("Player");
+        for (int i = 0; i < Players.Length; i++)
         {
-            estdanslelobby = true;
+            scriptpersonages = new ScriptPersonnage[Players.Length];
+            scriptpersonages[i]= Players[i].GetComponent<ScriptPersonnage>();
         }
-        if (other.gameObject.CompareTag("Spawn"))
-        {
-            estdanslespawn = true;
+    }
 
-        }
-        if (other.gameObject.CompareTag("Tutomob"))
-        {
-            estdansletutomob = true;
-        }
-        if (other.gameObject.CompareTag("Tutoenigme"))
-        {
-            estdansletutoenigme = true;
-        }
-    }
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Spawn"))
-        {
-            estdanslespawn = false;
-            nestjamaisallédanslespawn = false;
-            messagebienvenue.SetActive(false);
-        }
-        if (other.gameObject.CompareTag("Lobby"))
-        {
-            estdanslelobby = false;
-            nestjamaisallédanslelobby = false;
-        }
-        if (other.gameObject.CompareTag("Tutomob"))
-        {
-            estdansletutomob = false;
-            nestjamaisallédansletutomob = false;
-        }
-        if (other.gameObject.CompareTag("Tutoenigme"))
-        {
-            estdansletutoenigme = false;
-            nestjamaisallédansletutoenigme = false;
-
-        }
-    }
     // Update is called once per frame
     void Update()
     {
-        if (estdanslespawn && nestjamaisallédanslespawn)
+        for (int i = 0; i < Players.Length; i++)
+        {
+            scriptpersonages = new ScriptPersonnage[Players.Length];
+            scriptpersonages[i] = Players[i].GetComponent<ScriptPersonnage>();
+        }
+        if (scriptpersonages[0].estdanslespawn && nestjamaisallédanslespawn)
         {
             messagebienvenue.SetActive(true);
             Tutomove.SetActive(true);
             nestjamaisallédanslespawn = false;
         }
-        if (estdansletutomob && nestjamaisallédansletutomob)
+        if (scriptpersonages[0].estdansletutomob && nestjamaisallédansletutomob)
         {
+            messagebienvenue.SetActive(false);
             TutoAttack.SetActive(true);
             Tutomob.SetActive(true);
             nestjamaisallédansletutomob = false;
         }
-        if (estdansletutoenigme && nestjamaisallédansletutoenigme)
+        if (scriptpersonages[0].estdansletutoenigme && nestjamaisallédansletutoenigme)
         {
             TutoAttack.SetActive(false);
             Tutomove.SetActive(false);
@@ -104,11 +68,10 @@ public class Tutoriel : MonoBehaviour
             nestjamaisallédansletutoenigme = false;
             TutoEnigme.SetActive(true);
         }
-        if (estdanslelobby && nestjamaisallédanslelobby)
+        if (scriptpersonages[0].estdanslelobby && nestjamaisallédanslelobby)
         {
             TutoEnigme.SetActive(false);
             StartCoroutine(cinématiquelobby());
-            nestjamaisallédanslelobby = false;
             nestjamaisallédanslelobby = false;
         }
 
@@ -119,7 +82,8 @@ public class Tutoriel : MonoBehaviour
         cameratutolobby.SetActive(true);
         cinematiquecamera = cameratutolobby.GetComponent<CinématiqueCaméra>();
         StartCoroutine(cinematiquecamera.cinématiquetuto());
-        scriptpersonage.playercanmove = false;
+        for (int i = 0; i < scriptpersonages.Length; i++)
+            scriptpersonages[i].playercanmove = false;
         yield return new WaitForSeconds(3);
         TutoLobby1.SetActive(false);
         TutoLobby2.SetActive(true);
@@ -147,7 +111,8 @@ public class Tutoriel : MonoBehaviour
         yield return new WaitForSeconds(2);
         cameratutoheal.SetActive(false);
         TutoLobby5.SetActive(false);
-        scriptpersonage.playercanmove = true;
+        for (int i = 0; i < scriptpersonages.Length; i++)
+            scriptpersonages[i].playercanmove = true;
     }
     public void endtutoriel()
     {
@@ -171,6 +136,7 @@ public class Tutoriel : MonoBehaviour
         cameratutodoor3.SetActive(false);
         cameratutotp.SetActive(false);
         cameratutoheal.SetActive(false);
-        scriptpersonage.playercanmove = true;
+        for (int i = 0; i < scriptpersonages.Length; i++)
+            scriptpersonages[i].playercanmove = true;
     }
 }

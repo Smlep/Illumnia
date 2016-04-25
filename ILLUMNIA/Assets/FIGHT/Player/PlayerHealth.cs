@@ -15,6 +15,11 @@ public class PlayerHealth : MonoBehaviour
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
     public bool enmodedéfensif;
+    public bool healautorise; // A débloqué le pouvoir de Heal
+    private float TimerHealPower; // Timer pour pouvoir se heal
+    private Text CanvasTimerHeal; // Chronoaffiché
+    private Text texteannonce; // texte d'annonce
+    private Image HeartAfterHEal; // Coeur qui s'affiche après un Heal
 
     Animator anim;                                              // Reference to the Animator component.
     // AudioSource playerAudio;                                    // Reference to the AudioSource component.
@@ -35,11 +40,24 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
         enmodedéfensif = false;
         StartCoroutine(Autoregen());
+        CanvasTimerHeal = GameObject.FindGameObjectWithTag("ChronoHeal").GetComponent<Text>();
+        texteannonce = GameObject.FindGameObjectWithTag("Annonce").GetComponent<Text>();
+        HeartAfterHEal = GameObject.FindGameObjectWithTag("HeartAfterHeal").GetComponent<Image>();
+        HeartAfterHEal.gameObject.SetActive(false);
+
     }
 
 
     void Update()
     {
+        if (TimerHealPower < 25f)
+        {
+            TimerHealPower += Time.deltaTime;
+        }
+        if (TimerHealPower > 25f)
+        {
+            TimerHealPower = 25f;
+        }
         // If the player has just been damaged...
         if (damaged)
         {
@@ -55,6 +73,17 @@ public class PlayerHealth : MonoBehaviour
 
         // Reset the damaged flag.
         damaged = false;
+        if (healautorise)
+        {
+            if (TimerHealPower < 25)
+                CanvasTimerHeal.text = "Heal ready in " + (25 - TimerHealPower).ToString() + " seconds !";
+            else
+                CanvasTimerHeal.text = "Heal Ready ! Press H to use !";
+            if (Input.GetKeyUp(KeyCode.H))
+            {
+                StartCoroutine(HealPower());
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -83,7 +112,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            currentHealth -= amount/2;
+            currentHealth -= amount / 2;
         }
 
         // Set the health bar's value to the current health.
@@ -100,7 +129,7 @@ public class PlayerHealth : MonoBehaviour
             Death();
         }
     }
-    
+
     IEnumerator Autoregen()
     {
         while (true)
@@ -113,9 +142,9 @@ public class PlayerHealth : MonoBehaviour
             }
             yield return null;
         }
-           
+
     }
-    
+
     void Death()
     {
         // Set the death flag so this function won't be called again.
@@ -134,5 +163,23 @@ public class PlayerHealth : MonoBehaviour
         // Turn off the movement and shooting scripts.
         playerMovement.enabled = false;
         playerShooting.enabled = false;
+    }
+    IEnumerator HealPower()
+    {
+        if (TimerHealPower >= 25f)
+        {
+            TimerHealPower = 0f;
+            currentHealth += startingHealth * 3 / 4;
+            if (currentHealth > startingHealth)
+            {
+                currentHealth = startingHealth;
+            }
+            texteannonce.text = "Healed !";
+            HeartAfterHEal.gameObject.SetActive(true);
+            yield return new WaitForSeconds(2);
+            HeartAfterHEal.gameObject.SetActive(false);
+            texteannonce.text = " ";
+        }
+        yield return new WaitForSeconds(0);
     }
 }
