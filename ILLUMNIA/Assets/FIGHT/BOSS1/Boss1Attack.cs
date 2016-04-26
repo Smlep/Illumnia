@@ -32,6 +32,8 @@ public class Boss1Attack : MonoBehaviour
     NavMeshAgent nav;
     float courrir;
 
+    private GameObject target;
+
     void Awake()
     {
         nav = GetComponent<NavMeshAgent>();
@@ -82,9 +84,10 @@ public class Boss1Attack : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is in range.
+            target = other.gameObject;
             playerInRange = true;
         }
     }
@@ -93,7 +96,7 @@ public class Boss1Attack : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is no longer in range.
             playerInRange = false;
@@ -151,6 +154,7 @@ public class Boss1Attack : MonoBehaviour
         // If the player has health to lose...
         if (playerHealth.currentHealth > 0)
         {
+            playerHealth = target.GetComponent<PlayerHealth>();
             // ... damage the player.
             playerHealth.TakeDamage(attackDamage);
         }

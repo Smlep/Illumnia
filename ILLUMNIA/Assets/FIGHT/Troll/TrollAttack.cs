@@ -14,6 +14,7 @@ public class TrollAttack : MonoBehaviour
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
     public bool jouelaniamtiondattaque;
+    private GameObject target;
 
     void Awake()
     {
@@ -34,9 +35,10 @@ public class TrollAttack : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is in range.
+            target = other.gameObject;
             playerInRange = true;
         }
     }
@@ -45,7 +47,7 @@ public class TrollAttack : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is no longer in range.
             playerInRange = false;
@@ -80,13 +82,6 @@ public class TrollAttack : MonoBehaviour
             // ... attack.
             StartCoroutine(Attackforte());
         }
-
-        // If the player has zero or less health...
-        if (playerHealth.currentHealth <= 0)
-        {
-            // ... tell the animator the player is dead.
-            // anim.SetTrigger("PlayerDead");
-        }
     }
 
 
@@ -103,6 +98,7 @@ public class TrollAttack : MonoBehaviour
         // If the player has health to lose...
         if (playerHealth.currentHealth > 0&&enemyHealth.currentHealth>0)
         {
+            playerHealth = target.GetComponent<PlayerHealth>();
             // ... damage the player.
             playerHealth.TakeDamage(attackDamage);
         }
@@ -119,6 +115,7 @@ public class TrollAttack : MonoBehaviour
         if (playerHealth.currentHealth > 0&&enemyHealth.currentHealth>0)
         {
             // ... damage the player.
+            playerHealth = target.GetComponent<PlayerHealth>();
             playerHealth.TakeDamage(attackDamage/3);
         }
         yield return new WaitForSeconds(1.4f);
@@ -129,6 +126,7 @@ public class TrollAttack : MonoBehaviour
         if (playerHealth.currentHealth > 0&&enemyHealth.currentHealth>0)
         {
             // ... damage the player.
+            playerHealth = target.GetComponent<PlayerHealth>();
             playerHealth.TakeDamage(attackDamage / 3);
         }
         jouelaniamtiondattaque = false;

@@ -13,6 +13,7 @@ public class SqueletteAttack : MonoBehaviour {
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
+    private GameObject target;
 
 
     void Awake()
@@ -34,9 +35,10 @@ public class SqueletteAttack : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is in range.
+            target = other.gameObject;
             playerInRange = true;
         }
     }
@@ -45,7 +47,7 @@ public class SqueletteAttack : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is no longer in range.
             playerInRange = false;
@@ -68,14 +70,7 @@ public class SqueletteAttack : MonoBehaviour {
 
             // ... attack.
             Attack();
-        }
-
-        // If the player has zero or less health...
-        if (playerHealth.currentHealth <= 0)
-        {
-            // ... tell the animator the player is dead.
-            // anim.SetTrigger("PlayerDead");
-        }
+        }   
     }
 
 
@@ -84,7 +79,7 @@ public class SqueletteAttack : MonoBehaviour {
         Anim.Play("Attack1h1");
         // Reset the timer.
         timer = 0f;
-
+        playerHealth = target.GetComponent<PlayerHealth>();
         // If the player has health to lose...
         if (playerHealth.currentHealth > 0)
         {

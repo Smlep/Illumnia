@@ -14,6 +14,7 @@ public class CrocoAttack : MonoBehaviour
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
+    Collider playertoattack;
 
 
     void Awake()
@@ -29,9 +30,10 @@ public class CrocoAttack : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is in range.
+            playertoattack = other;
             playerInRange = true;
         }
     }
@@ -40,7 +42,7 @@ public class CrocoAttack : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is no longer in range.
             playerInRange = false;
@@ -66,24 +68,17 @@ public class CrocoAttack : MonoBehaviour
             // Jouer l'animation d'attaque;
             
             // ... attack.
-            Attack();
-        }
-
-        // If the player has zero or less health...
-        if (playerHealth.currentHealth <= 0)
-        {
-            // ... tell the animator the player is dead.
-            // anim.SetTrigger("PlayerDead");
+            Attack(playertoattack.gameObject);
         }
     }
 
 
-    void Attack()
+    void Attack(GameObject target)
     {
         anim.SetTrigger("Attack");
         // Reset the timer.
         timer = 0f;
-
+        playerHealth = target.GetComponent<PlayerHealth>();
         // If the player has health to lose...
         if (playerHealth.currentHealth > 0)
         {

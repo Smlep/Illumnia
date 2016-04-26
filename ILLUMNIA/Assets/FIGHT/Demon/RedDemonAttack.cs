@@ -22,6 +22,8 @@ public class RedDemonAttack : MonoBehaviour
     public GameObject IceDemon;
     public GameObject TreeDemon;
 
+    private GameObject target;
+
     void Awake()
     {
         // Setting up the references.
@@ -46,9 +48,10 @@ public class RedDemonAttack : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is in range.
+            target = other.gameObject;
             playerInRange = true;
         }
     }
@@ -57,7 +60,7 @@ public class RedDemonAttack : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.CompareTag("Player"))
         {
             // ... the player is no longer in range.
             playerInRange = false;
@@ -88,18 +91,18 @@ public class RedDemonAttack : MonoBehaviour
             // Jouer l'animation d'attaque;
 
             // ... attack.
-            StartCoroutine(Attacksimple());
+            StartCoroutine(Attacksimple(target));
         }
         else if (timer >= timeBetweenAttacks && playerInRange && Demonkind == 2&&!isgrowing && enemyHealth.currentHealth > 0)
         {
             int Random1 = rnd.Next(0, 2);
             if (Random1==0)
             {
-                StartCoroutine(Attacksimple());
+                StartCoroutine(Attacksimple(target));
             }
             else
             {
-                StartCoroutine(HPunch());
+                StartCoroutine(HPunch(target));
             } 
         }
         if (timer >= timeBetweenAttacks && Demonkind == 3 && !isgrowing && enemyHealth.currentHealth > 0)
@@ -117,14 +120,14 @@ public class RedDemonAttack : MonoBehaviour
             }
             else if (playerInRange)
             {
-                StartCoroutine(Attacksimple());
+                StartCoroutine(Attacksimple(target));
             }
             timer = 0f;
         }
     }
 
 
-    IEnumerator Attacksimple()
+    IEnumerator Attacksimple(GameObject target)
     {
         Anim.Play("DemPunch");
         // Reset the timer.
@@ -133,6 +136,7 @@ public class RedDemonAttack : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         timer = 0f;
         // Première partie de l'anim
+        playerHealth = target.GetComponent<PlayerHealth>();
         if (playerHealth.currentHealth > 0 && enemyHealth.currentHealth > 0)
         {
             // ... damage the player.
@@ -142,7 +146,7 @@ public class RedDemonAttack : MonoBehaviour
         timer = 0f;
         jouelaniamtiondattaque = false;
     }
-    IEnumerator HPunch()
+    IEnumerator HPunch(GameObject target)
     {
         Anim.Play("DemHPunch");
         // Reset the timer.
@@ -151,6 +155,7 @@ public class RedDemonAttack : MonoBehaviour
         yield return new WaitForSeconds(0.85f);
         timer = 0f;
         // Première partie de l'anim
+        playerHealth = target.GetComponent<PlayerHealth>();
         if (playerHealth.currentHealth > 0 && enemyHealth.currentHealth > 0)
         {
             // ... damage the player.
