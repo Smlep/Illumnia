@@ -82,6 +82,22 @@ public class Main : MonoBehaviour
     {
         player.transform.position = new Vector3(105, 0, 147);
     }
+
+    public void B3TP()
+    {
+        player.transform.position = new Vector3(438, 0, 365);
+    }
+
+    public void JumpTP()
+    {
+        player.transform.position = new Vector3(46, 0, 12);
+    }
+
+    public void ParcourTP()
+    {
+        player.transform.position = new Vector3(-5, 0, 722);
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
