@@ -62,7 +62,7 @@
      <Compile Include="Assets\FIGHT\Croco\ScriptCroco1.cs" />
      <Compile Include="Assets\FIGHT\Demon\RedDemonAttack.cs" />
      <Compile Include="Assets\FIGHT\Demon\RedDemonMove.cs" />
-     <Compile Include="Assets\FIGHT\Dragon\Dragon Behavior.cs" />
+     <Compile Include="Assets\FIGHT\Dragon\DragonBehavior.cs" />
      <Compile Include="Assets\FIGHT\Mob\MobMove.cs" />
      <Compile Include="Assets\FIGHT\Mob\Mobattack.cs" />
      <Compile Include="Assets\FIGHT\Player\PlayerAttack.cs" />

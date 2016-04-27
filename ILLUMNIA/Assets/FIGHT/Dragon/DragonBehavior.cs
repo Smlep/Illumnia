@@ -34,6 +34,7 @@ public class DragonBehavior : MonoBehaviour {
         enemyHealthSlider = enemyhealthSliderObjectGameObject.GetComponent<Slider>();
         enemyHealthSlider.maxValue = enemyHealth.startingHealth;
         anim = GetComponent<Animator>();
+        scriptdupersonage = GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptPersonnage>();
     }
 	
 	// Update is called once per frame
