@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead;                                // Whether the enemy is dead.
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
-    public int typedemonstre; // 0= Croco ; 1=Squelette ; 2= MOB ; 3=Boss1 ; 4=Troll ; 5= Demon
+    public int typedemonstre; // 0= Croco ; 1=Squelette ; 2= MOB ; 3=Boss1 ; 4=Troll ; 5= Demon ; 6= Boss2
     bool deathanimationplayed;
     private Boss1Attack boss1attack;
     private TrollAttack trollAttack;
@@ -148,7 +148,8 @@ public class EnemyHealth : MonoBehaviour
     public void StartSinking()
     {
         // Find and disable the Nav Mesh Agent.
-        GetComponent<NavMeshAgent>().enabled = false;
+        if (typedemonstre!=6)
+           GetComponent<NavMeshAgent>().enabled = false;
 
         // Find the rigidbody component and make it kinematic (since we use Translate to sink the enemy).
         GetComponent<Rigidbody>().isKinematic = true;

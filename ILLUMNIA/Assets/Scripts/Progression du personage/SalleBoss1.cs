@@ -16,7 +16,7 @@ public class SalleBoss1 : MonoBehaviour
     private GameObject caméracinématiqueouvertureporte;
     public int intensitélumineuseapresboss;
     EnemyHealth enemyHealth;
-    public GameObject Boss1;
+    private GameObject Boss1;
     private bool estdéjaentréavant;
     private PlayerAttack playerAttack;
     private bool findéjajoué;
@@ -41,6 +41,8 @@ public class SalleBoss1 : MonoBehaviour
         playerAttack = GetComponent<PlayerAttack>();
         door = GameObject.FindGameObjectWithTag("PorteBoss1");
         scriptPersonnage = GetComponent<ScriptPersonnage>();
+        Boss1 = GameObject.FindGameObjectWithTag("Boss1");
+        Boss1.SetActive(false);
     }
     // détection de la premiere entrée dans cette salle
     void OnTriggerEnter(Collider other)
