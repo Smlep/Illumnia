@@ -291,6 +291,7 @@ public class Boss1Attack : MonoBehaviour
 
     //---------------------------------Phase4(25-0)---------------------------------
     //IEnumerator Mecanic4()
+    //Cours plus vite -> se référer à la func update !
 
     //---------------------------------Phase1(100-75)---------------------------------
     void BossMecanic()

@@ -84,6 +84,9 @@
     <Compile Include="Assets\FIGHT\Croco\CrocoAttack.cs" />
     <Compile Include="Assets\FIGHT\Croco\EnemyHealth.cs" />
     <Compile Include="Assets\FIGHT\Croco\ScriptCroco1.cs" />
+    <Compile Include="Assets\FIGHT\Demon\RedDemonAttack.cs" />
+    <Compile Include="Assets\FIGHT\Demon\RedDemonMove.cs" />
+    <Compile Include="Assets\FIGHT\Dragon\Dragon Behavior.cs" />
     <Compile Include="Assets\FIGHT\Mob\MobMove.cs" />
     <Compile Include="Assets\FIGHT\Mob\Mobattack.cs" />
     <Compile Include="Assets\FIGHT\Player\PlayerAttack.cs" />
@@ -102,12 +105,14 @@
     <Compile Include="Assets\Materials\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Materials\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Scripts\Activation.cs" />
+    <Compile Include="Assets\Scripts\Clignote.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Changecolor1.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Changecolor2.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Code1.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Code2.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Code3.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Code4.cs" />
+    <Compile Include="Assets\Scripts\Enigmes\Enable.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Mobquicourt.cs" />
     <Compile Include="Assets\Scripts\Enigmes\Spawn2enemys.cs" />
     <Compile Include="Assets\Scripts\Enigmes\TP.cs" />
@@ -115,14 +120,28 @@
     <Compile Include="Assets\Scripts\GUItest.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\Needle.cs" />
     <Compile Include="Assets\Scripts\Portes\Porte0.cs" />
     <Compile Include="Assets\Scripts\Portes\Porte1.cs" />
     <Compile Include="Assets\Scripts\Portes\PorteAile1.cs" />
     <Compile Include="Assets\Scripts\Portes\PorteAile2.cs" />
+    <Compile Include="Assets\Scripts\Portes\PorteAile3.cs" />
+    <Compile Include="Assets\Scripts\Positionjoueur1prTuto.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\CinématiqueCaméra.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\Fights\FightSalle1.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\Fights\FightSalle2.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\Fights\FightSalle3.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\Fights\FightSalle4.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\Fights\ScriptPrincipalFight.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\MobCleaning.cs" />
     <Compile Include="Assets\Scripts\Progression du personage\SalleBoss1.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\SalleBoss2.cs" />
     <Compile Include="Assets\Scripts\Progression du personage\ScriptPersonnage.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\Tutoriel.cs" />
+    <Compile Include="Assets\Scripts\Slide.cs" />
     <Compile Include="Assets\Scripts\SlideCode.cs" />
     <Compile Include="Assets\Scripts\TEST.cs" />
+    <Compile Include="Assets\Scripts\Trapdmg.cs" />
     <Compile Include="Assets\Scripts\lightdoor.cs" />
   </ItemGroup>
   <ItemGroup>
