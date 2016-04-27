@@ -29,6 +29,9 @@ public class ScriptPersonnage : MonoBehaviour
     public bool lejoueurestdanslazonemobdelapremiereaile;
     public bool lejoueurestdanslazonemobdeladeuxiemeaile;
     public bool lejoueurestdanslazonemobdelatroisièmeaile;
+    public bool lejoueurestagauche; //cf boss2
+    public bool lejoueurestadroite; //cf boss2
+    public bool lejoueurestdanslabulle; //cf boss2
     public bool sprintautorisé;
     private bool jouelanimationdattaque;
     private PlayerHealth playerHealth;
@@ -267,7 +270,19 @@ public class ScriptPersonnage : MonoBehaviour
         {
             estdansletutoenigme = true;
         }
-
+        //boss2
+        if (other.gameObject.CompareTag("JoueurZoneGauche"))
+        {
+            lejoueurestagauche = true;
+        }
+        if (other.gameObject.CompareTag("JoueurZoneDroite"))
+        {
+            lejoueurestadroite = true;
+        }
+        if (other.gameObject.CompareTag("JoueurBulleVerte"))
+        {
+            lejoueurestdanslabulle = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -325,6 +340,19 @@ public class ScriptPersonnage : MonoBehaviour
         if (other.gameObject.CompareTag("Tutoenigme"))
         {
             estdansletutoenigme = false;
+        }
+        //boss2
+        if (other.gameObject.CompareTag("JoueurZoneGauche"))
+        {
+            lejoueurestagauche = false;
+        }
+        if (other.gameObject.CompareTag("JoueurZoneDroite"))
+        {
+            lejoueurestadroite = false;
+        }
+        if (other.gameObject.CompareTag("JoueurBulleVerte"))
+        {
+            lejoueurestdanslabulle = false;
         }
     }
     void Rotate(float x, float y)

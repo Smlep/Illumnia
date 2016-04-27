@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -86,7 +80,7 @@
     <Compile Include="Assets\FIGHT\Croco\ScriptCroco1.cs" />
     <Compile Include="Assets\FIGHT\Demon\RedDemonAttack.cs" />
     <Compile Include="Assets\FIGHT\Demon\RedDemonMove.cs" />
-    <Compile Include="Assets\FIGHT\Dragon\Dragon Behavior.cs" />
+    <Compile Include="Assets\FIGHT\Dragon\DragonBehavior.cs" />
     <Compile Include="Assets\FIGHT\Mob\MobMove.cs" />
     <Compile Include="Assets\FIGHT\Mob\Mobattack.cs" />
     <Compile Include="Assets\FIGHT\Player\PlayerAttack.cs" />

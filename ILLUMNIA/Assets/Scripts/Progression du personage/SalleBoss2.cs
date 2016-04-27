@@ -6,6 +6,7 @@ public class SalleBoss2 : MonoBehaviour
     bool isintheroom;
     bool bossenvie;
     bool estdéjaentréavant;
+    public GameObject Light;
     private GameObject Boss2;
     EnemyHealth enemyHealth;
     bool findéjajoué;
@@ -60,7 +61,7 @@ public class SalleBoss2 : MonoBehaviour
         {
             Canvasduboss.SetActive(true);
             estdéjaentréavant = true;
-            //lightforthisroom.SetActive(true);
+            Light.SetActive(true);
             //door.SendMessage("Activate");
             Boss2.SetActive(true);
             bossenvie = true;
