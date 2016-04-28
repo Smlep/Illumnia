@@ -58,11 +58,19 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Blender imports\BORDEL\FT_CaveWorm\Script\PlayAnimation.cs" />
+    <Compile Include="Assets\Blender imports\BORDEL\FT_CaveWorm\Script\SubstanceGUI.cs" />
     <Compile Include="Assets\Blender imports\Déco\torch\scene\script\TorchSlider.cs" />
     <Compile Include="Assets\Blender imports\Déco\torch\scene\script\Torchslider2.cs" />
     <Compile Include="Assets\Blender imports\Déco\torch\scripts\Torchelight.cs" />
@@ -75,6 +83,8 @@
     <Compile Include="Assets\DoorSystem\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\FIGHT\BOSS1\Boss1Attack.cs" />
     <Compile Include="Assets\FIGHT\BOSS1\Boss1Move.cs" />
+    <Compile Include="Assets\FIGHT\Boss3\Boss3Attack.cs" />
+    <Compile Include="Assets\FIGHT\Boss3\Boss3Move.cs" />
     <Compile Include="Assets\FIGHT\Croco\CrocoAttack.cs" />
     <Compile Include="Assets\FIGHT\Croco\EnemyHealth.cs" />
     <Compile Include="Assets\FIGHT\Croco\ScriptCroco1.cs" />
@@ -130,6 +140,7 @@
     <Compile Include="Assets\Scripts\Progression du personage\MobCleaning.cs" />
     <Compile Include="Assets\Scripts\Progression du personage\SalleBoss1.cs" />
     <Compile Include="Assets\Scripts\Progression du personage\SalleBoss2.cs" />
+    <Compile Include="Assets\Scripts\Progression du personage\SalleBoss3.cs" />
     <Compile Include="Assets\Scripts\Progression du personage\ScriptPersonnage.cs" />
     <Compile Include="Assets\Scripts\Progression du personage\Tutoriel.cs" />
     <Compile Include="Assets\Scripts\Slide.cs" />
@@ -137,6 +148,15 @@
     <Compile Include="Assets\Scripts\TEST.cs" />
     <Compile Include="Assets\Scripts\Trapdmg.cs" />
     <Compile Include="Assets\Scripts\lightdoor.cs" />
+    <Compile Include="Assets\VolumetricLines\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
+    <Compile Include="Assets\VolumetricLines\ExampleScenes\ExampleScripts\CreateSinShapedLineStrip.cs" />
+    <Compile Include="Assets\VolumetricLines\ExampleScenes\ExampleScripts\ShotBehavior.cs" />
+    <Compile Include="Assets\VolumetricLines\Scripts\SetFovGlobalShaderVariable.cs" />
+    <Compile Include="Assets\VolumetricLines\Scripts\Utils\ExposePropertyAttribute.cs" />
+    <Compile Include="Assets\VolumetricLines\Scripts\Utils\TransformExtensionMethods.cs" />
+    <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineBehavior.cs" />
+    <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineStripBehavior.cs" />
+    <Compile Include="Assets\VolumetricLines\Scripts\VolumetricMultiLineBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\Alpha_Texture.shader" />
@@ -158,6 +178,12 @@
     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditive.shader" />
+    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditiveFast.shader" />
+    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlended.shader" />
+    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlendedFast.shader" />
+    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAdditive.shader" />
+    <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAlphaBlended.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -37,7 +37,7 @@ public class Boss3Move : MonoBehaviour {
             {
                 // ... set the destination of the nav mesh agent to the player.
                 nav.SetDestination(player.position);
-                animation.Play("Walk");
+                //animation.Play("Walk");
             }
             else
             {

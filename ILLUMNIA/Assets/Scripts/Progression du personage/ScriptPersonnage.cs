@@ -46,6 +46,7 @@ public class ScriptPersonnage : MonoBehaviour
     public bool estdansletutomob;
     public bool estdansletutoenigme;
     public bool estdanslespawn;
+    public bool laser1, laser2;
     // private Rigidbody rb;
 
     void Awake()
@@ -283,6 +284,15 @@ public class ScriptPersonnage : MonoBehaviour
         {
             lejoueurestdanslabulle = true;
         }
+        //boss3
+        if (other.gameObject.CompareTag("laser1"))
+        {
+            laser1 = true;
+        }
+        if (other.gameObject.CompareTag("laser2"))
+        {
+            laser2 = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -353,6 +363,15 @@ public class ScriptPersonnage : MonoBehaviour
         if (other.gameObject.CompareTag("JoueurBulleVerte"))
         {
             lejoueurestdanslabulle = false;
+        }
+        //boss3
+        if (other.gameObject.CompareTag("laser1"))
+        {
+            laser1 = false;
+        }
+        if (other.gameObject.CompareTag("laser2"))
+        {
+            laser2 = false;
         }
     }
     void Rotate(float x, float y)
