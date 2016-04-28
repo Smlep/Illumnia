@@ -38,13 +38,15 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>D:/Logiciels/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:/Logiciels/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Blender imports\BORDEL\FT_CaveWorm\Script\PlayAnimation.cs" />
+     <Compile Include="Assets\Blender imports\BORDEL\FT_CaveWorm\Script\SubstanceGUI.cs" />
      <Compile Include="Assets\Blender imports\Déco\torch\scene\script\TorchSlider.cs" />
      <Compile Include="Assets\Blender imports\Déco\torch\scene\script\Torchslider2.cs" />
      <Compile Include="Assets\Blender imports\Déco\torch\scripts\Torchelight.cs" />
@@ -57,6 +59,8 @@
      <Compile Include="Assets\DoorSystem\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\FIGHT\BOSS1\Boss1Attack.cs" />
      <Compile Include="Assets\FIGHT\BOSS1\Boss1Move.cs" />
+     <Compile Include="Assets\FIGHT\Boss3\Boss3Attack.cs" />
+     <Compile Include="Assets\FIGHT\Boss3\Boss3Move.cs" />
      <Compile Include="Assets\FIGHT\Croco\CrocoAttack.cs" />
      <Compile Include="Assets\FIGHT\Croco\EnemyHealth.cs" />
      <Compile Include="Assets\FIGHT\Croco\ScriptCroco1.cs" />
@@ -112,6 +116,7 @@
      <Compile Include="Assets\Scripts\Progression du personage\MobCleaning.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\SalleBoss1.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\SalleBoss2.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\SalleBoss3.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\ScriptPersonnage.cs" />
      <Compile Include="Assets\Scripts\Progression du personage\Tutoriel.cs" />
      <Compile Include="Assets\Scripts\Slide.cs" />
@@ -139,10 +144,10 @@
      <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Advanced.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
