@@ -12,18 +12,21 @@ public class DragonBehavior : MonoBehaviour {
     EnemyHealth enemyHealth;                    // Reference to this enemy's health.
     Animator anim;
     PlayerHealth playerHealth;
-    GameObject player, ZoneMorteGauche, ZoneMorteDroite, BulleVerte;
+    GameObject player, ZoneMorteGauche, ZoneMorteDroite, BulleVerte, souffle_part;
     private GameObject e1;
     public GameObject enemy;
     EnemyHealth e1Health;
+    float x;
     // Use this for initialization
     void Awake ()
     {
         boss = GameObject.Find("Boss2-v3");
+        souffle_part = GameObject.Find("souffle_part");
         spawnenemy = GameObject.Find("SpawnBoss2");
         ZoneMorteDroite = GameObject.Find("ZoneMorteDroite");
         ZoneMorteGauche = GameObject.Find("ZoneMorteGauche");
         BulleVerte = GameObject.Find("BulleVerte");
+        x = souffle_part.transform.position.y;
         BulleVerte.transform.position = new Vector3(BulleVerte.transform.position.x, -20f, BulleVerte.transform.position.z);
         ZoneMorteGauche.transform.position = new Vector3(ZoneMorteGauche.transform.position.x, -20f, ZoneMorteGauche.transform.position.z);
         ZoneMorteDroite.transform.position = new Vector3(ZoneMorteDroite.transform.position.x, -20f, ZoneMorteDroite.transform.position.z);
@@ -35,6 +38,7 @@ public class DragonBehavior : MonoBehaviour {
         enemyHealthSlider.maxValue = enemyHealth.startingHealth;
         anim = GetComponent<Animator>();
         scriptdupersonage = GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptPersonnage>();
+        souffle_part.transform.position = new Vector3(souffle_part.transform.position.x, -20f, souffle_part.transform.position.z);
     }
 	
 	// Update is called once per frame
@@ -46,13 +50,13 @@ public class DragonBehavior : MonoBehaviour {
         if (TimerMecanic < 0)
         {
             MecanicRand();
-            TimerMecanic = 25;
+            TimerMecanic = 22;
         }
     }
     void MecanicRand()
     {
         System.Random MecRand = new System.Random();
-        int Mec = MecRand.Next(1, 4);
+        int Mec = MecRand.Next(1, 2);
         switch (Mec)
         {
             case 1:
@@ -71,6 +75,7 @@ public class DragonBehavior : MonoBehaviour {
     {
         anim.SetBool("souffle", true);
         yield return new WaitForSeconds(2f);
+        souffle_part.transform.position = new Vector3(souffle_part.transform.position.x, x, souffle_part.transform.position.z);
         //mettre la mecanic ici
         if (!playerHealth.enmodedéfensif)
             playerHealth.TakeDamage((int)(0.2 * playerHealth.startingHealth));
@@ -80,6 +85,7 @@ public class DragonBehavior : MonoBehaviour {
         yield return new WaitForSeconds(0.8f);
         if (!playerHealth.enmodedéfensif)
             playerHealth.TakeDamage((int)(0.4 * playerHealth.startingHealth));
+        souffle_part.transform.position = new Vector3(souffle_part.transform.position.x, -20f, souffle_part.transform.position.z);
         //mettre la mecanic ici
         anim.SetBool("isFlying", true);
         anim.SetBool("souffle", false);
@@ -143,7 +149,7 @@ public class DragonBehavior : MonoBehaviour {
         boss.transform.position = new Vector3(boss.transform.position.x, 2f, boss.transform.position.z);
         yield return new WaitForSeconds(0.1f);
         boss.transform.position = new Vector3(boss.transform.position.x, 2.2f, boss.transform.position.z);
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(12f);
         if (e1Health.currentHealth > 0)
         {
             enemyHealth.TakeDamage(e1Health.currentHealth, Vector3.zero);
