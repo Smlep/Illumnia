@@ -99,7 +99,7 @@ public class SalleBoss2 : MonoBehaviour
         
         for (int i = 0; i < scriptpersonnages.Length; i++)
         {
-            scriptpersonnages[i].playercanmove = true;
+            scriptpersonnages[i].Dashautorise = true;
         }
         for (int i = 0; i < playerHealths.Length; i++)
         {

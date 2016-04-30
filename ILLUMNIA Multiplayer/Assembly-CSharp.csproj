@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{40E2D340-CA2F-6AF8-98FB-AD9900E89169}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:/Logiciels/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:/Logiciels/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Blender imports\BORDEL\FT_CaveWorm\Script\PlayAnimation.cs" />
+     <Compile Include="Assets\Blender imports\BORDEL\FT_CaveWorm\Script\SubstanceGUI.cs" />
+     <Compile Include="Assets\Blender imports\Déco\torch\scene\script\TorchSlider.cs" />
+     <Compile Include="Assets\Blender imports\Déco\torch\scene\script\Torchslider2.cs" />
+     <Compile Include="Assets\Blender imports\Déco\torch\scripts\Torchelight.cs" />
+     <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanel.cs" />
+     <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanelField.cs" />
+     <Compile Include="Assets\DoorSystem\Debugger\Yurowm\DebugPanel\DebugPanelViewport.cs" />
+     <Compile Include="Assets\DoorSystem\Scripts\Detection.cs" />
+     <Compile Include="Assets\DoorSystem\Scripts\Door.cs" />
+     <Compile Include="Assets\DoorSystem\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\DoorSystem\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\FIGHT\BOSS1\Boss1Attack.cs" />
+     <Compile Include="Assets\FIGHT\BOSS1\Boss1Move.cs" />
+     <Compile Include="Assets\FIGHT\Boss3\Boss3Attack.cs" />
+     <Compile Include="Assets\FIGHT\Boss3\Boss3Move.cs" />
+     <Compile Include="Assets\FIGHT\Croco\CrocoAttack.cs" />
+     <Compile Include="Assets\FIGHT\Croco\EnemyHealth.cs" />
+     <Compile Include="Assets\FIGHT\Croco\ScriptCroco1.cs" />
+     <Compile Include="Assets\FIGHT\Demon\RedDemonAttack.cs" />
+     <Compile Include="Assets\FIGHT\Demon\RedDemonMove.cs" />
+     <Compile Include="Assets\FIGHT\Dragon\DragonBehavior.cs" />
+     <Compile Include="Assets\FIGHT\Mob\MobMove.cs" />
+     <Compile Include="Assets\FIGHT\Mob\Mobattack.cs" />
+     <Compile Include="Assets\FIGHT\Player\PlayerAttack.cs" />
+     <Compile Include="Assets\FIGHT\Player\PlayerHealth.cs" />
+     <Compile Include="Assets\FIGHT\Player\PlayerMove.cs" />
+     <Compile Include="Assets\FIGHT\Squelette\SkeletteMove.cs" />
+     <Compile Include="Assets\FIGHT\Squelette\SqueletteAttack.cs" />
+     <Compile Include="Assets\FIGHT\Troll\TrollAttack.cs" />
+     <Compile Include="Assets\FIGHT\Troll\TrollMove.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\Displace.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\GerstnerDisplace.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\MeshContainer.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\PlanarReflection.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\SpecularLighting.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\Water.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\WaterBase.cs" />
+     <Compile Include="Assets\Materials\Water\Water\Scripts\WaterTile.cs" />
+     <Compile Include="Assets\MultiplayerShit.cs" />
+     <Compile Include="Assets\Scripts\Activation.cs" />
+     <Compile Include="Assets\Scripts\Clignote.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\Changecolor1.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\Changecolor2.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\Code1.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\Code2.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\Code3.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\Code4.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\Enable.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\Mobquicourt.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\Spawn2enemys.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\TP.cs" />
+     <Compile Include="Assets\Scripts\Enigmes\clé.cs" />
+     <Compile Include="Assets\Scripts\GUItest.cs" />
+     <Compile Include="Assets\Scripts\Main.cs" />
+     <Compile Include="Assets\Scripts\MenuScript.cs" />
+     <Compile Include="Assets\Scripts\Multiplayersetup.cs" />
+     <Compile Include="Assets\Scripts\Needle.cs" />
+     <Compile Include="Assets\Scripts\Portes\Porte0.cs" />
+     <Compile Include="Assets\Scripts\Portes\Porte1.cs" />
+     <Compile Include="Assets\Scripts\Portes\PorteAile1.cs" />
+     <Compile Include="Assets\Scripts\Portes\PorteAile2.cs" />
+     <Compile Include="Assets\Scripts\Portes\PorteAile3.cs" />
+     <Compile Include="Assets\Scripts\Positionjoueur1prTuto.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\CinématiqueCaméra.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\Fights\FightSalle1.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\Fights\FightSalle2.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\Fights\FightSalle3.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\Fights\FightSalle4.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\Fights\ScriptPrincipalFight.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\MobCleaning.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\SalleBoss1.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\SalleBoss2.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\SalleBoss3.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\ScriptPersonnage.cs" />
+     <Compile Include="Assets\Scripts\Progression du personage\Tutoriel.cs" />
+     <Compile Include="Assets\Scripts\Slide.cs" />
+     <Compile Include="Assets\Scripts\SlideCode.cs" />
+     <Compile Include="Assets\Scripts\TEST.cs" />
+     <Compile Include="Assets\Scripts\Trapdmg.cs" />
+     <Compile Include="Assets\Scripts\lightdoor.cs" />
+     <Compile Include="Assets\VolumetricLines\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
+     <Compile Include="Assets\VolumetricLines\ExampleScenes\ExampleScripts\CreateSinShapedLineStrip.cs" />
+     <Compile Include="Assets\VolumetricLines\ExampleScenes\ExampleScripts\ShotBehavior.cs" />
+     <Compile Include="Assets\VolumetricLines\Scripts\SetFovGlobalShaderVariable.cs" />
+     <Compile Include="Assets\VolumetricLines\Scripts\Utils\ExposePropertyAttribute.cs" />
+     <Compile Include="Assets\VolumetricLines\Scripts\Utils\TransformExtensionMethods.cs" />
+     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineBehavior.cs" />
+     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineStripBehavior.cs" />
+     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricMultiLineBehavior.cs" />
+     <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\Alpha_Texture.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Earthborn Troll\Shader\DoubleSided-Light-Spec.shader" />
+     <None Include="Assets\Blender imports\Déco\Sculptures\readme.txt" />
+     <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlended.shader" />
+     <None Include="Assets\DungeonLevers\Readme.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditive.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\vertexAnim.shader" />
+     <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\bumpSpecmap.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\metalA.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Key\Key\readME keys.txt" />
+     <None Include="Assets\Materials\Shaders\TextBehindWalls.shader" />
+     <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAdditiveFast.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\caveShader.shader" />
+     <None Include="Assets\Materials\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Blender imports\Déco\torch\readme.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Blender imports\BORDEL\Monster\shaders\monsterShader.shader" />
+     <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAdditive.shader" />
+     <None Include="Assets\VolumetricLines\Shaders\VolumetricLineStripShaderAlphaBlended.shader" />
+     <None Include="Assets\VolumetricLines\Shaders\VolumetricLineShaderAlphaBlendedFast.shader" />
+     <None Include="Assets\Materials\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Materials\Water\Water4\Shaders\FXWater4Advanced.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>D:/Logiciels/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

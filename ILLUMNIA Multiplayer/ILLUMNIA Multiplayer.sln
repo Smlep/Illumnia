@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{CFADB267-A1FD-A67A-1313-BF5076CA15C2}") = "ILLUMNIA Multiplayer", "Assembly-CSharp.csproj", "{40E2D340-CA2F-6AF8-98FB-AD9900E89169}"
+EndProject
+Project("{CFADB267-A1FD-A67A-1313-BF5076CA15C2}") = "ILLUMNIA Multiplayer", "Assembly-CSharp-Editor.csproj", "{C8583775-ACF8-3727-3564-E23673B46F52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40E2D340-CA2F-6AF8-98FB-AD9900E89169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E2D340-CA2F-6AF8-98FB-AD9900E89169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E2D340-CA2F-6AF8-98FB-AD9900E89169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E2D340-CA2F-6AF8-98FB-AD9900E89169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8583775-ACF8-3727-3564-E23673B46F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8583775-ACF8-3727-3564-E23673B46F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8583775-ACF8-3727-3564-E23673B46F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8583775-ACF8-3727-3564-E23673B46F52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
