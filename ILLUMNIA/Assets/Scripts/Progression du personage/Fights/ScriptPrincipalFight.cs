@@ -44,7 +44,13 @@ public class ScriptPrincipalFight : MonoBehaviour
         yield return new WaitForSeconds(5);
         messageEntrée.SetActive(false);
     }
-        IEnumerator FightOver()
+    
+    public void Fincombats()
+    {
+        StartCoroutine(FightOver());
+    }
+
+    IEnumerator FightOver()
     {
         finactivé = true;
         TPtoBoss.SetActive(true);
