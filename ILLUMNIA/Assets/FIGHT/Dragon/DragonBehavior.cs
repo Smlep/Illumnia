@@ -56,7 +56,7 @@ public class DragonBehavior : MonoBehaviour {
     void MecanicRand()
     {
         System.Random MecRand = new System.Random();
-        int Mec = MecRand.Next(1, 2);
+        int Mec = MecRand.Next(1, 4);
         switch (Mec)
         {
             case 1:
