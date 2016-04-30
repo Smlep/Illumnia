@@ -16,7 +16,6 @@ public class ScriptPrincipalFight : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        CheatEnd();
     }
     void OnTriggerEnter(Collider other)
     {
