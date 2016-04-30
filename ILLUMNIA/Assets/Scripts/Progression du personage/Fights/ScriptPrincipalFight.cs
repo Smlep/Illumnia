@@ -16,7 +16,7 @@ public class ScriptPrincipalFight : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        CheatEnd();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -47,6 +47,7 @@ public class ScriptPrincipalFight : MonoBehaviour
     }
         IEnumerator FightOver()
     {
+        finactivé = true;
         TPtoBoss.SetActive(true);
         messageFin.SetActive(true);
         yield return new WaitForSeconds(5);

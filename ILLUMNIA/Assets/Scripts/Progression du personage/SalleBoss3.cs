@@ -118,16 +118,18 @@ public class SalleBoss3 : MonoBehaviour {
         */
         // Cinématique
         yield return new WaitForSeconds(3);
+        /*
         for (int i = 0; i < scriptpersonnages.Length; i++)
         {
             scriptpersonnages[i].playercanmove = false;
         }
-        /*Canvasbossdead.SetActive(false);
-        Canvasbossdead2.SetActive(true);*/
+        Canvasbossdead.SetActive(false);
+        Canvasbossdead2.SetActive(true);
         for (int i = 0; i < scriptpersonnages.Length; i++)
         {
             scriptpersonnages[i].playercanmove = true;
         }
+        */
         yield return new WaitForSeconds(8);
         //Canvasbossdead2.SetActive(false);
     }
