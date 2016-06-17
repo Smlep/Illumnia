@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int startingHealth = 100;                            // The amount of health the player starts the game with.
     public int tauxderégen;
     public int currentHealth;                                   // The current health the player has.
-    private Slider healthSlider;                                 // Reference to the UI's health bar.
+    public Slider healthSlider;                                 // Reference to the UI's health bar.
     private Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
     // public AudioClip deathClip;                                 // The audio clip to play when the player dies.
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
     // AudioSource playerAudio;                                    // Reference to the AudioSource component.
     ScriptPersonnage playerMovement;                              // Reference to the player's movement.
     PlayerAttack playerShooting;                              // Reference to the PlayerShooting script.
-    bool isDead;                                                // Whether the player is dead.
+    public bool isDead;                                                // Whether the player is dead.
     bool damaged;                                               // True when the player gets damaged.
     void Awake()
     {
@@ -125,7 +125,6 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0 && !isDead)
         {
             // ... it should die.
-            SceneManager.LoadScene("Menu Scene");
             Death();
         }
     }

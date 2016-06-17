@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
 
-    private Text yourbuttontext;
-    private Text yourbuttontext1;
-    private Text yourbuttonresumetext;
     public Button Buttonquit;
     public Button Buttonrestart;
     public Button Buttonresume;
@@ -16,7 +14,9 @@ public class Main : MonoBehaviour
     public Canvas OptionMenu;
     public static bool Inpause;
     public GameObject player;
-    Tutoriel tutoriel;
+    Tutoriel tutoriel;                       
+    private PlayerHealth playerHealth;
+    private Slider healthSlider;
 
     
 
@@ -26,11 +26,13 @@ public class Main : MonoBehaviour
         tutoriel = player.GetComponent<Tutoriel>();
         Time.timeScale = 1;
         Inpause = false;
+        playerHealth = player.GetComponent<PlayerHealth>();
+        healthSlider = GameObject.FindGameObjectWithTag("SliderviePlayer").GetComponent<Slider>();
     }
 
     public void end()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Menu Scene");
     }
 
     public void restart()
@@ -68,34 +70,30 @@ public class Main : MonoBehaviour
         Buttonoption.gameObject.SetActive(true);
     }
 
-    public void lobby()
+    public void Easy()
     {
-        player.transform.position = new Vector3(-7,0,40);
+        int temp = (playerHealth.currentHealth * 200) / playerHealth.startingHealth;
+        playerHealth.startingHealth = 200;
+        healthSlider.maxValue = 200;
+        playerHealth.currentHealth = temp;
+        healthSlider.value = playerHealth.currentHealth;
     }
 
-    public void B1TP()
+    public void Medium()
     {
-        player.transform.position = new Vector3(-53, 0, 63);
+        int temp = (playerHealth.currentHealth * 100) / playerHealth.startingHealth;
+        playerHealth.startingHealth = 100;
+        healthSlider.maxValue = 100;
+        playerHealth.currentHealth = temp;
+        healthSlider.value = playerHealth.currentHealth;
     }
-
-    public void B2TP()
+    public void Hard()
     {
-        player.transform.position = new Vector3(105, 0, 147);
-    }
-
-    public void B3TP()
-    {
-        player.transform.position = new Vector3(438, 0, 365);
-    }
-
-    public void JumpTP()
-    {
-        player.transform.position = new Vector3(46, 0, 12);
-    }
-
-    public void ParcourTP()
-    {
-        player.transform.position = new Vector3(-5, 0, 722);
+        int temp = (playerHealth.currentHealth * 50) / playerHealth.startingHealth;
+        playerHealth.startingHealth = 50;
+        healthSlider.maxValue = 50;
+        playerHealth.currentHealth = temp;
+        healthSlider.value = playerHealth.currentHealth;
     }
 
     void Update()
@@ -120,7 +118,7 @@ public class Main : MonoBehaviour
     void OnGUI()
     {
         // CROSSHAIR
-        if (!Inpause)
+        if (Time.timeScale != 0)
         {
             float xMin = (Screen.width / 2) - (crosshairImage.width / 2);
             float yMin = (Screen.height / 2) - (crosshairImage.height / 2);

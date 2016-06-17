@@ -175,7 +175,7 @@ public class ScriptPersonnage : MonoBehaviour
             characteranimation.Play("Attack");
         }
 
-        if (!Main.Inpause)
+        if ((!Main.Inpause) && (!Optionscript.Inpause))
         {
             RotateControls();
         }

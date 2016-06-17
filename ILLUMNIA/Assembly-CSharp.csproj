@@ -87,6 +87,7 @@
      <Compile Include="Assets\Scripts\Activation.cs" />
      <Compile Include="Assets\Scripts\CinéMenu.cs" />
      <Compile Include="Assets\Scripts\Clignote.cs" />
+     <Compile Include="Assets\Scripts\Death.cs" />
      <Compile Include="Assets\Scripts\Enigmes\Changecolor1.cs" />
      <Compile Include="Assets\Scripts\Enigmes\Changecolor2.cs" />
      <Compile Include="Assets\Scripts\Enigmes\Code1.cs" />
@@ -102,6 +103,7 @@
      <Compile Include="Assets\Scripts\Main.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\Needle.cs" />
+     <Compile Include="Assets\Scripts\Optionscript.cs" />
      <Compile Include="Assets\Scripts\Portes\Porte0.cs" />
      <Compile Include="Assets\Scripts\Portes\Porte1.cs" />
      <Compile Include="Assets\Scripts\Portes\PorteAile1.cs" />
