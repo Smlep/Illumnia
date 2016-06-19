@@ -100,6 +100,32 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
+    public void Easy()
+    {
+        int temp = (currentHealth * 200) / startingHealth;
+        startingHealth = 200;
+        healthSlider.maxValue = 200;
+        currentHealth = temp;
+        healthSlider.value = currentHealth;
+    }
+
+    public void Medium()
+    {
+        int temp = (currentHealth * 100) / startingHealth;
+        startingHealth = 100;
+        healthSlider.maxValue = 100;
+        currentHealth = temp;
+        healthSlider.value = currentHealth;
+    }
+    public void Hard()
+    {
+        int temp = (currentHealth * 50) / startingHealth;
+        startingHealth = 50;
+        healthSlider.maxValue = 50;
+        currentHealth = temp;
+        healthSlider.value = currentHealth;
+    }
+
     public void TakeDamage(int amount)
     {
         // Set the damaged flag so the screen will flash.

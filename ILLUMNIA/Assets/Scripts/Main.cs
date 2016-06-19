@@ -13,8 +13,7 @@ public class Main : MonoBehaviour
     public Texture2D crosshairImage;
     public Canvas OptionMenu;
     public static bool Inpause;
-    public GameObject player;
-    Tutoriel tutoriel;                       
+    public GameObject player;  
     private PlayerHealth playerHealth;
     private Slider healthSlider;
 
@@ -23,7 +22,6 @@ public class Main : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-        tutoriel = player.GetComponent<Tutoriel>();
         Time.timeScale = 1;
         Inpause = false;
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -68,32 +66,6 @@ public class Main : MonoBehaviour
         Buttonrestart.gameObject.SetActive(true);
         Buttonresume.gameObject.SetActive(true);
         Buttonoption.gameObject.SetActive(true);
-    }
-
-    public void Easy()
-    {
-        int temp = (playerHealth.currentHealth * 200) / playerHealth.startingHealth;
-        playerHealth.startingHealth = 200;
-        healthSlider.maxValue = 200;
-        playerHealth.currentHealth = temp;
-        healthSlider.value = playerHealth.currentHealth;
-    }
-
-    public void Medium()
-    {
-        int temp = (playerHealth.currentHealth * 100) / playerHealth.startingHealth;
-        playerHealth.startingHealth = 100;
-        healthSlider.maxValue = 100;
-        playerHealth.currentHealth = temp;
-        healthSlider.value = playerHealth.currentHealth;
-    }
-    public void Hard()
-    {
-        int temp = (playerHealth.currentHealth * 50) / playerHealth.startingHealth;
-        playerHealth.startingHealth = 50;
-        healthSlider.maxValue = 50;
-        playerHealth.currentHealth = temp;
-        healthSlider.value = playerHealth.currentHealth;
     }
 
     void Update()
