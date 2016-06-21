@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Tutoriel : MonoBehaviour
 {
+    public AudioClip[] sound;
     private bool nestjamaisallédanslelobby = true;
     private bool nestjamaisallédanslespawn = true;
     private bool nestjamaisallédansletutomob = true;
@@ -84,6 +85,7 @@ public class Tutoriel : MonoBehaviour
         StartCoroutine(cinematiquecamera.cinématiquetuto());
         for (int i = 0; i < scriptpersonages.Length; i++)
             scriptpersonages[i].playercanmove = false;
+        AudioSource.PlayClipAtPoint(sound[0], Players[0].transform.position);
         yield return new WaitForSeconds(3);
         TutoLobby1.SetActive(false);
         TutoLobby2.SetActive(true);

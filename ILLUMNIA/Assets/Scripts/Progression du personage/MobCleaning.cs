@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class MobCleaning : MonoBehaviour
 {
+    public AudioClip[] sound;
     private bool isintheroom;
     private ScriptPersonnage scriptPersonnage;
     public GameObject doorin;
@@ -33,11 +34,13 @@ public class MobCleaning : MonoBehaviour
     private bool vague2terminée;
     private bool vague3terminée;
     private bool vague4terminée;
+    GameObject player;
     // Use this for initialization
     void Start()
     {
         isintheroom = false;
         playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
+        player = GameObject.FindGameObjectWithTag("Player");
         scriptPersonnage = GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptPersonnage>();
     }
     // détection de la premiere entrée dans cette salle
@@ -64,6 +67,7 @@ public class MobCleaning : MonoBehaviour
         vague2terminée = false;
         vague3terminée = false;
         System.Random ran = new System.Random();
+        AudioSource.PlayClipAtPoint(sound[0], player.transform.position);
         yield return new WaitForSeconds(3);
         ennemi1vague1 = Instantiate(Squelette, listpositionspawn[ran.Next(listpositionspawn.Count)].position, listpositionspawn[ran.Next(listpositionspawn.Count)].rotation);
         ennemi2vague1 = Instantiate(Squelette, listpositionspawn[ran.Next(listpositionspawn.Count)].position, listpositionspawn[ran.Next(listpositionspawn.Count)].rotation);
@@ -71,10 +75,12 @@ public class MobCleaning : MonoBehaviour
         ennemi4vague1 = Instantiate(Mob, listpositionspawn[ran.Next(listpositionspawn.Count)].position, listpositionspawn[ran.Next(listpositionspawn.Count)].rotation);
         while (ennemi1vague1 != null || ennemi2vague1 != null || ennemi3vague1 != null || ennemi4vague1 != null)
         { yield return new WaitForSeconds(1); }
+        AudioSource.PlayClipAtPoint(sound[0], player.transform.position);
         vague1terminée = true;
         ennemi1vague2 = Instantiate(Troll, listpositionspawn[ran.Next(listpositionspawn.Count)].position, listpositionspawn[ran.Next(listpositionspawn.Count)].rotation);
         while (ennemi1vague2 != null)
         { yield return new WaitForSeconds(1); }
+        AudioSource.PlayClipAtPoint(sound[0], player.transform.position);
         vague2terminée = true;
         ennemi1vague3 = Instantiate(Troll, listpositionspawn[ran.Next(listpositionspawn.Count)].position, listpositionspawn[ran.Next(listpositionspawn.Count)].rotation);
         ennemi2vague3 = Instantiate(Squelette, listpositionspawn[ran.Next(listpositionspawn.Count)].position, listpositionspawn[ran.Next(listpositionspawn.Count)].rotation);

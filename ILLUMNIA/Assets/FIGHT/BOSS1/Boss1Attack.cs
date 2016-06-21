@@ -7,7 +7,7 @@ public class Boss1Attack : MonoBehaviour
 
     public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
     public int attackDamage = 10;               // The amount of health taken away per attack.
-
+    public AudioClip[] sound;
     private ScriptPersonnage scriptdupersonage;
     Animation Anim;                              // Reference to the animator component.
     GameObject player;                          // Reference to the player GameObject.
@@ -164,6 +164,7 @@ public class Boss1Attack : MonoBehaviour
     //---------------------------------Phase1(100-75)---------------------------------
     IEnumerator Mecanic1()
     {
+        AudioSource.PlayClipAtPoint(sound[1], Boss.transform.position);
         TimerMecanic = 20f; ;
         Boss1Move.lebosspeutbouger = false;
         Anim.Play("faint");
@@ -241,6 +242,7 @@ public class Boss1Attack : MonoBehaviour
     //---------------------------------Phase2(75-50)---------------------------------
     IEnumerator Mecanic2()
     {
+        AudioSource.PlayClipAtPoint(sound[1], Boss.transform.position);
         TimerMecanic = 10f;
         ZoneMorteMecanic2.transform.position = new Vector3(Boss.transform.position.x, 0.003f, Boss.transform.position.z);
         Boss1Move.lebosspeutbouger = false;
@@ -259,6 +261,7 @@ public class Boss1Attack : MonoBehaviour
     //---------------------------------Phase3(50-25)---------------------------------
     IEnumerator Mecanic3()
     {
+        AudioSource.PlayClipAtPoint(sound[1], Boss.transform.position);
         TimerMecanic = 30f;
         Boss1Move.lebosspeutbouger = false;
         Anim.Play("hpunch");

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class DragonBehavior : MonoBehaviour {
+    public AudioClip[] sound;
     float TimerMecanic = 5;
     public GameObject boss;
     private ScriptPersonnage scriptdupersonage;
@@ -77,6 +78,7 @@ public class DragonBehavior : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         souffle_part.transform.position = new Vector3(souffle_part.transform.position.x, x, souffle_part.transform.position.z);
         //mettre la mecanic ici
+        AudioSource.PlayClipAtPoint(sound[1], boss.transform.position);
         if (!playerHealth.enmodedéfensif)
             playerHealth.TakeDamage((int)(0.2 * playerHealth.startingHealth));
         yield return new WaitForSeconds(0.8f);
@@ -94,6 +96,7 @@ public class DragonBehavior : MonoBehaviour {
     IEnumerator Mecanic2()
     {
         System.Random GaucheDroite = new System.Random();
+        AudioSource.PlayClipAtPoint(sound[1], boss.transform.position);
         int GD = GaucheDroite.Next(1, 3);
         if (GD == 1)
         {
@@ -125,6 +128,7 @@ public class DragonBehavior : MonoBehaviour {
     //Envol
     IEnumerator Mecanic3()
     {
+        AudioSource.PlayClipAtPoint(sound[1], boss.transform.position);
         e1 = (GameObject)Instantiate(enemy, spawnenemy.transform.position, spawnenemy.transform.rotation);
         e1Health = e1.GetComponent<EnemyHealth>();
         yield return new WaitForSeconds(0.1f);
